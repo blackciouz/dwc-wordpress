@@ -1,0 +1,32 @@
+services:
+  wordpress:
+    image: 'wordpress:6.6-php8.2-apache'
+    environment:
+      WORDPRESS_DB_HOST: 'db'
+      WORDPRESS_DB_NAME: 'wordpress'
+      WORDPRESS_DB_USER: 'wordpress'
+      WORDPRESS_DB_PASSWORD: '${DWC_DB_PASSWORD}'
+      WORDPRESS_CONFIG_EXTRA: "define('FS_METHOD','direct');"
+    volumes:
+      - 'wp-data:/var/www/html'
+    networks:
+      - dwc-net
+    labels:
+      - 'coolify.proxy.fqdn=https://digitalworldcoaching.clonesxstudio.com'
+      - 'coolify.proxy.port=80'
+  db:
+    image: 'mariadb:10.11'
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DWC_DB_ROOT_PASSWORD}'
+      MYSQL_DATABASE: 'wordpress'
+      MYSQL_USER: 'wordpress'
+      MYSQL_PASSWORD: '${DWC_DB_PASSWORD}'
+    volumes:
+      - 'wp-db:/var/lib/mysql'
+    networks:
+      - dwc-net
+networks:
+  dwc-net: {}
+volumes:
+  wp-data: {}
+  wp-db: {}
