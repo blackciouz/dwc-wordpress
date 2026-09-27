@@ -559,3 +559,427 @@ body.dwc-body {
     .dwc-mobile-menu { top: 4.5rem; }
     .uv-card:hover { transform: scale(1.0); }
 }
+
+/* ============================================
+   v2 — LOGO SVG
+   ============================================ */
+.dwc-logo-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    display: block;
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.35));
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+.dwc-logo-img:hover { transform: scale(1.06) rotate(-3deg); }
+.dwc-logo-img-sm { width: 2.25rem; height: 2.25rem; }
+
+/* ============================================
+   v2 — ICÔNES LUCIDE (remplacement des emojis)
+   ============================================ */
+/* Icône dans la bande dégradée des cartes uv-card */
+.uv-top-emoji svg,
+.uv-header-icon svg { display: block; }
+
+.uv-top-ic {
+    width: 1.15rem;
+    height: 1.15rem;
+    color: #ffffff;
+    opacity: 0.95;
+}
+
+/* Icône dans le carré du header de carte — hérite de la couleur du parent (définie inline) */
+.uv-header-ic {
+    width: 1rem;
+    height: 1rem;
+    color: inherit;
+}
+
+/* Icône inline dans les titres (h2/h3) */
+.dwc-h-ic {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: -0.2em;
+    margin-right: 0.45rem;
+}
+
+/* Dégradé or -> violet appliqué au tracé des icônes (defs injectées par nav.js) */
+.dwc-ic-grad { stroke: url(#dwcIconGrad); }
+
+/* ============================================
+   v2 — SECTION PROJETS & RÉALISATIONS
+   ============================================ */
+.dwc-proj-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: rgba(18, 13, 31, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+    overflow: hidden;
+    transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
+    text-decoration: none;
+}
+
+.dwc-proj-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #10b981, #f59e0b, #a855f7);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.dwc-proj-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(16, 185, 129, 0.35);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35), 0 0 30px rgba(16, 185, 129, 0.08);
+}
+
+.dwc-proj-card:hover::before { opacity: 1; }
+
+.dwc-proj-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    align-self: flex-start;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 9999px;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.dwc-proj-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.dwc-proj-desc {
+    font-size: 0.875rem;
+    color: #a9a4bd;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    flex: 1;
+}
+
+.dwc-proj-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 1.25rem;
+}
+
+.dwc-proj-tag {
+    font-size: 0.6875rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.18);
+    border-radius: 9999px;
+    color: #cfc9e0;
+}
+
+.dwc-proj-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: auto;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #fbbf24;
+    text-decoration: none;
+}
+
+.dwc-proj-link svg {
+    width: 1rem; height: 1rem;
+    transition: transform 0.3s;
+}
+
+.dwc-proj-card:hover .dwc-proj-link svg { transform: translateX(4px); }
+
+/* Note d'illustration sous la section projets */
+.dwc-proj-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #7d768f;
+}
+
+/* ============================================
+   v2 — PAGE CONTACT : cartes cliquables
+   ============================================ */
+.dwc-contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+    text-decoration: none;
+    transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s, background 0.35s;
+}
+
+.dwc-contact-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35), 0 0 30px rgba(245, 158, 11, 0.12);
+}
+
+.dwc-contact-card .dwc-cc-icon {
+    width: 3.25rem; height: 3.25rem;
+    border-radius: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.35s, box-shadow 0.35s;
+}
+
+.dwc-contact-card:hover .dwc-cc-icon { transform: scale(1.1); }
+
+.dwc-contact-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 1.0625rem;
+    margin-bottom: 0.3rem;
+}
+
+.dwc-contact-card .dwc-cc-sub {
+    font-size: 0.8125rem;
+    color: #a9a4bd;
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+}
+
+.dwc-contact-card .dwc-cc-value {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #fbbf24;
+    word-break: break-word;
+}
+
+.dwc-contact-card .dwc-cc-arrow {
+    margin-top: 0.35rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7d768f;
+    transition: color 0.3s;
+}
+
+.dwc-contact-card:hover .dwc-cc-arrow { color: #f59e0b; }
+
+/* ============================================
+   v2 — PAGE CONTACT : formulaire
+   ============================================ */
+.dwc-form-panel {
+    position: relative;
+    background: rgba(18, 13, 31, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .dwc-form-panel { padding: 2.75rem 3rem; }
+}
+
+.dwc-form-panel::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.5), rgba(168, 85, 247, 0.5), transparent);
+}
+
+.dwc-field label {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #a9a4bd;
+    margin-bottom: 0.5rem;
+}
+
+.dwc-field label svg { width: 0.9rem; height: 0.9rem; color: #f59e0b; }
+
+.dwc-input,
+.dwc-select,
+.dwc-textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.75rem;
+    padding: 0.875rem 1rem;
+    color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9375rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+    color-scheme: dark;
+}
+
+.dwc-textarea { resize: vertical; min-height: 8rem; }
+
+.dwc-input::placeholder,
+.dwc-textarea::placeholder { color: #5b5570; }
+
+.dwc-input:focus,
+.dwc-select:focus,
+.dwc-textarea:focus {
+    border-color: rgba(245, 158, 11, 0.55);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12), 0 0 24px rgba(245, 158, 11, 0.08);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dwc-select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 2.75rem;
+    cursor: pointer;
+}
+
+.dwc-select-wrap { position: relative; }
+
+.dwc-select-wrap .dwc-select-chev {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.1rem; height: 1.1rem;
+    color: #a9a4bd;
+    pointer-events: none;
+}
+
+/* Boutons d'envoi */
+.dwc-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+}
+
+.dwc-submit-btn:hover { transform: translateY(-2px) scale(1.02); filter: brightness(1.08); }
+
+.dwc-submit-main {
+    background: linear-gradient(135deg, #f59e0b, #a855f7);
+    color: #ffffff;
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.35), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.dwc-submit-main:hover { box-shadow: 0 0 34px rgba(168, 85, 247, 0.5), 0 10px 28px rgba(0, 0, 0, 0.4); color: #fff; }
+
+.dwc-submit-wa {
+    background: rgba(16, 185, 129, 0.12);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.dwc-submit-wa:hover { background: rgba(16, 185, 129, 0.2); box-shadow: 0 0 24px rgba(16, 185, 129, 0.25); color: #34d399; }
+
+.dwc-submit-btn svg { width: 1.1rem; height: 1.1rem; }
+
+/* ============================================
+   v2 — PAGE CONTACT : FAQ accordéon
+   ============================================ */
+.dwc-faq-item {
+    background: rgba(18, 13, 31, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.dwc-faq-item[open] {
+    border-color: rgba(245, 158, 11, 0.35);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.07);
+}
+
+.dwc-faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.15rem 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #f8fafc;
+    user-select: none;
+}
+
+.dwc-faq-item summary::-webkit-details-marker { display: none; }
+
+.dwc-faq-chev {
+    flex-shrink: 0;
+    width: 1.2rem; height: 1.2rem;
+    color: #f59e0b;
+    transition: transform 0.3s;
+}
+
+.dwc-faq-item[open] .dwc-faq-chev { transform: rotate(180deg); }
+
+.dwc-faq-answer {
+    padding: 0 1.5rem 1.25rem;
+    font-size: 0.9rem;
+    color: #a9a4bd;
+    line-height: 1.7;
+}
+
+/* ============================================
+   v2 — CTA glow & divers contact
+   ============================================ */
+.dwc-cta-glow {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: radial-gradient(ellipse at 50% 0%, rgba(245, 158, 11, 0.14), rgba(10, 8, 18, 0.2) 60%),
+                radial-gradient(ellipse at 80% 100%, rgba(168, 85, 247, 0.14), transparent 55%);
+    box-shadow: 0 0 60px rgba(245, 158, 11, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.dwc-dispo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #a9a4bd;
+}

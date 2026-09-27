@@ -1,7 +1,28 @@
 // Digital World Coaching — Navigation
 // Menu mobile, effet scroll sur la nav pilule, lien actif, reveal au scroll, année footer
+// v2 : injection du dégradé or->violet dans les tracés Lucide + logo SVG
+
+var DWC_EMAIL = 'contact@digitalworldcoaching.com';
+var DWC_PHONE_HREF = 'tel:+22997000000';
+var DWC_WA_NUMBER = '22997000000';
 
 document.addEventListener('DOMContentLoaded', function () {
+
+    // ---- Dégradé or -> violet pour les tracés d'icônes Lucide (une seule defs par page) ----
+    if (!document.getElementById('dwcIconGrad')) {
+        var svgDefs = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svgDefs.setAttribute('aria-hidden', 'true');
+        svgDefs.style.position = 'absolute';
+        svgDefs.style.width = '0';
+        svgDefs.style.height = '0';
+        svgDefs.style.overflow = 'hidden';
+        svgDefs.innerHTML =
+            '<defs><linearGradient id="dwcIconGrad" x1="0%" y1="0%" x2="100%" y2="100%">' +
+            '<stop offset="0%" stop-color="#f59e0b"/>' +
+            '<stop offset="100%" stop-color="#a855f7"/>' +
+            '</linearGradient></defs>';
+        document.body.appendChild(svgDefs);
+    }
 
     // ---- Menu mobile (nav pilule) ----
     var navToggle = document.getElementById('dwc-nav-toggle');
@@ -95,5 +116,65 @@ document.addEventListener('DOMContentLoaded', function () {
     // ---- Icônes Lucide (sécurisé si CDN indisponible) ----
     if (typeof lucide !== 'undefined' && lucide.createIcons) {
         lucide.createIcons();
+        // Appliquer le dégradé or->violet aux tracés marqués .dwc-ic-grad
+        document.querySelectorAll('.dwc-ic-grad').forEach(function (el) {
+            el.style.stroke = 'url(#dwcIconGrad)';
+        });
+    }
+
+    // ---- Page contact : envoi du formulaire via mailto / WhatsApp (aucun backend) ----
+    var form = document.getElementById('dwc-contact-form');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var get = function (id) {
+                var el = document.getElementById(id);
+                return el ? (el.value || '').trim() : '';
+            };
+            var name = get('f-name');
+            var email = get('f-email');
+            var phone = get('f-phone');
+            var service = get('f-service');
+            var message = get('f-message');
+            var mode = (window.DWC_SUBMIT_MODE === 'whatsapp') ? 'whatsapp' : 'email';
+
+            var lines = [
+                'Bonjour Digital World Coaching,',
+                '',
+                'Nom : ' + (name || '—'),
+                'Email : ' + (email || '—'),
+                'WhatsApp : ' + (phone || '—'),
+                'Service souhaité : ' + (service || '—'),
+                '',
+                'Message :',
+                message || '—'
+            ];
+            var text = lines.join('\n');
+
+            var url;
+            if (mode === 'whatsapp') {
+                url = 'https://wa.me/' + DWC_WA_NUMBER + '?text=' + encodeURIComponent(text);
+                window.open(url, '_blank', 'noopener');
+            } else {
+                var subject = 'Demande de contact — ' + (service || 'Site web') + (name ? ' — ' + name : '');
+                url = 'mailto:' + DWC_EMAIL +
+                      '?subject=' + encodeURIComponent(subject) +
+                      '&body=' + encodeURIComponent(text);
+                window.location.href = url;
+            }
+        });
+    }
+
+    // ---- Page contact : bouton WhatsApp -> mode WhatsApp puis envoi ----
+    var waModeBtn = document.getElementById('dwc-submit-wa');
+    if (waModeBtn && form) {
+        waModeBtn.addEventListener('click', function () {
+            window.DWC_SUBMIT_MODE = 'whatsapp';
+            if (form.requestSubmit) {
+                form.requestSubmit();
+            } else {
+                form.dispatchEvent(new Event('submit', { cancelable: true }));
+            }
+        });
     }
 });
