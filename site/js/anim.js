@@ -7,7 +7,7 @@
   'use strict';
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+  var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches || 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth < 768;
 
   function onReady(fn) {
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
@@ -201,6 +201,11 @@
         card.addEventListener('mouseleave', function () {
           card.style.transform = '';
         });
+        card.addEventListener('blur', function () { card.style.transform = ''; });
+        window.addEventListener('scroll', function () {
+          if (raf) { cancelAnimationFrame(raf); raf = null; }
+          card.style.transform = '';
+        }, { passive: true });
       });
     }
 
