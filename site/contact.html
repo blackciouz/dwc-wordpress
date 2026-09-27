@@ -9,13 +9,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/anim.css"/>
 <link rel="stylesheet" href="css/main.css"/>
 <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-<!-- Halos chauds ambiant (signature Stitch contact) -->
-<div class="dwc-glow-blur" style="position:fixed; top:-10rem; left:50%; transform:translateX(-50%); width:53rem; height:28rem; opacity:0.5; z-index:0;"></div>
+<!-- Halos chauds ambiant multi-teintes (signature Stitch contact, v4) -->
+<div class="dwc-aurora" aria-hidden="true" style="position:fixed; top:0; height:40rem;"><i></i><i></i><i></i><i></i><i></i></div>
 
 <!-- ===== NAV ===== -->
 <header class="dwc-header">
@@ -55,7 +56,7 @@
 <main style="position:relative; z-index:1; padding-top:7.5rem; padding-bottom:2rem;">
 
   <!-- ===== HERO CONTACT ===== -->
-  <section class="dwc-center" style="display:flex; flex-direction:column; align-items:center; margin-bottom:4rem;">
+  <section class="dwc-center dwc-hero dwc-reveal" style="display:flex; flex-direction:column; align-items:center; margin-bottom:4rem;">
     <div class="dwc-badge dwc-mb-4">
       <span class="dwc-dot"></span>
       <span class="dwc-micro">Parlons de votre projet — réponse sous 24h</span>
@@ -80,7 +81,7 @@
   <div class="dwc-container" style="margin-bottom:4.5rem;">
   <section class="dwc-grid dwc-grid--4">
     <!-- WhatsApp -->
-    <a class="dwc-contact-card" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+    <a class="dwc-contact-card dwc-tilt dwc-spot" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
       <div>
         <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
           <span class="dwc-icon-circle"><i data-lucide="message-circle"></i></span>
@@ -95,7 +96,7 @@
       </div>
     </a>
     <!-- Email -->
-    <a class="dwc-contact-card" href="mailto:contact@digitalworldcoaching.com">
+    <a class="dwc-contact-card dwc-tilt dwc-spot" href="mailto:contact@digitalworldcoaching.com">
       <div>
         <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
           <span class="dwc-icon-circle"><i data-lucide="mail"></i></span>
@@ -110,7 +111,7 @@
       </div>
     </a>
     <!-- Téléphone -->
-    <a class="dwc-contact-card" href="tel:+22997000000">
+    <a class="dwc-contact-card dwc-tilt dwc-spot" href="tel:+229****0000">
       <div>
         <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
           <span class="dwc-icon-circle"><i data-lucide="phone"></i></span>
@@ -125,7 +126,7 @@
       </div>
     </a>
     <!-- Localisation -->
-    <a class="dwc-contact-card" href="https://maps.google.com/?q=Haie+Vive+Cotonou+Benin" target="_blank" rel="noopener noreferrer">
+    <a class="dwc-contact-card dwc-tilt dwc-spot" href="https://maps.google.com/?q=Haie+Vive+Cotonou+Benin" target="_blank" rel="noopener noreferrer">
       <div>
         <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
           <span class="dwc-icon-circle"><i data-lucide="map-pin"></i></span>
@@ -140,6 +141,13 @@
       </div>
     </a>
   </section>
+  </div>
+
+  <!-- ===== MARQUEE GARANTIES ===== -->
+  <div class="dwc-marquee" aria-hidden="true">
+    <div class="dwc-marquee-track">
+      <span>Réponse sous 24h ouvrées</span><span>Diagnostic offert 30 min</span><span>Clause NDA stricte</span><span>Devis transparent</span><span>Paiement échelonné</span><span>Suivi post-formation</span><span>Hub Haie Vive Cotonou</span><span>Visio 7j/7</span>
+    </div>
   </div>
 
   <!-- ===== PROTOCOLE + FORMULAIRE ===== -->
@@ -254,10 +262,11 @@
               <textarea class="dwc-textarea" id="f-message" rows="4" placeholder="Décrivez succinctement votre projet, vos échéances, vos attentes prioritaires et les livrables visés..." required></textarea>
             </div>
             <div>
-              <button class="dwc-btn dwc-btn--gold dwc-btn--block dwc-btn--lg" type="submit">
-                Envoyer ma demande &amp; réserver mon diagnostic <i data-lucide="arrow-right"></i>
+              <button class="dwc-btn dwc-btn--gold dwc-btn--block dwc-btn--lg dwc-btn--sparkle" type="submit">
+                <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+                <span class="dwc-btn-label">Envoyer ma demande &amp; réserver mon diagnostic</span> <i data-lucide="arrow-right"></i>
               </button>
-              <button class="dwc-btn dwc-btn--dark dwc-btn--block dwc-mt-2" type="button" id="dwc-submit-wa">
+              <button class="dwc-btn dwc-btn--dark dwc-btn--block dwc-mt-2 dwc-btn--beam" type="button" id="dwc-submit-wa">
                 <i data-lucide="message-circle"></i> Envoyer via WhatsApp
               </button>
               <p class="dwc-micro dwc-center dwc-mt-2" style="display:flex; align-items:center; justify-content:center; gap:0.4rem;">
@@ -350,17 +359,17 @@
             </div>
           </div>
           <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-mt-4">
-            <a class="dwc-btn dwc-btn--gold" href="https://maps.google.com/?q=Haie+Vive+Cotonou+Benin" target="_blank" rel="noopener noreferrer">
-              <i data-lucide="map"></i> Ouvrir dans Google Maps
+            <a class="dwc-btn dwc-btn--gold dwc-btn--sparkle" href="https://maps.google.com/?q=Haie+Vive+Cotonou+Benin" target="_blank" rel="noopener noreferrer">
+              <span class="dwc-sparkle-dots" aria-hidden="true"></span> <i data-lucide="map"></i> Ouvrir dans Google Maps
             </a>
-            <a class="dwc-btn dwc-btn--ghost" href="#devis-form">
+            <a class="dwc-btn dwc-btn--ghost dwc-btn--beam" href="#devis-form">
               <i data-lucide="calendar"></i> Prendre RDV sur place
             </a>
           </div>
         </div>
         <!-- Visuel chaud du hub -->
         <div>
-          <div class="dwc-visual" style="height:20rem; border-radius:1rem; border:1px solid rgba(79,70,54,0.4);">
+          <div class="dwc-visual dwc-spot" style="height:20rem; border-radius:1rem; border:1px solid rgba(79,70,54,0.4);">
             <i data-lucide="coffee"></i>
           </div>
           <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between; margin-top:-3.25rem; margin-left:1rem; margin-right:1rem; padding:1rem 1.25rem; border-radius:0.9rem; background:rgba(23,19,13,0.94); border:1px solid rgba(79,70,54,0.4); position:relative; z-index:1;">
@@ -434,5 +443,6 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script src="js/anim.js"></script>
 </body>
 </html>

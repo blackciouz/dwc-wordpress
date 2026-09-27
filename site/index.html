@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/anim.css"/>
 <link rel="stylesheet" href="css/main.css"/>
 <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -16,6 +17,7 @@
 
 <!-- Halo chaud ambiant (signature Stitch) -->
 <div class="dwc-halo-top"></div>
+<div class="dwc-aurora" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
 <!-- ===== NAV PILULE FLOTTANTE ===== -->
 <header class="dwc-header">
@@ -55,7 +57,7 @@
 <main class="dwc-container" style="position:relative; z-index:1; padding-top:7.5rem;">
 
   <!-- ===== HERO ===== -->
-  <section style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:3rem 0 3.5rem;">
+  <section class="dwc-hero dwc-reveal" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:3rem 0 3.5rem;">
     <div class="dwc-badge dwc-mb-4">
       <span class="dwc-dot"></span>
       <span class="dwc-micro">Nouvelle cohorte — inscriptions ouvertes</span>
@@ -67,10 +69,11 @@
       Un accompagnement humain sur-mesure à Cotonou et en ligne. Développez des compétences concrètes, valorisez vos travaux académiques et bâtissez des projets numériques rentables.
     </p>
     <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-justify-center dwc-mb-4">
-      <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="contact.html">
-        Demander un devis <i data-lucide="arrow-right"></i>
+      <a class="dwc-btn dwc-btn--gold dwc-btn--lg dwc-btn--sparkle" href="contact.html">
+        <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+        <span class="dwc-btn-label">Demander un devis</span> <i data-lucide="arrow-right"></i>
       </a>
-      <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="services.html">
+      <a class="dwc-btn dwc-btn--ghost dwc-btn--lg dwc-btn--beam" href="services.html">
         Découvrir nos services <i data-lucide="chevron-down"></i>
       </a>
     </div>
@@ -83,6 +86,13 @@
     </div>
   </section>
 
+  <!-- ===== MARQUEE COMPÉTENCES ===== -->
+  <div class="dwc-marquee" aria-hidden="true">
+    <div class="dwc-marquee-track">
+      <span>Coaching Mémoire &amp; Thèse</span><span>Intelligence Artificielle</span><span>Automatisation No-Code</span><span>YouTube &amp; Monétisation</span><span>Community Management</span><span>Excel &amp; Bureautique</span><span>Identité Visuelle</span><span>Marketing Digital</span><span>Développement Web</span><span>Impression de Prestige</span>
+    </div>
+  </div>
+
   <!-- ===== 3 CARTES STATS GLASS ===== -->
   <section class="dwc-grid dwc-grid--3" style="padding-bottom:1rem;">
     <div class="dwc-card dwc-card--hover dwc-reveal" style="flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
@@ -90,6 +100,7 @@
       <div>
         <div class="dwc-stat-value">100%</div>
         <h2 class="dwc-stat-title">Accompagnement personnalisé</h2>
+        <div class="dwc-bar" data-bar="1" aria-hidden="true"><span class="dwc-bar-fill"></span></div>
         <p class="dwc-sm dwc-mt-1">Des parcours sur-mesure adaptés à vos objectifs réels et à votre niveau technique initial.</p>
       </div>
     </div>
@@ -98,6 +109,7 @@
       <div>
         <div class="dwc-stat-value" data-count="10" data-suffix="+">10+</div>
         <h2 class="dwc-stat-title">Formations &amp; services</h2>
+        <div class="dwc-bar" data-bar="0.7" aria-hidden="true"><span class="dwc-bar-fill"></span></div>
         <p class="dwc-sm dwc-mt-1">De la rédaction académique rigoureuse à l'intelligence artificielle générative appliquée.</p>
       </div>
     </div>
@@ -106,6 +118,7 @@
       <div>
         <div class="dwc-stat-value">Hybride</div>
         <h2 class="dwc-stat-title">Présentiel &amp; à distance</h2>
+        <div class="dwc-bar" data-bar="0.85" aria-hidden="true"><span class="dwc-bar-fill"></span></div>
         <p class="dwc-sm dwc-mt-1">Dans nos locaux feutrés à Cotonou ou en visioconférence interactive avec support continu.</p>
       </div>
     </div>
@@ -121,11 +134,12 @@
     <div class="dwc-grid dwc-grid--3">
 
       <!-- Service 1 : Coaching Mémoire & Thèse -->
-      <div class="dwc-card dwc-card--hover dwc-service-card dwc-reveal">
+      <div class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-cat="academic">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <span class="dwc-flag">Populaire</span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="book-open"></i></span>
-          <span class="dwc-chip">Recherche &amp; Académique</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--academic"><i data-lucide="book-open"></i></span>
+          <span class="dwc-chip dwc-chip--cat-academic">Recherche &amp; Académique</span>
         </div>
         <h3 class="dwc-card-title">Coaching Mémoire &amp; Thèse</h3>
         <p class="dwc-sm dwc-card-desc">Un encadrement méthodologique d'exception pour structurer, rédiger et soutenir avec brio vos travaux universitaires.</p>
@@ -149,10 +163,11 @@
       </div>
 
       <!-- Service 2 : Formation Intelligence Artificielle -->
-      <div class="dwc-card dwc-card--hover dwc-service-card dwc-reveal">
+      <div class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-cat="tech">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="brain-circuit"></i></span>
-          <span class="dwc-chip">Innovation &amp; Productivité</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--tech"><i data-lucide="brain-circuit"></i></span>
+          <span class="dwc-chip dwc-chip--cat-tech">Innovation &amp; Productivité</span>
         </div>
         <h3 class="dwc-card-title">Formation Intelligence Artificielle</h3>
         <p class="dwc-sm dwc-card-desc">Domptez la révolution de l'IA générative pour décupler votre cadence de travail et automatiser vos processus clés.</p>
@@ -176,10 +191,11 @@
       </div>
 
       <!-- Service 3 : Création & Monétisation YouTube -->
-      <div class="dwc-card dwc-card--hover dwc-service-card dwc-reveal">
+      <div class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-cat="media">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="video"></i></span>
-          <span class="dwc-chip">Création de Contenu</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--media"><i data-lucide="video"></i></span>
+          <span class="dwc-chip dwc-chip--cat-media">Création de Contenu</span>
         </div>
         <h3 class="dwc-card-title">Création &amp; Monétisation YouTube</h3>
         <p class="dwc-sm dwc-card-desc">Bâtissez une chaîne d'autorité rentable, du cadrage stratégique à la monétisation multi-canal depuis l'Afrique.</p>
@@ -320,10 +336,11 @@
         <h2 class="dwc-h2" style="margin-bottom:1.2rem;">Prêt à propulser vos projets académiques et digitaux&nbsp;?</h2>
         <p class="dwc-lead" style="margin-bottom:2.2rem;">Réservez un diagnostic sans engagement avec notre équipe à Cotonou. Discutons de vos ambitions, identifions les blocages et construisons le plan d'action qui fera la différence.</p>
         <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-justify-center">
-          <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="contact.html">
-            Demander un devis gratuit <i data-lucide="send"></i>
+          <a class="dwc-btn dwc-btn--gold dwc-btn--lg dwc-btn--sparkle" href="contact.html">
+            <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+            <span class="dwc-btn-label">Demander un devis gratuit</span> <i data-lucide="send"></i>
           </a>
-          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg dwc-btn--beam" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
             <i data-lucide="message-circle" class="dwc-gold"></i> Échanger sur WhatsApp (+229)
           </a>
         </div>
@@ -388,5 +405,6 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script src="js/anim.js"></script>
 </body>
 </html>

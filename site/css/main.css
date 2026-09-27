@@ -51,6 +51,23 @@
 
   --shadow-card: 0 16px 32px -8px rgba(16, 14, 11, 0.7);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- v4 : écosystème enrichi (crème / teal / ambre / cuivre / braise) --- */
+  --cream: #F3EAD8;
+  --teal: #3E9B8F;
+  --teal-bright: #6FC7BB;
+  --teal-soft: rgba(62, 155, 143, 0.16);
+  --amber: #E89B3C;
+  --amber-bright: #F3BE7A;
+  --copper: #C87A3B;
+  --copper-bright: #E2A468;
+  --ember: #C96F4A;
+  --ember-bright: #EFA07E;
+  --surface-hi: #221B12;
+  --surface-card: #1D1811;
+  --surface-line: rgba(226, 201, 148, 0.14);
+  --grad-title: linear-gradient(100deg, #F2D492 0%, #E5B44C 30%, #C87A3B 62%, #F3EAD8 100%);
+  --grad-warm: linear-gradient(120deg, #E5B44C 0%, #E89B3C 45%, #C87A3B 100%);
 }
 
 /* ---------- 2. Reset ---------- */
@@ -112,7 +129,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
 }
 
 .dwc-grad-text {
-  background: var(--grad-gold);
+  background: var(--grad-title, var(--grad-gold));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -311,7 +328,8 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
 /* ---------- 8. Cartes ---------- */
 .dwc-card {
   position: relative; display: flex; flex-direction: column;
-  background: var(--surface); border: 1px solid var(--gold-border);
+  background: var(--surface-card, var(--surface));
+  border: 1px solid var(--surface-line, var(--gold-border));
   border-radius: 1.25rem; padding: 2rem;
   transition: transform 0.35s var(--ease-out), border-color 0.3s ease, box-shadow 0.3s ease;
 }

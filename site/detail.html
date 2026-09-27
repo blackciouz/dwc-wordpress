@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/anim.css"/>
 <link rel="stylesheet" href="css/main.css"/>
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
@@ -26,6 +27,7 @@
 <body>
 
 <div class="dwc-halo-top"></div>
+<div class="dwc-aurora" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
 <!-- ===== NAV ===== -->
 <header class="dwc-header">
@@ -76,7 +78,7 @@
   </div>
 
   <!-- ===== HERO DE SERVICE ===== -->
-  <section class="dwc-container" style="padding-bottom:4rem;">
+  <section class="dwc-container dwc-hero" style="padding-bottom:4rem;">
     <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:center;" class="dwc-detail-hero">
       <div style="display:flex; flex-direction:column; gap:1.4rem;">
         <div>
@@ -122,10 +124,11 @@
 
         <!-- CTAs -->
         <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-mt-2">
-          <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="#devis">
-            Demander un devis <i data-lucide="arrow-right"></i>
+          <a class="dwc-btn dwc-btn--gold dwc-btn--lg dwc-btn--sparkle" href="#devis">
+            <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+            <span class="dwc-btn-label">Demander un devis</span> <i data-lucide="arrow-right"></i>
           </a>
-          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg dwc-btn--beam" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
             <i data-lucide="message-circle" class="dwc-gold"></i> WhatsApp (+229 01 97 00 00 00)
           </a>
         </div>
@@ -133,7 +136,8 @@
 
       <!-- Carte insignia visuelle -->
       <div>
-        <div class="dwc-card dwc-card--hover" style="position:relative; overflow:hidden; padding:2rem; box-shadow:0 30px 60px -20px rgba(10,8,6,0.8);">
+        <div class="dwc-card dwc-card--hover dwc-fx-card dwc-tilt" style="position:relative; overflow:hidden; padding:2rem; box-shadow:0 30px 60px -20px rgba(10,8,6,0.8);">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <div class="dwc-glow-blur" style="width:18rem; height:18rem; top:-7rem; right:-7rem; opacity:0.8;"></div>
           <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-4" style="justify-content:space-between; position:relative; z-index:1;">
             <span class="dwc-icon-circle dwc-icon-circle--lg"><i data-lucide="brain-circuit"></i></span>
@@ -162,6 +166,13 @@
     </div>
   </section>
 
+  <!-- ===== MARQUEE STACK IA ===== -->
+  <div class="dwc-marquee" aria-hidden="true">
+    <div class="dwc-marquee-track">
+      <span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Midjourney</span><span>Make.com</span><span>Zapier</span><span>Notion</span><span>Airtable</span><span>Perplexity</span><span>Prompt Engineering</span><span>Webhooks &amp; APIs</span><span>Governance IA</span>
+    </div>
+  </div>
+
   <!-- ===== CURRICULUM : CE QUE VOUS APPRENEZ ===== -->
   <section class="dwc-section" id="programme" style="background:var(--surface-dim); border-top:1px solid rgba(79,70,54,0.25);">
     <div class="dwc-container">
@@ -170,7 +181,7 @@
         <h2 class="dwc-h2 dwc-mt-1">Ce que vous apprenez : 4 modules pragmatiques</h2>
         <p class="dwc-body dwc-mt-2">Zéro théorie superflue. Chaque heure passée avec nous aboutit à un livrable concret déployé sur vos environnements réels.</p>
       </div>
-      <div class="dwc-grid dwc-grid--2">
+      <div class="dwc-grid dwc-grid--2 dwc-timeline">
 
         <!-- Module 1 -->
         <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35);">
@@ -244,7 +255,8 @@
         <p class="dwc-body">Un accompagnement calibré pour les professionnels exigeants qui refusent d'être dépassés par la vague technologique.</p>
       </div>
       <div class="dwc-grid dwc-grid--4">
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="briefcase"></i></span>
           <h3 class="dwc-h4">Cadres &amp; Dirigeants</h3>
           <p class="dwc-sm dwc-mt-1">Gain de temps décisionnel critique, analyse de marché accélérée et pilotage stratégique sans dépendance technique.</p>
@@ -252,7 +264,8 @@
             <span class="dwc-micro dwc-gold">Bénéfice clé : vision &amp; rapidité</span>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="pen-tool"></i></span>
           <h3 class="dwc-h4">Consultants &amp; Créatifs</h3>
           <p class="dwc-sm dwc-mt-1">Production de livrables décuplée, propositions commerciales percutantes et direction artistique de niveau mondial.</p>
@@ -260,7 +273,8 @@
             <span class="dwc-micro dwc-gold">Bénéfice clé : facturation x3</span>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="graduation-cap"></i></span>
           <h3 class="dwc-h4">Étudiants &amp; Chercheurs</h3>
           <p class="dwc-sm dwc-mt-1">Revue de littérature augmentée, traitement massif de données quantitatives et rigueur méthodologique assistée.</p>
@@ -268,7 +282,8 @@
             <span class="dwc-micro dwc-gold">Bénéfice clé : efficience académique</span>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="rocket"></i></span>
           <h3 class="dwc-h4">Entrepreneurs</h3>
           <p class="dwc-sm dwc-mt-1">Systématisation des opérations, prospection semi-automatique sur LinkedIn et service client automatisé H24.</p>
@@ -289,35 +304,40 @@
         <p class="dwc-body dwc-mt-2">Vous ne repartez pas avec de simples notes, mais avec un système complet prêt à être exécuté.</p>
       </div>
       <div class="dwc-grid dwc-grid--3">
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle"><i data-lucide="library"></i></span>
           <div>
             <h3 class="dwc-h4">Bibliothèque 100+ Prompts</h3>
             <p class="dwc-sm dwc-mt-1">Collection privée de templates sectoriels (finance, droit, marketing, stratégie) testés et éprouvés.</p>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle"><i data-lucide="workflow"></i></span>
           <div>
             <h3 class="dwc-h4">5 Blueprints Make / Zapier</h3>
             <p class="dwc-sm dwc-mt-1">Scénarios d'automatisation pré-configurés prêts à être importés dans votre compte en un clic.</p>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle"><i data-lucide="video"></i></span>
           <div>
             <h3 class="dwc-h4">Replays &amp; fiches à vie</h3>
             <p class="dwc-sm dwc-mt-1">Accès illimité aux enregistrements HD des sessions de travail et aux fiches récapitulatives personnalisées.</p>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle"><i data-lucide="heart-handshake"></i></span>
           <div>
             <h3 class="dwc-h4">30 jours de mentorat post-formation</h3>
             <p class="dwc-sm dwc-mt-1">Suivi direct sur canal privé dédié pour débloquer vos déploiements et vérifier vos automatisations.</p>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem; grid-column:1/-1;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem; grid-column:1/-1;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle"><i data-lucide="badge-check"></i></span>
           <div>
             <h3 class="dwc-h4">Certificat d'Aptitude Professionnelle DWC</h3>
@@ -363,8 +383,9 @@
                   <option value="Intra-entreprise (dans vos locaux)">Intra-entreprise (dans vos locaux)</option>
                 </select>
               </div>
-              <button class="dwc-btn dwc-btn--gold dwc-btn--block dwc-btn--lg" type="submit">
-                Recevoir mon devis sous 24h <i data-lucide="send"></i>
+              <button class="dwc-btn dwc-btn--gold dwc-btn--block dwc-btn--lg dwc-btn--sparkle" type="submit">
+                <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+                <span class="dwc-btn-label">Recevoir mon devis sous 24h</span> <i data-lucide="send"></i>
               </button>
               <p class="dwc-micro dwc-center" style="color:var(--outline);">Vos données sont strictement confidentielles. Réponse sous 24h ouvrées.</p>
             </form>
@@ -501,6 +522,7 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script src="js/anim.js"></script>
 <script>
   // Formulaire express de devis -> WhatsApp (aucun backend)
   document.getElementById('dwc-quote-form');

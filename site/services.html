@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/anim.css"/>
 <link rel="stylesheet" href="css/main.css"/>
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
@@ -31,6 +32,7 @@
 <body>
 
 <div class="dwc-halo-top"></div>
+<div class="dwc-aurora" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
 <!-- ===== NAV ===== -->
 <header class="dwc-header">
@@ -70,7 +72,7 @@
 <main style="position:relative; z-index:1; padding-top:7.5rem;">
 
   <!-- ===== HERO CATALOGUE ===== -->
-  <section class="dwc-container dwc-center" style="display:flex; flex-direction:column; align-items:center; padding:3rem 1.5rem 3.5rem;">
+  <section class="dwc-container dwc-center dwc-hero dwc-reveal" style="display:flex; flex-direction:column; align-items:center; padding:3rem 1.5rem 3.5rem;">
     <div class="dwc-badge dwc-mb-4">
       <span class="dwc-dot"></span>
       <span class="dwc-micro">Catalogue officiel • 10 services certifiants &amp; experts</span>
@@ -87,18 +89,22 @@
       <div class="dwc-metric">
         <span class="dwc-stat-value" data-count="10" style="font-size:1.65rem;">10</span>
         <span class="dwc-sm" style="display:block; margin-top:0.25rem;">Expertises ciblées &amp; reconnues</span>
+        <div class="dwc-bar" data-bar="1" aria-hidden="true"><span class="dwc-bar-fill"></span></div>
       </div>
       <div class="dwc-metric">
         <span class="dwc-stat-value" style="font-size:1.65rem;">100%</span>
         <span class="dwc-sm" style="display:block; margin-top:0.25rem;">Sur-mesure &amp; pratique directe</span>
+        <div class="dwc-bar" data-bar="1" aria-hidden="true"><span class="dwc-bar-fill"></span></div>
       </div>
       <div class="dwc-metric" style="border-top:1px solid rgba(79,70,54,0.25);">
         <span class="dwc-stat-value" style="font-size:1.65rem;">Hub Bénin</span>
         <span class="dwc-sm" style="display:block; margin-top:0.25rem;">Cotonou &amp; Afrique en ligne</span>
+        <div class="dwc-bar" data-bar="0.8" aria-hidden="true"><span class="dwc-bar-fill"></span></div>
       </div>
       <div class="dwc-metric" style="border-top:1px solid rgba(79,70,54,0.25);">
         <span class="dwc-stat-value" style="font-size:1.65rem;">Rigueur</span>
         <span class="dwc-sm" style="display:block; margin-top:0.25rem;">Certification &amp; validation finale</span>
+        <div class="dwc-bar" data-bar="0.9" aria-hidden="true"><span class="dwc-bar-fill"></span></div>
       </div>
     </div>
 
@@ -112,15 +118,23 @@
     </div>
   </section>
 
+  <!-- ===== MARQUEE OUTILS & STACKS ===== -->
+  <div class="dwc-marquee" aria-hidden="true">
+    <div class="dwc-marquee-track">
+      <span>ChatGPT</span><span>Claude</span><span>Midjourney</span><span>Make</span><span>Zapier</span><span>Notion</span><span>Zotero</span><span>LaTeX</span><span>Excel Avancé</span><span>Figma</span><span>CapCut</span><span>SEO Local</span><span>Meta Ads</span><span>WordPress</span>
+    </div>
+  </div>
+
   <!-- ===== GRILLE DES 10 SERVICES ===== -->
   <section class="dwc-container" id="services" style="padding-bottom:4rem;">
     <div class="dwc-grid dwc-grid--3" id="dwc-services-grid" style="gap:1.5rem;">
 
       <!-- Service 1 -->
-      <article class="dwc-card dwc-service-card dwc-reveal" data-category="academic">
+      <article class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-category="academic" data-cat="academic">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="graduation-cap"></i></span>
-          <span class="dwc-chip">Recherche &amp; Académique</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--academic"><i data-lucide="graduation-cap"></i></span>
+          <span class="dwc-chip dwc-chip--cat-academic">Recherche &amp; Académique</span>
         </div>
         <h3 class="dwc-card-title" style="font-size:1.2rem;">Coaching rédaction de mémoire &amp; thèse</h3>
         <p class="dwc-sm dwc-card-desc">Cadrage méthodologique rigoureux, structuration analytique et préparation intensive pour franchir votre soutenance avec mention.</p>
@@ -139,10 +153,11 @@
       </article>
 
       <!-- Service 2 -->
-      <article class="dwc-card dwc-service-card dwc-reveal" data-category="tech">
+      <article class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-category="tech" data-cat="tech">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="cpu"></i></span>
-          <span class="dwc-chip">Innovation &amp; Productivité</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--tech"><i data-lucide="cpu"></i></span>
+          <span class="dwc-chip dwc-chip--cat-tech">Innovation &amp; Productivité</span>
         </div>
         <h3 class="dwc-card-title" style="font-size:1.2rem;">IA générative &amp; Automatisation no-code</h3>
         <p class="dwc-sm dwc-card-desc">Déployez la puissance de l'IA pour automatiser vos tâches récurrentes, multiplier par dix votre productivité et générer du contenu percutant.</p>
@@ -161,10 +176,11 @@
       </article>
 
       <!-- Service 3 -->
-      <article class="dwc-card dwc-service-card dwc-reveal" data-category="media">
+      <article class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-category="media" data-cat="media">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="share-2"></i></span>
-          <span class="dwc-chip">Stratégie de Marque</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--media"><i data-lucide="share-2"></i></span>
+          <span class="dwc-chip dwc-chip--cat-media">Stratégie de Marque</span>
         </div>
         <h3 class="dwc-card-title" style="font-size:1.2rem;">Réseaux Sociaux &amp; Community Management</h3>
         <p class="dwc-sm dwc-card-desc">Construisez une autorité indiscutable sur votre secteur grâce à une ligne éditoriale captivante et une gestion de communauté active.</p>
@@ -183,10 +199,11 @@
       </article>
 
       <!-- Service 4 -->
-      <article class="dwc-card dwc-service-card dwc-reveal" data-category="media">
+      <article class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-category="media" data-cat="media">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="video"></i></span>
-          <span class="dwc-chip">Création Contenu &amp; Média</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--media"><i data-lucide="video"></i></span>
+          <span class="dwc-chip dwc-chip--cat-media">Création Contenu &amp; Média</span>
         </div>
         <h3 class="dwc-card-title" style="font-size:1.2rem;">Chaînes YouTube &amp; Vidéos TikTok Pro</h3>
         <p class="dwc-sm dwc-card-desc">De la scénarisation au montage dynamique : montez une chaîne influente et activez les leviers de monétisation locale et internationale.</p>
@@ -205,10 +222,11 @@
       </article>
 
       <!-- Service 5 -->
-      <article class="dwc-card dwc-service-card dwc-reveal" data-category="business">
+      <article class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-category="business" data-cat="business">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="monitor"></i></span>
-          <span class="dwc-chip">Compétences Essentielles</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--business"><i data-lucide="monitor"></i></span>
+          <span class="dwc-chip dwc-chip--cat-business">Compétences Essentielles</span>
         </div>
         <h3 class="dwc-card-title" style="font-size:1.2rem;">Informatique &amp; Bureautique avancée</h3>
         <p class="dwc-sm dwc-card-desc">Maîtrisez les tableurs et suites logicielles pour automatiser le reporting financier, structurer les données et professionnaliser vos présentations.</p>
@@ -227,10 +245,11 @@
       </article>
 
       <!-- Service 6 -->
-      <article class="dwc-card dwc-service-card dwc-reveal" data-category="media">
+      <article class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-category="media" data-cat="media">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="palette"></i></span>
-          <span class="dwc-chip">Design &amp; Image de Marque</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--media"><i data-lucide="palette"></i></span>
+          <span class="dwc-chip dwc-chip--cat-media">Design &amp; Image de Marque</span>
         </div>
         <h3 class="dwc-card-title" style="font-size:1.2rem;">Graphisme &amp; Identité visuelle de marque</h3>
         <p class="dwc-sm dwc-card-desc">Donnez vie à une identité visuelle singulière qui inspire instantanément le respect et positionne votre marque sur le haut de gamme.</p>
@@ -249,10 +268,11 @@
       </article>
 
       <!-- Service 7 -->
-      <article class="dwc-card dwc-service-card dwc-reveal" data-category="business">
+      <article class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-category="business" data-cat="business">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="trending-up"></i></span>
-          <span class="dwc-chip">Croissance &amp; Ventes</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--business"><i data-lucide="trending-up"></i></span>
+          <span class="dwc-chip dwc-chip--cat-business">Croissance &amp; Ventes</span>
         </div>
         <h3 class="dwc-card-title" style="font-size:1.2rem;">Marketing digital &amp; Acquisition clients</h3>
         <p class="dwc-sm dwc-card-desc">Mettez en place une machine d'acquisition prévisible pour générer des prospects qualifiés et maximiser votre chiffre d'affaires.</p>
@@ -271,10 +291,11 @@
       </article>
 
       <!-- Service 8 -->
-      <article class="dwc-card dwc-service-card dwc-reveal" data-category="tech">
+      <article class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-category="tech" data-cat="tech">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="code-2"></i></span>
-          <span class="dwc-chip">Tech &amp; Digital</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--tech"><i data-lucide="code-2"></i></span>
+          <span class="dwc-chip dwc-chip--cat-tech">Tech &amp; Digital</span>
         </div>
         <h3 class="dwc-card-title" style="font-size:1.2rem;">Développement web &amp; Vitrines haute conversion</h3>
         <p class="dwc-sm dwc-card-desc">Déployez une présence en ligne ultra-rapide, élégante et parfaitement optimisée pour transformer chaque visiteur en client engagé.</p>
@@ -293,10 +314,11 @@
       </article>
 
       <!-- Service 9 -->
-      <article class="dwc-card dwc-service-card dwc-reveal" data-category="business">
+      <article class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-category="business" data-cat="business">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-          <span class="dwc-icon-circle"><i data-lucide="wrench"></i></span>
-          <span class="dwc-chip">Infrastructure &amp; Support</span>
+          <span class="dwc-icon-circle dwc-medal dwc-medal--business"><i data-lucide="wrench"></i></span>
+          <span class="dwc-chip dwc-chip--cat-business">Infrastructure &amp; Support</span>
         </div>
         <h3 class="dwc-card-title" style="font-size:1.2rem;">Maintenance &amp; Sécurité des systèmes</h3>
         <p class="dwc-sm dwc-card-desc">Garantissez la fiabilité absolue de vos postes de travail, sécurisez vos données sensibles et éliminez tout risque de panne bloquante.</p>
@@ -315,12 +337,13 @@
       </article>
 
       <!-- Service 10 : carte pleine largeur -->
-      <article class="dwc-card dwc-service-card dwc-reveal" data-category="academic" style="grid-column:1/-1;">
+      <article class="dwc-card dwc-card--hover dwc-service-card dwc-reveal dwc-fx-card dwc-tilt" data-category="academic" data-cat="academic" style="grid-column:1/-1;">
+        <span class="dwc-fx-shine" aria-hidden="true"></span>
         <div style="display:grid; grid-template-columns:1fr; gap:2rem;" class="dwc-svc10">
           <div>
             <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
-              <span class="dwc-icon-circle"><i data-lucide="printer"></i></span>
-              <span class="dwc-chip">Édition &amp; Fabrication</span>
+              <span class="dwc-icon-circle dwc-medal dwc-medal--academic"><i data-lucide="printer"></i></span>
+              <span class="dwc-chip dwc-chip--cat-academic">Édition &amp; Fabrication</span>
             </div>
             <h3 class="dwc-card-title" style="font-size:1.2rem;">Impression numérique &amp; Édition de prestige</h3>
             <p class="dwc-sm dwc-card-desc">L'atelier d'impression officiel DWC à Cotonou. Confectionnez des exemplaires de thèses, mémoires, rapports institutionnels et plaquettes de prestige avec des finitions d'exception.</p>
@@ -355,17 +378,17 @@
         <p class="dwc-body dwc-mt-2">Parce que chaque projet de recherche, chaque besoin d'automatisation et chaque profil professionnel est unique. Nous ne vendons pas de modules préfabriqués génériques, mais une solution calibrée exactement sur vos objectifs et contraintes de calendrier.</p>
       </div>
       <div class="dwc-grid dwc-grid--3 dwc-mt-6">
-        <div class="dwc-card dwc-card--hover" style="padding:1.5rem; background:var(--surface-elevated); border-color:rgba(79,70,54,0.35);">
+        <div class="dwc-card dwc-card--hover dwc-fx-card" style="padding:1.5rem; background:var(--surface-elevated); border-color:rgba(79,70,54,0.35);">
           <span class="dwc-icon-circle" style="margin-bottom:1rem;"><i data-lucide="clock"></i></span>
           <h4 class="dwc-h4">Devis clair sous 24h ouvrées</h4>
           <p class="dwc-sm dwc-mt-1">Une estimation transparente et détaillée, sans frais cachés, transmise rapidement après notre premier cadrage.</p>
         </div>
-        <div class="dwc-card dwc-card--hover" style="padding:1.5rem; background:var(--surface-elevated); border-color:rgba(79,70,54,0.35);">
+        <div class="dwc-card dwc-card--hover dwc-fx-card" style="padding:1.5rem; background:var(--surface-elevated); border-color:rgba(79,70,54,0.35);">
           <span class="dwc-icon-circle" style="margin-bottom:1rem;"><i data-lucide="shield-check"></i></span>
           <h4 class="dwc-h4">Garantie jusqu'à satisfaction</h4>
           <p class="dwc-sm dwc-mt-1">Tous nos accompagnements incluent des phases de révision et d'ajustement jusqu'à validation académique ou technique.</p>
         </div>
-        <div class="dwc-card dwc-card--hover" style="padding:1.5rem; background:var(--surface-elevated); border-color:rgba(79,70,54,0.35);">
+        <div class="dwc-card dwc-card--hover dwc-fx-card" style="padding:1.5rem; background:var(--surface-elevated); border-color:rgba(79,70,54,0.35);">
           <span class="dwc-icon-circle" style="margin-bottom:1rem;"><i data-lucide="credit-card"></i></span>
           <h4 class="dwc-h4">Paiement échelonné sans frais</h4>
           <p class="dwc-sm dwc-mt-1">Des facilités de règlement adaptées au rythme d'avancement de votre mémoire ou de votre formation.</p>
@@ -383,10 +406,11 @@
         <h2 class="dwc-h2" style="margin:1rem 0 0.8rem;">Trouvez le service adapté à vos <span class="dwc-grad-text">ambitions professionnelles</span></h2>
         <p class="dwc-lead" style="margin-bottom:2.2rem;">Rencontrez nos mentors au hub de Cotonou ou démarrez votre session en direct où que vous soyez.</p>
         <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-justify-center">
-          <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="contact.html">
-            Demander mon devis personnalisé <i data-lucide="arrow-right"></i>
+          <a class="dwc-btn dwc-btn--gold dwc-btn--lg dwc-btn--sparkle" href="contact.html">
+            <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+            <span class="dwc-btn-label">Demander mon devis personnalisé</span> <i data-lucide="arrow-right"></i>
           </a>
-          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg dwc-btn--beam" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
             <i data-lucide="message-circle" class="dwc-gold"></i> Échanger sur WhatsApp (+229 01 97 00 00 00)
           </a>
         </div>
@@ -445,6 +469,7 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script src="js/anim.js"></script>
 <script>
   // Filtre interactif des catégories (design Stitch services.html)
   (function () {

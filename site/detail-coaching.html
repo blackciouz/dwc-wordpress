@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/anim.css"/>
 <link rel="stylesheet" href="css/main.css"/>
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
@@ -25,6 +26,7 @@
 <body>
 
 <div class="dwc-halo-top"></div>
+<div class="dwc-aurora" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
 
 <!-- ===== NAV ===== -->
 <header class="dwc-header">
@@ -75,7 +77,7 @@
   </div>
 
   <!-- ===== HERO DE SERVICE ===== -->
-  <section class="dwc-container" style="padding-bottom:4rem;">
+  <section class="dwc-container dwc-hero" style="padding-bottom:4rem;">
     <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:center;" class="dwc-detail-hero">
       <div style="display:flex; flex-direction:column; gap:1.4rem;">
         <div>
@@ -121,10 +123,11 @@
 
         <!-- CTAs -->
         <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-mt-2">
-          <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="#devis">
-            Demander un devis <i data-lucide="arrow-right"></i>
+          <a class="dwc-btn dwc-btn--gold dwc-btn--lg dwc-btn--sparkle" href="#devis">
+            <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+            <span class="dwc-btn-label">Demander un devis</span> <i data-lucide="arrow-right"></i>
           </a>
-          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg dwc-btn--beam" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
             <i data-lucide="message-circle" class="dwc-gold"></i> WhatsApp (+229 01 97 00 00 00)
           </a>
         </div>
@@ -132,7 +135,8 @@
 
       <!-- Carte insignia visuelle -->
       <div>
-        <div class="dwc-card dwc-card--hover" style="position:relative; overflow:hidden; padding:2rem; box-shadow:0 30px 60px -20px rgba(10,8,6,0.8);">
+        <div class="dwc-card dwc-card--hover dwc-fx-card dwc-tilt" style="position:relative; overflow:hidden; padding:2rem; box-shadow:0 30px 60px -20px rgba(10,8,6,0.8);">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <div class="dwc-glow-blur" style="width:18rem; height:18rem; top:-7rem; right:-7rem; opacity:0.8;"></div>
           <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-4" style="justify-content:space-between; position:relative; z-index:1;">
             <span class="dwc-icon-circle dwc-icon-circle--lg"><i data-lucide="graduation-cap"></i></span>
@@ -161,6 +165,13 @@
     </div>
   </section>
 
+  <!-- ===== MARQUEE OUTILS ACADÉMIQUES ===== -->
+  <div class="dwc-marquee" aria-hidden="true">
+    <div class="dwc-marquee-track">
+      <span>Zotero</span><span>LaTeX</span><span>Word Avancé</span><span>APA &amp; ISO 690</span><span>SPSS</span><span>R</span><span>Python</span><span>Overleaf</span><span>Mind Mapping</span><span>Jury Blanc</span><span>Soutenance Filmée</span>
+    </div>
+  </div>
+
   <!-- ===== PARCOURS : CE QUE VOUS TRAVAILLEZ ===== -->
   <section class="dwc-section" id="programme" style="background:var(--surface-dim); border-top:1px solid rgba(79,70,54,0.25);">
     <div class="dwc-container">
@@ -169,7 +180,7 @@
         <h2 class="dwc-h2 dwc-mt-1">Ce que vous travaillez : 4 phases jalonnées</h2>
         <p class="dwc-body dwc-mt-2">Chaque phase se conclut par un livrable validé ensemble. Vous avancez sans angle mort, étape après étape.</p>
       </div>
-      <div class="dwc-grid dwc-grid--2">
+      <div class="dwc-grid dwc-grid--2 dwc-timeline">
 
         <!-- Phase 1 -->
         <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35);">
@@ -243,7 +254,8 @@
         <p class="dwc-body">Chaque niveau d'étude a ses exigences : nous calibrons l'encadrement sur les vôtres.</p>
       </div>
       <div class="dwc-grid dwc-grid--4">
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="library"></i></span>
           <h3 class="dwc-h4">Licence &amp; Master</h3>
           <p class="dwc-sm dwc-mt-1">Premiers pas en recherche : construction du plan, discipline d'écriture et sécurisation du dépôt dans les délais.</p>
@@ -251,7 +263,8 @@
             <span class="dwc-micro dwc-gold">Bénéfice clé : méthode acquise</span>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="graduation-cap"></i></span>
           <h3 class="dwc-h4">Doctorants</h3>
           <p class="dwc-sm dwc-mt-1">Exigence thèse : architecture démonstrative, contribution au savoir et préparation des pré-soutenances.</p>
@@ -259,7 +272,8 @@
             <span class="dwc-micro dwc-gold">Bénéfice clé : solidité théorique</span>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="briefcase"></i></span>
           <h3 class="dwc-h4">Professionnels en reprise d'études</h3>
           <p class="dwc-sm dwc-mt-1">Concilier emploi et mémoire : un rythme aménagé, des objectifs hebdomadaires réalistes et un mentor qui maintient le cap.</p>
@@ -267,7 +281,8 @@
             <span class="dwc-micro dwc-gold">Bénéfice clé : sérénité</span>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="flag"></i></span>
           <h3 class="dwc-h4">Candidats aux concours &amp; mémoires pro</h3>
           <p class="dwc-sm dwc-mt-1">Rapports de stage, mémoires professionnels et notes de synthèse : la rigueur académique appliquée aux livrables métiers.</p>
@@ -288,35 +303,40 @@
         <p class="dwc-body dwc-mt-2">Un arsenal complet d'outils méthodologiques, calibré sur votre discipline et votre niveau.</p>
       </div>
       <div class="dwc-grid dwc-grid--3">
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle"><i data-lucide="list-checks"></i></span>
           <div>
             <h3 class="dwc-h4">Kit méthodologique DWC</h3>
             <p class="dwc-sm dwc-mt-1">Gabarits de plans, grilles d'auto-évaluation et checklists de conformité par type de travail (mémoire, thèse, rapport).</p>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle"><i data-lucide="bookmark"></i></span>
           <div>
             <h3 class="dwc-h4">Bibliothèque Zotero pré-configurée</h3>
             <p class="dwc-sm dwc-mt-1">Base de références organisée avec styles de citation normalisés, prête pour votre discipline.</p>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle"><i data-lucide="file-text"></i></span>
           <div>
             <h3 class="dwc-h4">Retours annotés sous 72h</h3>
             <p class="dwc-sm dwc-mt-1">Chaque chapitre soumis revient commenté au commentaire près : argumentation, sources, style, mise en forme.</p>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle"><i data-lucide="presentation"></i></span>
           <div>
             <h3 class="dwc-h4">2 simulations de soutenance</h3>
             <p class="dwc-sm dwc-mt-1">Jury blanc exigeant, questions réalistes et débriefing complet avec plan d'action correctif avant le jour J.</p>
           </div>
         </div>
-        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem; grid-column:1/-1;">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem; grid-column:1/-1;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
           <span class="dwc-icon-circle"><i data-lucide="badge-check"></i></span>
           <div>
             <h3 class="dwc-h4">Attestation de coaching académique DWC</h3>
@@ -363,8 +383,9 @@
                   <option value="Préparation de soutenance">Préparation de soutenance</option>
                 </select>
               </div>
-              <button class="dwc-btn dwc-btn--gold dwc-btn--block dwc-btn--lg" type="submit">
-                Recevoir mon devis sous 24h <i data-lucide="send"></i>
+              <button class="dwc-btn dwc-btn--gold dwc-btn--block dwc-btn--lg dwc-btn--sparkle" type="submit">
+                <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+                <span class="dwc-btn-label">Recevoir mon devis sous 24h</span> <i data-lucide="send"></i>
               </button>
               <p class="dwc-micro dwc-center" style="color:var(--outline);">Vos données sont strictement confidentielles. Réponse sous 24h ouvrées.</p>
             </form>
@@ -501,6 +522,7 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script src="js/anim.js"></script>
 <script>
   // Formulaire express de devis -> WhatsApp (aucun backend)
   (function () {

@@ -1,0 +1,680 @@
+/* ============================================================
+   Digital World Coaching — DWC v4 : couche animations premium
+   Patterns portés depuis ouzef.com (sparkle-btn, reveals, tilt)
+   + uiverse.io / 21st.dev (liquid fill, border beam, shimmer,
+   spotlight, floating labels) — recalibrés palette Stitch :
+   noir café #0E0C09 + or chaud #E5B44C. Zéro bleu, zéro violet.
+   ============================================================ */
+
+/* ---------- 0. Angle animé (border beam) ---------- */
+@property --dwc-beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ---------- 0b. Écosystème de couleurs enrichi (directive v4) ----------
+   Base inchangée : noir café + or. Ajouts harmonisés autour du duo :
+   ivoire/crème (accents clairs), teal profond (succès tertiaire),
+   ambre & cuivre (gradients secondaires), rouge braise (badges chauds).
+   Profondeur des cartes = variations de luminosité du café, pas un aplat. */
+:root {
+  /* Accents clairs */
+  --cream: #F3EAD8;
+  --cream-dim: #E4D9C2;
+  /* Tertiaire vert/teal (états positifs, accent IA) */
+  --teal: #3E9B8F;
+  --teal-bright: #6FC7BB;
+  --teal-soft: rgba(62, 155, 143, 0.16);
+  --teal-glow: rgba(111, 199, 187, 0.35);
+  /* Secondaire ambre / cuivre */
+  --amber: #E89B3C;
+  --amber-bright: #F3BE7A;
+  --amber-soft: rgba(232, 155, 60, 0.15);
+  --copper: #C87A3B;
+  --copper-bright: #E2A468;
+  --copper-soft: rgba(200, 122, 59, 0.16);
+  --copper-glow: rgba(226, 164, 104, 0.32);
+  /* Braise discrète (alertes, badge Populaire) */
+  --ember: #C96F4A;
+  --ember-bright: #EFA07E;
+  --ember-soft: rgba(201, 111, 74, 0.16);
+  /* Surfaces café étagées (profondeur) */
+  --surface-hi: #221B12;
+  --surface-card: #1D1811;
+  --surface-line: rgba(226, 201, 148, 0.14);
+  /* Dégradés multi-teintes */
+  --grad-title: linear-gradient(100deg, #F2D492 0%, #E5B44C 30%, #C87A3B 62%, #F3EAD8 100%);
+  --grad-warm: linear-gradient(120deg, #E5B44C 0%, #E89B3C 45%, #C87A3B 100%);
+}
+
+/* ---------- 1. NAV : liseré de progression + état scrolé ---------- */
+.dwc-scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 2.5px; z-index: 60; pointer-events: none;
+  background: linear-gradient(90deg, var(--bronze), var(--gold), var(--gold-soft));
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  box-shadow: 0 0 12px rgba(229, 180, 76, 0.55);
+}
+.dwc-header.is-scrolled .dwc-nav {
+  background: rgba(20, 16, 11, 0.88);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+  border-color: rgba(229, 180, 76, 0.35);
+  box-shadow: 0 14px 44px rgba(10, 8, 6, 0.65), 0 0 0 1px rgba(229, 180, 76, 0.08), 0 0 28px rgba(229, 180, 76, 0.07);
+}
+.dwc-nav-links a { position: relative; }
+.dwc-nav-links a::after {
+  content: ""; position: absolute; left: 0; right: 100%; bottom: -0.35rem;
+  height: 2px; border-radius: 2px; background: var(--grad-gold);
+  transition: right 0.35s var(--ease-out);
+}
+.dwc-nav-links a:hover::after, .dwc-nav-links a.active::after { right: 0; }
+
+/* ---------- 2. BOUTON OR : fill liquide + shine sweep ---------- */
+.dwc-btn { position: relative; overflow: hidden; }
+.dwc-btn--gold:not(.dwc-btn--sparkle)::before {
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(180deg, var(--gold-soft) 0%, var(--gold) 55%, var(--bronze) 130%);
+  transform: translateY(101%);
+  transition: transform 0.45s var(--ease-out);
+}
+.dwc-btn--gold:not(.dwc-btn--sparkle):hover::before { transform: translateY(0); }
+/* Shine diagonal qui balaie */
+.dwc-btn--gold::after, .dwc-btn--dark::after {
+  content: ""; position: absolute; top: -40%; bottom: -40%; left: -30%;
+  width: 34%; z-index: 1; pointer-events: none;
+  background: linear-gradient(105deg, transparent 20%, rgba(255, 244, 214, 0.5) 50%, transparent 80%);
+  transform: translateX(-140%) skewX(-18deg);
+  transition: transform 0.7s ease;
+}
+.dwc-btn--gold:hover::after, .dwc-btn--dark:hover::after { transform: translateX(420%) skewX(-18deg); }
+.dwc-btn--gold:not(.dwc-btn--sparkle) > *, .dwc-btn--dark > * { position: relative; z-index: 2; }
+.dwc-btn--gold:not(.dwc-btn--sparkle):hover { filter: none; }
+.dwc-btn--gold:not(.dwc-btn--sparkle):hover {
+  box-shadow: 0 14px 34px -10px rgba(229, 180, 76, 0.55), 0 0 0 1px rgba(242, 212, 146, 0.35) inset;
+}
+.dwc-btn--gold:active, .dwc-btn--ghost:active, .dwc-btn--dark:active { transform: scale(0.96); }
+
+/* ---------- 2b. BOUTON SECONDAIRE : border beam animé (21st.dev) ---------- */
+.dwc-btn--beam {
+  background: rgba(23, 19, 13, 0.72);
+  border: 1px solid transparent;
+  isolation: isolate;
+  box-shadow: 0 10px 30px -12px rgba(10, 8, 6, 0.8);
+}
+.dwc-btn--beam::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--dwc-beam-angle),
+    rgba(229, 180, 76, 0.12) 0deg,
+    var(--gold-soft) 40deg,
+    var(--bronze) 80deg,
+    rgba(229, 180, 76, 0.12) 130deg,
+    rgba(79, 70, 54, 0.5) 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+  animation: dwc-beam-spin 3.6s linear infinite;
+}
+.dwc-btn--beam:hover {
+  color: var(--gold-soft);
+  transform: translateY(-1px) scale(1.015);
+  box-shadow: 0 14px 34px -12px rgba(229, 180, 76, 0.3);
+}
+.dwc-btn--beam > * { position: relative; z-index: 2; }
+@keyframes dwc-beam-spin { to { --dwc-beam-angle: 360deg; } }
+/* Repli si @property non supporté : halo respirant */
+@supports not (background: conic-gradient(from 0deg, red, blue)) {
+  .dwc-btn--beam { border-color: rgba(229, 180, 76, 0.5); }
+}
+
+/* ---------- 2c. BOUTON SPARKLE (port ouzef.com, or/bronze) ---------- */
+.dwc-btn--sparkle { overflow: visible; transform-origin: center; }
+.dwc-btn--sparkle > * { position: relative; z-index: 3; }
+.dwc-btn--sparkle::before { display: none; } /* pas de fill liquide ici */
+/* Points orbitants : faisceau or qui tourne autour de la pilule */
+.dwc-btn--sparkle .dwc-sparkle-dots {
+  position: absolute; top: 50%; left: 50%;
+  width: calc(100% + 2px); height: calc(100% + 2px);
+  transform: translate(-50%, -50%);
+  border-radius: 9999px; overflow: hidden; z-index: 0;
+  background: transparent;
+}
+.dwc-btn--sparkle .dwc-sparkle-dots::before {
+  content: ""; position: absolute; top: 35%; left: 50%;
+  width: 110%; height: 2.2rem;
+  background: linear-gradient(180deg, var(--gold-soft), rgba(229, 180, 76, 0.1));
+  -webkit-mask: linear-gradient(transparent 0%, #000 120%);
+          mask: linear-gradient(transparent 0%, #000 120%);
+  transform-origin: left center;
+  animation: dwc-sparkle-rotate 2.4s linear infinite;
+}
+@keyframes dwc-sparkle-rotate { to { transform: rotate(360deg); } }
+/* Halo interne animé au hover (bloom or) */
+.dwc-btn--sparkle::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; border-radius: 9999px;
+  background:
+    radial-gradient(circle at 22% 85%, rgba(255, 209, 116, 0.85) 0%, transparent 55%),
+    radial-gradient(circle at 80% 90%, rgba(185, 127, 53, 0.8) 0%, transparent 55%),
+    radial-gradient(circle at 50% 120%, rgba(242, 212, 146, 0.9) 0%, transparent 60%);
+  opacity: 0; transition: opacity 0.35s ease;
+}
+.dwc-btn--sparkle:hover::after, .dwc-btn--sparkle:focus-visible::after { opacity: 1; }
+.dwc-btn--sparkle:hover {
+  transform: scale(1.035);
+  box-shadow: 0 16px 40px -12px rgba(229, 180, 76, 0.6), 0 0 0 4px rgba(229, 180, 76, 0.18);
+}
+.dwc-btn--sparkle:hover > * { text-shadow: 0 0 18px rgba(255, 232, 176, 0.55); }
+/* Icône lucide qui pulse en alternance */
+.dwc-btn--sparkle .lucide { transform-origin: center; }
+.dwc-btn--sparkle:hover .lucide { animation: dwc-sparkle-icon 1.4s ease-in-out infinite; }
+@keyframes dwc-sparkle-icon {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.25) rotate(6deg); }
+  60% { transform: scale(0.95) rotate(-4deg); }
+}
+
+/* ---------- 3. HERO : aurora + particules + shine titre + marquee ---------- */
+.dwc-hero { position: relative; }
+.dwc-aurora {
+  position: absolute; inset: -18% -12%; z-index: -1;
+  pointer-events: none; overflow: hidden; filter: blur(2px);
+}
+.dwc-aurora i {
+  position: absolute; display: block; border-radius: 50%;
+  opacity: 0.55; will-change: transform;
+}
+.dwc-aurora i:nth-child(1) {
+  width: 34rem; height: 22rem; top: -6rem; left: 8%;
+  background: radial-gradient(closest-side, rgba(229, 180, 76, 0.17), transparent 72%);
+  animation: dwc-aurora-a 22s ease-in-out infinite alternate;
+}
+.dwc-aurora i:nth-child(2) {
+  width: 30rem; height: 20rem; top: 2rem; right: 4%;
+  background: radial-gradient(closest-side, rgba(200, 122, 59, 0.18), transparent 72%);
+  animation: dwc-aurora-b 27s ease-in-out infinite alternate;
+}
+.dwc-aurora i:nth-child(3) {
+  width: 24rem; height: 16rem; top: 38%; left: 36%;
+  background: radial-gradient(closest-side, rgba(111, 199, 187, 0.09), transparent 75%);
+  animation: dwc-aurora-c 19s ease-in-out infinite alternate;
+}
+.dwc-aurora i:nth-child(4) {
+  width: 20rem; height: 14rem; top: 55%; left: 12%;
+  background: radial-gradient(closest-side, rgba(232, 155, 60, 0.11), transparent 75%);
+  animation: dwc-aurora-a 25s ease-in-out infinite alternate-reverse;
+}
+/* Un 5e halo optionnel pour les pages longues (posé en HTML au besoin) */
+.dwc-aurora i:nth-child(5) {
+  width: 26rem; height: 18rem; top: 70%; right: 10%;
+  background: radial-gradient(closest-side, rgba(111, 199, 187, 0.07), transparent 78%);
+  animation: dwc-aurora-c 31s ease-in-out infinite alternate;
+}
+@keyframes dwc-aurora-a { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(14%, 12%, 0) scale(1.18); } }
+@keyframes dwc-aurora-b { from { transform: translate3d(0,0,0) scale(1.1); } to { transform: translate3d(-16%, 10%, 0) scale(0.92); } }
+@keyframes dwc-aurora-c { from { transform: translate3d(0,0,0) scale(0.9); } to { transform: translate3d(-10%, -14%, 0) scale(1.15); } }
+
+.dwc-particles { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.dwc-p {
+  position: absolute; bottom: -0.5rem; border-radius: 9999px;
+  background: var(--gold-soft); opacity: 0;
+  will-change: transform, opacity;
+  animation: dwc-float-up linear infinite;
+}
+@keyframes dwc-float-up {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0; }
+  8% { opacity: var(--p-opacity, 0.4); }
+  85% { opacity: calc(var(--p-opacity, 0.4) * 0.6); }
+  100% { transform: translate3d(var(--p-drift, 1.5rem), -46vh, 0) scale(0.4); opacity: 0; }
+}
+
+/* Shine périodique sur le mot dégradé du titre.
+   NB : le dégradé doit être posé sur .dwc-wi lui-même — un enfant
+   transformé/composé ne reçoit plus le background-clip:text du parent. */
+.dwc-grad-text .dwc-wi {
+  background: var(--grad-title, var(--grad-gold));
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-size: 200% 100%;
+  animation: dwc-title-shine 7s ease-in-out infinite;
+}
+.dwc-hero .dwc-grad-text, .dwc-hero .dwc-gold {
+  background-size: 200% 100% !important;
+  animation: dwc-title-shine 7s ease-in-out infinite;
+}
+.dwc-grad-text { background-size: 200% 100%; animation: dwc-title-shine 7s ease-in-out infinite; }
+@keyframes dwc-title-shine {
+  0%, 62% { background-position: 0% 50%; }
+  88%, 100% { background-position: 190% 50%; }
+}
+
+/* Titre lettre/word slide-up (wrappers posés par anim.js) */
+.dwc-w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.14em; margin-bottom: -0.14em; }
+.dwc-wi { display: inline-block; transform: translateY(115%); opacity: 0; transition: transform 0.85s var(--ease-out), opacity 0.6s ease; will-change: transform; }
+.dwc-title-in .dwc-wi { transform: translateY(0); opacity: 1; }
+
+/* Marquee de compétences */
+.dwc-marquee {
+  margin-top: 3rem; width: 100%; overflow: hidden; position: relative;
+  -webkit-mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+          mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  border-top: 1px solid rgba(79, 70, 54, 0.3);
+  border-bottom: 1px solid rgba(79, 70, 54, 0.3);
+  padding: 0.9rem 0;
+}
+.dwc-marquee-track {
+  display: flex; gap: 2.75rem; width: max-content;
+  animation: dwc-marquee 36s linear infinite;
+  will-change: transform;
+}
+.dwc-marquee:hover .dwc-marquee-track { animation-play-state: paused; }
+.dwc-marquee-track span {
+  display: inline-flex; align-items: center; gap: 2.75rem;
+  font-family: var(--font-head); font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--outline);
+  white-space: nowrap;
+}
+.dwc-marquee-track span::after {
+  content: ""; width: 0.4rem; height: 0.4rem; border-radius: 9999px;
+  background: var(--gold); opacity: 0.7;
+}
+@keyframes dwc-marquee { to { transform: translateX(-50%); } }
+
+/* ---------- 4. STATS : barres de progression ---------- */
+.dwc-bar {
+  margin-top: 0.9rem; height: 6px; border-radius: 9999px;
+  background: rgba(79, 70, 54, 0.35); overflow: hidden;
+}
+.dwc-bar-fill {
+  display: block; height: 100%; width: 100%; border-radius: inherit;
+  background: var(--grad-gold);
+  transform-origin: 0 50%; transform: scaleX(0);
+  transition: transform 1.4s var(--ease-out) 0.15s;
+  box-shadow: 0 0 10px rgba(229, 180, 76, 0.4);
+}
+.dwc-bar-fill.is-filled { transform: scaleX(var(--bar-w, 1)); }
+
+/* ---------- 5. CARTES : border beam + tilt + spotlight + shine ---------- */
+.dwc-fx-card { will-change: transform; transform-style: preserve-3d; }
+.dwc-fx-card::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; z-index: 0;
+  padding: 1px; pointer-events: none;
+  background: conic-gradient(from var(--dwc-beam-angle), transparent 0deg, transparent 250deg, var(--gold-soft) 310deg, var(--bronze) 340deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+  opacity: 0; transition: opacity 0.4s ease;
+  animation: dwc-beam-spin 4.5s linear infinite;
+}
+.dwc-fx-card:hover::before { opacity: 1; }
+/* Shine diagonal au passage */
+.dwc-fx-card > .dwc-fx-shine {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit; overflow: hidden;
+}
+.dwc-fx-card > .dwc-fx-shine::before {
+  content: ""; position: absolute; top: -60%; bottom: -60%; left: -30%; width: 40%;
+  background: linear-gradient(105deg, transparent 15%, rgba(255, 226, 160, 0.14) 50%, transparent 85%);
+  transform: translateX(-160%) skewX(-18deg);
+  transition: transform 0.85s ease;
+}
+.dwc-fx-card:hover > .dwc-fx-shine::before { transform: translateX(360%); }
+/* Médaillon icône : rotation + pulse */
+.dwc-service-card .dwc-icon-circle, .dwc-fx-card .dwc-icon-circle {
+  transition: transform 0.5s var(--ease-out), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+.dwc-service-card:hover .dwc-icon-circle {
+  transform: rotate(-10deg) scale(1.12);
+  border-color: rgba(229, 180, 76, 0.65);
+  box-shadow: 0 0 0 4px rgba(229, 180, 76, 0.12), 0 8px 22px -6px rgba(229, 180, 76, 0.35);
+}
+.dwc-service-card:hover .dwc-icon-circle .lucide, .dwc-fx-card:hover .dwc-icon-circle .lucide {
+  animation: dwc-icon-pulse 1.6s ease-in-out infinite;
+}
+@keyframes dwc-icon-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+/* Checks qui se soulèvent en cascade */
+.dwc-check-list .lucide { transition: transform 0.35s var(--ease-out); }
+.dwc-service-card:hover .dwc-check-list li:nth-child(1) .lucide { transform: scale(1.3); transition-delay: 0s; }
+.dwc-service-card:hover .dwc-check-list li:nth-child(2) .lucide { transform: scale(1.3); transition-delay: 0.07s; }
+.dwc-service-card:hover .dwc-check-list li:nth-child(3) .lucide { transform: scale(1.3); transition-delay: 0.14s; }
+/* Spotlight (radial qui suit le curseur) pour visuels */
+.dwc-spot { position: relative; }
+.dwc-spot::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(14rem 14rem at var(--spot-x, 50%) var(--spot-y, 50%), rgba(242, 212, 146, 0.22), transparent 65%);
+  opacity: 0; transition: opacity 0.35s ease;
+}
+.dwc-spot:hover::after { opacity: 1; }
+.dwc-spot > * { position: relative; z-index: 2; }
+
+/* ---------- 6. BADGES : shimmer ---------- */
+.dwc-flag { overflow: hidden; position: absolute; }
+.dwc-flag::after, .dwc-chip--gold::after {
+  content: ""; position: absolute; top: -40%; bottom: -40%; left: -30%; width: 40%;
+  background: linear-gradient(105deg, transparent 20%, rgba(255, 250, 230, 0.65) 50%, transparent 80%);
+  transform: translateX(-180%) skewX(-18deg);
+  animation: dwc-shimmer 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes dwc-shimmer {
+  0% { transform: translateX(-180%) skewX(-18deg); }
+  55%, 100% { transform: translateX(340%) skewX(-18deg); }
+}
+.dwc-chip--gold { position: relative; overflow: hidden; }
+.dwc-chip--gold::after { opacity: 0.5; }
+
+/* ---------- 7. ÉTAPES : ligne dorée qui se dessine ---------- */
+.dwc-step-line { position: relative; }
+.dwc-step-line .dwc-step-fill {
+  position: absolute; top: -1.5px; left: 0; right: 0; height: 3px;
+  background: var(--grad-gold); border-radius: 3px;
+  transform-origin: 0 50%; transform: scaleX(0);
+  transition: transform 1.8s var(--ease-out) 0.2s;
+  box-shadow: 0 0 14px rgba(229, 180, 76, 0.45);
+}
+.dwc-step-line.is-drawn .dwc-step-fill { transform: scaleX(1); }
+.dwc-step-num { transition: transform 0.45s var(--ease-out), box-shadow 0.4s ease; }
+.dwc-card:hover .dwc-step-num, .dwc-step-card.is-in .dwc-step-num {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 12px 28px rgba(10, 8, 6, 0.7), 0 0 18px rgba(229, 180, 76, 0.3);
+}
+
+/* Stepper connecté (projet.html) */
+.dwc-steps-h { position: relative; }
+.dwc-steps-h::before, .dwc-steps-h::after {
+  content: ""; position: absolute; top: 3.1rem; left: 7%; right: 7%; height: 2px; z-index: 0;
+}
+.dwc-steps-h::before { background: rgba(229, 180, 76, 0.16); }
+.dwc-steps-h::after {
+  background: var(--grad-gold);
+  transform-origin: 0 50%; transform: scaleX(0);
+  transition: transform 1.8s var(--ease-out) 0.2s;
+  box-shadow: 0 0 14px rgba(229, 180, 76, 0.45);
+}
+.dwc-steps-h.is-drawn::after { transform: scaleX(1); }
+@media (max-width: 899px) { .dwc-steps-h::before, .dwc-steps-h::after { display: none; } }
+
+/* ---------- 8. TIMELINE verticale (pages détail : modules/phares) ---------- */
+.dwc-timeline {
+  grid-template-columns: 1fr !important;
+  position: relative; padding-left: 2.9rem; gap: 1.75rem;
+}
+.dwc-timeline::before, .dwc-timeline > .dwc-rail {
+  content: ""; position: absolute; top: 0.6rem; bottom: 0.6rem; left: 0.95rem;
+  width: 2px; border-radius: 2px; background: rgba(79, 70, 54, 0.4);
+}
+.dwc-timeline::after {
+  content: ""; position: absolute; top: 0.6rem; bottom: 0.6rem; left: 0.95rem;
+  width: 2px; border-radius: 2px; background: var(--grad-gold);
+  transform-origin: 0 0; transform: scaleY(0);
+  transition: transform 1.6s var(--ease-out) 0.1s;
+  box-shadow: 0 0 16px rgba(229, 180, 76, 0.45);
+}
+.dwc-timeline.is-drawn::after { transform: scaleY(1); }
+.dwc-timeline > * { position: relative; }
+.dwc-timeline > *::before {
+  content: ""; position: absolute; top: 1.9rem; left: calc(-2.05rem - 0.55rem);
+  width: 1.1rem; height: 1.1rem; border-radius: 9999px; z-index: 1;
+  background: var(--surface-elevated);
+  border: 2px solid rgba(229, 180, 76, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.dwc-timeline > .revealed::before {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(229, 180, 76, 0.12), 0 0 14px rgba(229, 180, 76, 0.35);
+}
+.dwc-timeline > *:hover::before { transform: scale(1.2); }
+
+/* ---------- 9. FORMULAIRES : labels flottants + focus or + états submit ---------- */
+.dwc-field { position: relative; }
+.dwc-field.is-float label {
+  position: absolute; left: 1rem; top: 0.88rem; z-index: 1;
+  margin-bottom: 0; pointer-events: none;
+  font-size: 0.95rem; font-weight: 500; color: rgba(155, 143, 125, 0.9);
+  transform-origin: left top;
+  transition: transform 0.25s var(--ease-out), color 0.25s ease;
+}
+.dwc-field.is-float input.dwc-input, .dwc-field.is-float textarea.dwc-textarea {
+  padding-top: 1.55rem; padding-bottom: 0.55rem;
+}
+.dwc-field.is-float input::placeholder, .dwc-field.is-float textarea::placeholder {
+  color: transparent; transition: color 0.2s ease 0.12s;
+}
+.dwc-field.is-float.is-floated input::placeholder, .dwc-field.is-float.is-floated textarea::placeholder {
+  color: rgba(155, 143, 125, 0.65);
+}
+.dwc-field.is-float.is-floated label, .dwc-field.is-float:focus-within label {
+  transform: translateY(-0.62rem) scale(0.72);
+  color: var(--gold-soft); font-weight: 600;
+}
+/* Bordure or qui s'illumine au focus */
+.dwc-input:focus, .dwc-textarea:focus, .dwc-select:focus {
+  animation: dwc-focus-glow 1.8s ease-in-out infinite;
+}
+@keyframes dwc-focus-glow {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(229, 180, 76, 0.16), 0 0 18px rgba(229, 180, 76, 0.12); }
+  50% { box-shadow: 0 0 0 3px rgba(229, 180, 76, 0.3), 0 0 26px rgba(229, 180, 76, 0.22); }
+}
+/* Bouton submit : loading → succès */
+.dwc-btn.is-loading { pointer-events: none; }
+.dwc-btn.is-loading .lucide { opacity: 0.25; }
+.dwc-btn.is-loading::after {
+  content: ""; position: absolute; top: 50%; left: 50%; z-index: 3;
+  width: 1.15rem; height: 1.15rem; margin: -0.575rem 0 0 -0.575rem;
+  border-radius: 9999px; border: 2px solid rgba(38, 25, 0, 0.3);
+  border-top-color: var(--on-primary-deep);
+  animation: dwc-spin 0.7s linear infinite;
+}
+@keyframes dwc-spin { to { transform: rotate(360deg); } }
+.dwc-btn.is-success {
+  background: var(--success); color: #10200f;
+  box-shadow: 0 14px 34px -12px rgba(139, 177, 116, 0.6);
+  animation: dwc-success-pop 0.5s var(--ease-out);
+}
+.dwc-btn.is-success::before { display: none; }
+@keyframes dwc-success-pop {
+  0% { transform: scale(1); } 45% { transform: scale(1.05); } 100% { transform: scale(1); }
+}
+
+/* ---------- 10. FAQ : glow + chevron fluide (hauteur animée via JS) ---------- */
+.dwc-faq { position: relative; }
+.dwc-faq::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; z-index: 0; pointer-events: none;
+  background: conic-gradient(from var(--dwc-beam-angle), transparent 0deg, transparent 230deg, rgba(229, 180, 76, 0.55) 320deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+  opacity: 0; transition: opacity 0.45s ease;
+  animation: dwc-beam-spin 5s linear infinite;
+}
+.dwc-faq:hover::before, .dwc-faq[open]::before { opacity: 1; }
+.dwc-faq .dwc-faq-a { overflow: hidden; }
+.dwc-faq[open] .dwc-faq-chev {
+  background: var(--gold); color: var(--on-primary-deep); border-color: var(--gold);
+  box-shadow: 0 6px 16px -4px rgba(229, 180, 76, 0.5);
+}
+
+/* ---------- 11. PILULES FILTRES : remplissage liquide ---------- */
+.dwc-filter-btn { position: relative; overflow: hidden; isolation: isolate; }
+.dwc-filter-btn::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+  transform: translateY(101%); transition: transform 0.35s var(--ease-out);
+}
+.dwc-filter-btn.is-active { border-color: var(--gold); }
+.dwc-filter-btn.is-active::before { transform: translateY(0); }
+/* Le libellé passe au-dessus du remplissage liquide, en sombre sur or */
+.dwc-filter-btn { color: var(--text-secondary); }
+.dwc-filter-btn.is-active { color: var(--on-primary-deep) !important; font-weight: 700; }
+
+/* ---------- 12. FOOTER : colonnes lift + réseaux fill doré ---------- */
+.dwc-footer-grid > div { transition: transform 0.35s var(--ease-out); }
+.dwc-footer-grid > div:hover { transform: translateY(-4px); }
+.dwc-footer h4 {
+  display: inline-block; position: relative;
+}
+.dwc-footer h4::after {
+  content: ""; position: absolute; left: 0; right: 100%; bottom: -0.3rem;
+  height: 2px; border-radius: 2px; background: var(--grad-gold);
+  transition: right 0.4s var(--ease-out);
+}
+.dwc-footer-grid > div:hover h4::after { right: 0; }
+.dwc-footer .dwc-nav-call {
+  overflow: hidden; transition: background 0.3s ease, color 0.3s ease, transform 0.3s var(--ease-out), border-color 0.3s ease;
+}
+.dwc-footer .dwc-nav-call:hover {
+  background: var(--gold); border-color: var(--gold);
+  color: var(--on-primary-deep); transform: translateY(-3px) rotate(-6deg);
+  box-shadow: 0 10px 24px -8px rgba(229, 180, 76, 0.55);
+}
+.dwc-footer .dwc-nav-call .lucide { position: relative; z-index: 1; }
+
+/* ---------- 13. Micro-interactions génériques ---------- */
+.dwc-badge { transition: transform 0.3s var(--ease-out), box-shadow 0.3s ease; }
+.dwc-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(10, 8, 6, 0.5), 0 0 20px rgba(229, 180, 76, 0.12); }
+.dwc-chip, .dwc-tag { transition: transform 0.25s var(--ease-out), border-color 0.25s ease, color 0.25s ease; }
+.dwc-card:hover .dwc-chip { transform: translateY(-2px); border-color: rgba(229, 180, 76, 0.45); color: var(--gold-bright); }
+.dwc-card:hover .dwc-tag { transform: translateY(-2px); }
+.dwc-card:hover .dwc-tag:nth-child(2n) { transition-delay: 0.04s; }
+.dwc-card:hover .dwc-tag:nth-child(3n) { transition-delay: 0.08s; }
+.dwc-link-arrow .lucide { transition: transform 0.3s var(--ease-out); }
+.dwc-link-arrow:hover .lucide { transform: translateX(4px); }
+.dwc-contact-card:hover .dwc-icon-circle { transform: rotate(-8deg) scale(1.1); border-color: rgba(229, 180, 76, 0.6); }
+.dwc-radio-card { transition: border-color 0.25s ease, transform 0.25s var(--ease-out), box-shadow 0.25s ease; }
+.dwc-radio-card:hover { transform: translateY(-2px); }
+.dwc-radio-card:has(input:checked) { border-color: rgba(229, 180, 76, 0.65); box-shadow: 0 0 0 3px rgba(229, 180, 76, 0.12), 0 8px 22px -10px rgba(229, 180, 76, 0.3); }
+.dwc-stat-box { transition: transform 0.35s var(--ease-out), border-color 0.3s ease, box-shadow 0.3s ease; }
+.dwc-stat-box:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -12px rgba(229, 180, 76, 0.25); }
+
+/* Reveal : variantes directionnelles + stagger via --dwc-delay */
+.dwc-reveal { transition-delay: var(--dwc-delay, 0s); }
+.dwc-reveal[data-reveal="left"]  { transform: translateX(-32px); }
+.dwc-reveal[data-reveal="right"] { transform: translateX(32px); }
+.dwc-reveal[data-reveal="scale"] { transform: scale(0.94); }
+.dwc-reveal[data-reveal].revealed { transform: none; }
+
+/* ---------- 14. Accessibilité & mobile ---------- */
+@media (max-width: 820px) {
+  .dwc-aurora { filter: blur(3px); }
+  .dwc-aurora i { opacity: 0.4; }
+  .dwc-marquee-track { animation-duration: 26s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dwc-scroll-progress { display: none; }
+  .dwc-aurora, .dwc-aurora i, .dwc-particles, .dwc-marquee-track { animation: none !important; }
+  .dwc-btn--beam::before, .dwc-fx-card::before, .dwc-faq::before { animation: none !important; }
+  .dwc-btn--sparkle .dwc-sparkle-dots::before { animation: none !important; }
+  .dwc-wi { transform: none !important; opacity: 1 !important; transition: none !important; }
+  .dwc-bar-fill { transform: scaleX(var(--bar-w, 1)) !important; transition: none !important; }
+  .dwc-btn--gold::after, .dwc-btn--dark::after, .dwc-flag::after, .dwc-chip--gold::after { animation: none !important; transition: none !important; display: none; }
+  .dwc-footer-grid > div:hover, .dwc-fx-card, .dwc-tilt-done { transform: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; }
+}
+
+/* ---------- 15. Médaillons d'icônes par catégorie (couleurs distinctes) ----------
+   Chaque famille de service a SA couleur : les icônes ne se fondent plus. */
+.dwc-medal {
+  border-color: rgba(229, 180, 76, 0.35);
+  color: var(--gold-soft);
+  background: linear-gradient(145deg, #2A2013 0%, #241C11 100%);
+}
+/* Académique & Recherche : crème/doré */
+.dwc-medal--academic {
+  background: linear-gradient(145deg, rgba(243, 234, 216, 0.3) 0%, rgba(229, 180, 76, 0.14) 100%);
+  border-color: rgba(243, 234, 216, 0.55);
+  color: var(--cream);
+  box-shadow: 0 0 0 1px rgba(243, 234, 216, 0.06), 0 4px 18px -6px rgba(243, 234, 216, 0.18);
+}
+/* IA & Tech : teal profond */
+.dwc-medal--tech {
+  background: linear-gradient(145deg, rgba(111, 199, 187, 0.32) 0%, rgba(62, 155, 143, 0.16) 100%);
+  border-color: rgba(111, 199, 187, 0.6);
+  color: var(--teal-bright);
+  box-shadow: 0 0 0 1px rgba(111, 199, 187, 0.08), 0 4px 18px -6px rgba(111, 199, 187, 0.25);
+}
+/* Création & Média : ambre */
+.dwc-medal--media {
+  background: linear-gradient(145deg, rgba(243, 190, 122, 0.28) 0%, rgba(232, 155, 60, 0.16) 100%);
+  border-color: rgba(243, 190, 122, 0.6);
+  color: var(--amber-bright);
+  box-shadow: 0 0 0 1px rgba(243, 190, 122, 0.08), 0 4px 18px -6px rgba(232, 155, 60, 0.25);
+}
+/* Business & Infrastructure : cuivre */
+.dwc-medal--business {
+  background: linear-gradient(145deg, rgba(226, 164, 104, 0.28) 0%, rgba(200, 122, 59, 0.16) 100%);
+  border-color: rgba(226, 164, 104, 0.6);
+  color: var(--copper-bright);
+  box-shadow: 0 0 0 1px rgba(226, 164, 104, 0.08), 0 4px 18px -6px rgba(200, 122, 59, 0.25);
+}
+/* Rotation/pulse conservés + teinte au hover */
+.dwc-service-card:hover .dwc-medal--academic { box-shadow: 0 0 0 4px rgba(243, 234, 216, 0.1), 0 8px 22px -6px rgba(243, 234, 216, 0.3); }
+.dwc-service-card:hover .dwc-medal--tech { box-shadow: 0 0 0 4px rgba(111, 199, 187, 0.14), 0 8px 22px -6px rgba(111, 199, 187, 0.4); }
+.dwc-service-card:hover .dwc-medal--media { box-shadow: 0 0 0 4px rgba(232, 155, 60, 0.14), 0 8px 22px -6px rgba(232, 155, 60, 0.4); }
+.dwc-service-card:hover .dwc-medal--business { box-shadow: 0 0 0 4px rgba(200, 122, 59, 0.16), 0 8px 22px -6px rgba(200, 122, 59, 0.4); }
+
+/* ---------- 16. Cartes hiérarchisées : surface éclaircie + bordure teintée + glow coloré ---------- */
+.dwc-fx-card {
+  background: var(--surface-card, #1D1811);
+  border-color: var(--surface-line, rgba(226, 201, 148, 0.14));
+  box-shadow: 0 1px 0 rgba(243, 234, 216, 0.04) inset, 0 14px 34px -18px rgba(10, 8, 6, 0.8);
+}
+/* Bordure supérieure lumineuse (lumière rasante café→or) */
+.dwc-fx-card::after {
+  content: ""; position: absolute; top: 0; left: 12%; right: 12%; height: 1px; z-index: 3;
+  background: linear-gradient(90deg, transparent, rgba(243, 234, 216, 0.28), transparent);
+  pointer-events: none;
+}
+/* Glows de survol par catégorie */
+.dwc-fx-card[data-cat="academic"]:hover {
+  border-color: rgba(243, 234, 216, 0.45);
+  box-shadow: 0 18px 40px -14px rgba(16, 14, 11, 0.85), 0 0 30px -6px rgba(243, 234, 216, 0.16);
+}
+.dwc-fx-card[data-cat="tech"]:hover {
+  border-color: rgba(111, 199, 187, 0.5);
+  box-shadow: 0 18px 40px -14px rgba(16, 14, 11, 0.85), 0 0 30px -6px var(--teal-glow);
+}
+.dwc-fx-card[data-cat="media"]:hover {
+  border-color: rgba(243, 190, 122, 0.5);
+  box-shadow: 0 18px 40px -14px rgba(16, 14, 11, 0.85), 0 0 30px -6px rgba(232, 155, 60, 0.32);
+}
+.dwc-fx-card[data-cat="business"]:hover {
+  border-color: rgba(226, 164, 104, 0.5);
+  box-shadow: 0 18px 40px -14px rgba(16, 14, 11, 0.85), 0 0 30px -6px var(--copper-glow);
+}
+/* Fallback or quand aucune catégorie */
+.dwc-fx-card:hover { border-color: rgba(229, 180, 76, 0.5); }
+
+/* ---------- 17. Badge "Populaire" braise + chips catégorie teintées ---------- */
+.dwc-flag {
+  background: linear-gradient(120deg, var(--ember-bright), var(--ember));
+  color: #2B130A;
+  box-shadow: 0 6px 18px rgba(201, 111, 74, 0.4);
+}
+.dwc-chip--cat-academic { border-color: rgba(243, 234, 216, 0.5); color: var(--cream); background: rgba(243, 234, 216, 0.12); }
+.dwc-chip--cat-tech { border-color: rgba(111, 199, 187, 0.6); color: var(--teal-bright); background: rgba(62, 155, 143, 0.24); }
+.dwc-chip--cat-media { border-color: rgba(243, 190, 122, 0.6); color: var(--amber-bright); background: rgba(232, 155, 60, 0.22); }
+.dwc-chip--cat-business { border-color: rgba(226, 164, 104, 0.6); color: var(--copper-bright); background: rgba(200, 122, 59, 0.22); }
+.dwc-chip--cat-academic, .dwc-chip--cat-tech, .dwc-chip--cat-media, .dwc-chip--cat-business {
+  font-weight: 700; letter-spacing: 0.09em;
+}
+
+/* ---------- 18. Titres : dégradé 3 stops or → cuivre → crème ---------- */
+.dwc-grad-text { background-image: var(--grad-title); }
+
+/* ---------- 19. Divers accents enrichis ---------- */
+.dwc-dot { background: var(--teal-bright) !important; box-shadow: 0 0 10px rgba(111, 199, 187, 0.5); }
+@keyframes dwc-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.dwc-bar-fill { background: var(--grad-warm); }
+.dwc-step-fill, .dwc-steps-h::after, .dwc-timeline::after { background: var(--grad-warm) !important; }
+.dwc-marquee-track span::after { background: var(--copper-bright); }
+.dwc-success-check { color: var(--teal-bright); }
+
