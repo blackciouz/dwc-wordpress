@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DWC — Coaching Mémoire &amp; Thèse : réussissez votre soutenance | Cotonou, Bénin</title>
+<meta name="description" content="Coaching 1-sur-1 DWC : cadrage du sujet, méthodologie, relecture critique, mise en forme Zotero/LaTeX et simulation de soutenance. Parcours sur devis, réponse sous 24h."/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/main.css"/>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .dwc-meta-card { display:flex; align-items:flex-start; gap:0.8rem; padding:0.9rem; border-radius:1rem; background:var(--surface); border:1px solid rgba(79,70,54,0.35); }
+  .dwc-meta-card .dwc-icon-circle { width:2.25rem; height:2.25rem; }
+  .dwc-meta-card .dwc-icon-circle .lucide { width:1.05rem; height:1.05rem; }
+  .dwc-module-pill {
+    display:inline-block; padding:0.35rem 0.85rem; border-radius:9999px;
+    font-size:0.6563rem; letter-spacing:0.12em; font-weight:600; text-transform:uppercase;
+    background:var(--icon-bg); border:1px solid rgba(229,180,76,0.25); color:var(--gold-soft);
+  }
+</style>
+</head>
+<body>
+
+<div class="dwc-halo-top"></div>
+
+<!-- ===== NAV ===== -->
+<header class="dwc-header">
+  <nav class="dwc-nav" aria-label="Navigation principale">
+    <a class="dwc-brand" href="index.html" aria-label="Digital World Coaching — Accueil">
+      <img class="dwc-brand-logo" src="assets/logo.svg" alt="Logo DWC — monogramme DW doré"/>
+      <span class="dwc-brand-text">
+        <span class="dwc-brand-name">DWC</span>
+        <span class="dwc-brand-sub">Digital World Coaching</span>
+      </span>
+    </a>
+    <div class="dwc-nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="projet.html">Projet</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="dwc-nav-actions">
+      <a class="dwc-nav-call" href="tel:+22997000000" aria-label="Appeler DWC Cotonou">
+        <i data-lucide="phone"></i>
+      </a>
+      <a class="dwc-btn dwc-btn--gold dwc-nav-cta" href="#devis">Demander un devis</a>
+      <button class="dwc-burger" id="dwc-nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="dwc-mobile-menu" id="dwc-mobile-menu">
+      <a href="index.html">Accueil <i data-lucide="home"></i></a>
+      <a href="services.html">Services <i data-lucide="layers"></i></a>
+      <a href="projet.html">Projet <i data-lucide="building-2"></i></a>
+      <a href="contact.html">Contact <i data-lucide="mail"></i></a>
+      <a class="dwc-btn dwc-btn--gold dwc-btn--block dwc-mobile-cta" href="#devis">Demander un devis</a>
+    </div>
+  </nav>
+</header>
+
+<main style="position:relative; z-index:1; padding-top:7.5rem;">
+
+  <!-- ===== FIL D'ARIANE ===== -->
+  <div class="dwc-container" style="margin-bottom:2rem;">
+    <nav class="dwc-breadcrumb" aria-label="Fil d'Ariane">
+      <a href="index.html"><i data-lucide="home"></i> Accueil</a>
+      <span class="dwc-crumb-sep">/</span>
+      <a href="services.html">Services</a>
+      <span class="dwc-crumb-sep">/</span>
+      <span class="dwc-crumb-current">Coaching Mémoire &amp; Thèse</span>
+    </nav>
+  </div>
+
+  <!-- ===== HERO DE SERVICE ===== -->
+  <section class="dwc-container" style="padding-bottom:4rem;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:center;" class="dwc-detail-hero">
+      <div style="display:flex; flex-direction:column; gap:1.4rem;">
+        <div>
+          <span class="dwc-badge">
+            <span class="dwc-dot"></span>
+            <span class="dwc-micro">Coaching 1-sur-1 DWC • Accompagnement continu</span>
+          </span>
+        </div>
+        <h1 class="dwc-h1">Coaching Mémoire &amp; Thèse : <span class="dwc-gold">soutenez avec mention</span></h1>
+        <p class="dwc-lead">Un encadrement méthodologique d'exception, du cadrage du sujet jusqu'à la soutenance. Structurez votre démonstration, épurez votre style et entrez dans votre jury blanc avec une confiance inébranlable.</p>
+
+        <!-- 4 méta-badges -->
+        <div class="dwc-grid dwc-meta-2col" style="grid-template-columns:repeat(2,1fr); gap:0.8rem;">
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="user"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Format</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">Individuel 1-sur-1 avec un mentor dédié</p>
+            </div>
+          </div>
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="clock"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Durée</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">3 à 12 mois selon l'avancement</p>
+            </div>
+          </div>
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="map-pin"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Lieu</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">Hub DWC (Haie Vive, Cotonou) ou visio</p>
+            </div>
+          </div>
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="badge-check"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Validation</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">Attestation de coaching DWC</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-mt-2">
+          <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="#devis">
+            Demander un devis <i data-lucide="arrow-right"></i>
+          </a>
+          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle" class="dwc-gold"></i> WhatsApp (+229 01 97 00 00 00)
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte insignia visuelle -->
+      <div>
+        <div class="dwc-card dwc-card--hover" style="position:relative; overflow:hidden; padding:2rem; box-shadow:0 30px 60px -20px rgba(10,8,6,0.8);">
+          <div class="dwc-glow-blur" style="width:18rem; height:18rem; top:-7rem; right:-7rem; opacity:0.8;"></div>
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-4" style="justify-content:space-between; position:relative; z-index:1;">
+            <span class="dwc-icon-circle dwc-icon-circle--lg"><i data-lucide="graduation-cap"></i></span>
+            <span class="dwc-chip dwc-chip--gold">DWC Élite Academy</span>
+          </div>
+          <div style="position:relative; z-index:1;">
+            <h3 class="dwc-h3">Méthodologie, Rigueur Éditoriale &amp; Soutenance</h3>
+            <p class="dwc-sm dwc-mt-2" style="margin-bottom:1.5rem;">De la problématique à la bibliographie : nous sécurisons chaque maillon de la chaîne académique pour que votre travail résiste aux questions les plus exigeantes.</p>
+            <div class="dwc-grid" style="grid-template-columns:repeat(2,1fr); gap:1rem; padding-top:1.25rem; border-top:1px solid rgba(79,70,54,0.35);">
+              <div style="padding:1rem; border-radius:0.8rem; background:var(--surface-elevated); border:1px solid rgba(79,70,54,0.25);">
+                <p class="dwc-stat-value">98%</p>
+                <p class="dwc-sm">Taux de succès aux soutenances accompagnées</p>
+              </div>
+              <div style="padding:1rem; border-radius:0.8rem; background:var(--surface-elevated); border:1px solid rgba(79,70,54,0.25);">
+                <p class="dwc-stat-value">+250</p>
+                <p class="dwc-sm">Travaux académiques encadrés</p>
+              </div>
+            </div>
+            <div class="dwc-flex dwc-items-center dwc-gap-2 dwc-sm dwc-mt-3">
+              <i data-lucide="award" class="dwc-gold" style="width:1.15rem;height:1.15rem;"></i>
+              <span>Mentors universitaires certifiés DWC Cotonou</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARCOURS : CE QUE VOUS TRAVAILLEZ ===== -->
+  <section class="dwc-section" id="programme" style="background:var(--surface-dim); border-top:1px solid rgba(79,70,54,0.25);">
+    <div class="dwc-container">
+      <div class="dwc-reveal" style="max-width:42rem; margin-bottom:3.5rem;">
+        <span class="dwc-micro dwc-gold">Parcours d'encadrement</span>
+        <h2 class="dwc-h2 dwc-mt-1">Ce que vous travaillez : 4 phases jalonnées</h2>
+        <p class="dwc-body dwc-mt-2">Chaque phase se conclut par un livrable validé ensemble. Vous avancez sans angle mort, étape après étape.</p>
+      </div>
+      <div class="dwc-grid dwc-grid--2">
+
+        <!-- Phase 1 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Phase 01</span>
+            <span class="dwc-icon-circle"><i data-lucide="compass"></i></span>
+          </div>
+          <h3 class="dwc-h3">Cadrage du Sujet &amp; Problématique Irréprochable</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Transformez une intuition floue en question de recherche précise, délimitée et défendable devant n'importe quel jury.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Exploration du sujet, revue d'opportunité et positionnement original.</span></li>
+            <li><i data-lucide="check"></i><span>Formulation de la problématique, hypothèses et questions secondaires.</span></li>
+            <li><i data-lucide="check"></i><span>Plan de travail rétro-planné jusqu'à la date de dépôt.</span></li>
+          </ul>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Phase 02</span>
+            <span class="dwc-icon-circle"><i data-lucide="book-open"></i></span>
+          </div>
+          <h3 class="dwc-h3">Méthodologie &amp; Revue de Littérature Structurée</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Choisissez le dispositif méthodologique adapté et bâtissez un état de l'art qui impressionne par sa rigueur.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Sélection et justification de la démarche (quali, quanti, mixte).</span></li>
+            <li><i data-lucide="check"></i><span>Veille documentaire organisée avec Zotero : citations normalisées (APA, ISO 690).</span></li>
+            <li><i data-lucide="check"></i><span>Conception des instruments : guides d'entretien, questionnaires, matrices d'analyse.</span></li>
+          </ul>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Phase 03</span>
+            <span class="dwc-icon-circle"><i data-lucide="pen-line"></i></span>
+          </div>
+          <h3 class="dwc-h3">Rédaction, Relecture Critique &amp; Style</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Rédigez chapitre par chapitre avec un retour critique systématique sous 72h : fond, forme et argumentation.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Co-écriture structurée : plans de chapitres, transitions et synthèses.</span></li>
+            <li><i data-lucide="check"></i><span>Relecture approfondie : clarté, cohérence, style académique, orthographe.</span></li>
+            <li><i data-lucide="check"></i><span>Mise en forme professionnelle Word ou LaTeX, paginations et annexes.</span></li>
+          </ul>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Phase 04</span>
+            <span class="dwc-icon-circle"><i data-lucide="presentation"></i></span>
+          </div>
+          <h3 class="dwc-h3">Simulation de Soutenance &amp; Jour J</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Affrontez un jury blanc sans indulgence avant le vrai : timing, support visuel et réponses aux objections.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Conception du pitch de soutenance et du support de présentation.</span></li>
+            <li><i data-lucide="check"></i><span>Simulations orales filmées avec questions pièges et feedback pointé.</span></li>
+            <li><i data-lucide="check"></i><span>Coaching posture, gestion du stress et stratégie d'anticipation du jury.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POUR QUI ===== -->
+  <section class="dwc-section" id="profils">
+    <div class="dwc-container">
+      <div class="dwc-section-head dwc-reveal">
+        <span class="dwc-micro dwc-gold">Audience cible</span>
+        <h2 class="dwc-h2 dwc-mt-1">Pour qui est conçu cet accompagnement&nbsp;?</h2>
+        <p class="dwc-body">Chaque niveau d'étude a ses exigences : nous calibrons l'encadrement sur les vôtres.</p>
+      </div>
+      <div class="dwc-grid dwc-grid--4">
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="library"></i></span>
+          <h3 class="dwc-h4">Licence &amp; Master</h3>
+          <p class="dwc-sm dwc-mt-1">Premiers pas en recherche : construction du plan, discipline d'écriture et sécurisation du dépôt dans les délais.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(79,70,54,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : méthode acquise</span>
+          </div>
+        </div>
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="graduation-cap"></i></span>
+          <h3 class="dwc-h4">Doctorants</h3>
+          <p class="dwc-sm dwc-mt-1">Exigence thèse : architecture démonstrative, contribution au savoir et préparation des pré-soutenances.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(79,70,54,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : solidité théorique</span>
+          </div>
+        </div>
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="briefcase"></i></span>
+          <h3 class="dwc-h4">Professionnels en reprise d'études</h3>
+          <p class="dwc-sm dwc-mt-1">Concilier emploi et mémoire : un rythme aménagé, des objectifs hebdomadaires réalistes et un mentor qui maintient le cap.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(79,70,54,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : sérénité</span>
+          </div>
+        </div>
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); padding:1.75rem;">
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="flag"></i></span>
+          <h3 class="dwc-h4">Candidats aux concours &amp; mémoires pro</h3>
+          <p class="dwc-sm dwc-mt-1">Rapports de stage, mémoires professionnels et notes de synthèse : la rigueur académique appliquée aux livrables métiers.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(79,70,54,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : impact immédiat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CE QUE VOUS RECEVEZ ===== -->
+  <section class="dwc-section" id="livrables" style="background:var(--surface-dim); border-top:1px solid rgba(79,70,54,0.25);">
+    <div class="dwc-container">
+      <div class="dwc-reveal" style="max-width:42rem; margin-bottom:3.5rem;">
+        <span class="dwc-micro dwc-gold">Assets tangibles</span>
+        <h2 class="dwc-h2 dwc-mt-1">Ce que vous recevez dès le démarrage</h2>
+        <p class="dwc-body dwc-mt-2">Un arsenal complet d'outils méthodologiques, calibré sur votre discipline et votre niveau.</p>
+      </div>
+      <div class="dwc-grid dwc-grid--3">
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-icon-circle"><i data-lucide="list-checks"></i></span>
+          <div>
+            <h3 class="dwc-h4">Kit méthodologique DWC</h3>
+            <p class="dwc-sm dwc-mt-1">Gabarits de plans, grilles d'auto-évaluation et checklists de conformité par type de travail (mémoire, thèse, rapport).</p>
+          </div>
+        </div>
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-icon-circle"><i data-lucide="bookmark"></i></span>
+          <div>
+            <h3 class="dwc-h4">Bibliothèque Zotero pré-configurée</h3>
+            <p class="dwc-sm dwc-mt-1">Base de références organisée avec styles de citation normalisés, prête pour votre discipline.</p>
+          </div>
+        </div>
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-icon-circle"><i data-lucide="file-text"></i></span>
+          <div>
+            <h3 class="dwc-h4">Retours annotés sous 72h</h3>
+            <p class="dwc-sm dwc-mt-1">Chaque chapitre soumis revient commenté au commentaire près : argumentation, sources, style, mise en forme.</p>
+          </div>
+        </div>
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-icon-circle"><i data-lucide="presentation"></i></span>
+          <div>
+            <h3 class="dwc-h4">2 simulations de soutenance</h3>
+            <p class="dwc-sm dwc-mt-1">Jury blanc exigeant, questions réalistes et débriefing complet avec plan d'action correctif avant le jour J.</p>
+          </div>
+        </div>
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(79,70,54,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem; grid-column:1/-1;">
+          <span class="dwc-icon-circle"><i data-lucide="badge-check"></i></span>
+          <div>
+            <h3 class="dwc-h4">Attestation de coaching académique DWC</h3>
+            <p class="dwc-sm dwc-mt-1">Document officiel détaillant les compétences travaillées (méthodologie, rédaction, soutenance), valorisable en CV et en entretien — preuve d'une rigueur acquise qui dépasse le seul travail déposé.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TARIFICATION SUR DEVIS ===== -->
+  <section class="dwc-section" id="devis">
+    <div class="dwc-container">
+      <div class="dwc-card dwc-reveal" style="border-radius:1.5rem; border-color:rgba(229,180,76,0.35); padding:2.5rem; position:relative; overflow:hidden;">
+        <div style="display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:center;" class="dwc-devis-grid">
+          <div>
+            <span class="dwc-chip dwc-chip--gold">Transparence &amp; sur-mesure</span>
+            <h2 class="dwc-h2 dwc-mt-2">Un accompagnement calibré, sur devis personnalisé</h2>
+            <p class="dwc-body dwc-mt-2">Le volume d'accompagnement dépend de votre discipline, de votre avancement et de votre échéance de dépôt. Après un diagnostic offert de 30 minutes, nous vous transmettons une proposition détaillée sous 24h ouvrées.</p>
+            <ul class="dwc-check-list dwc-mt-4" style="padding-top:1.25rem; border-top:1px solid rgba(79,70,54,0.3);">
+              <li><i data-lucide="check"></i><span>Forfaits par chapitre ou par phase, à votre rythme</span></li>
+              <li><i data-lucide="check"></i><span>Facilités de paiement échelonné disponibles</span></li>
+              <li><i data-lucide="check"></i><span>Engagement de confidentialité stricte (NDA) sur vos travaux</span></li>
+            </ul>
+          </div>
+          <!-- Formulaire express -->
+          <div>
+            <form id="dwc-quote-form" style="background:var(--surface-elevated); border:1px solid rgba(79,70,54,0.4); border-radius:1.25rem; padding:1.75rem; display:flex; flex-direction:column; gap:1.1rem;">
+              <h3 class="dwc-h4">Recevoir une proposition sous 24h</h3>
+              <div>
+                <label class="dwc-label-micro" for="q-name">Nom &amp; Prénoms</label>
+                <input class="dwc-input" type="text" id="q-name" placeholder="Ex : Marie-Claire Agbodjan" required/>
+              </div>
+              <div>
+                <label class="dwc-label-micro" for="q-phone">Numéro WhatsApp (avec indicatif)</label>
+                <input class="dwc-input" type="tel" id="q-phone" placeholder="+229 01 97 00 00 00" required/>
+              </div>
+              <div>
+                <label class="dwc-label-micro" for="q-level">Niveau &amp; état d'avancement</label>
+                <select class="dwc-select" id="q-level">
+                  <option value="Master — sujet à cadrer">Master — sujet à cadrer</option>
+                  <option value="Master — rédaction en cours">Master — rédaction en cours</option>
+                  <option value="Doctorat — thèse en cours">Doctorat — thèse en cours</option>
+                  <option value="Préparation de soutenance">Préparation de soutenance</option>
+                </select>
+              </div>
+              <button class="dwc-btn dwc-btn--gold dwc-btn--block dwc-btn--lg" type="submit">
+                Recevoir mon devis sous 24h <i data-lucide="send"></i>
+              </button>
+              <p class="dwc-micro dwc-center" style="color:var(--outline);">Vos données sont strictement confidentielles. Réponse sous 24h ouvrées.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ACCORDÉON ===== -->
+  <section class="dwc-section" style="background:var(--surface-dim); border-top:1px solid rgba(79,70,54,0.25);">
+    <div class="dwc-container" style="max-width:56rem;">
+      <div class="dwc-section-head dwc-reveal" style="margin-bottom:3rem;">
+        <span class="dwc-micro dwc-gold">Clarifications</span>
+        <h2 class="dwc-h2 dwc-mt-1">Questions fréquemment posées</h2>
+        <p class="dwc-body">Les réponses avant de confier votre travail académique.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">Rédigez-vous le mémoire à ma place&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">Non, et c'est un choix déontologique assumé : DWC est un service de coaching et d'encadrement, pas une rédaction fantôme. Nous vous transmettons la méthode, la structure et des retours critiques pointus — l'œuvre reste la vôtre, défendable et authentique devant n'importe quel jury.</div>
+        </details>
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">À quel stade de mon travail puis-je vous rejoindre&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">À n'importe lequel : idée de sujet encore floue, problématique à affiner, chapitre bloqué, données à analyser ou soutenance à préparer. Le diagnostic initial de 30 minutes (offert) détermine le point d'entrée optimal dans le parcours.</div>
+        </details>
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">Travaillez-vous avec les étudiants hors du Bénin&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">Oui. Une large partie de nos coachés étudient au Sénégal, en Côte d'Ivoire, au Togo, au Cameroun, en France ou au Canada. Les séances se déroulent en visio HD avec partage d'écran, retours annotés sur document et suivi continu par WhatsApp.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="dwc-section" id="contact">
+    <div class="dwc-container">
+      <div class="dwc-cta-band dwc-reveal">
+        <div class="dwc-glow-blur"></div>
+        <div style="position:relative; z-index:1; max-width:48rem; margin:0 auto;">
+          <span class="dwc-badge" style="margin-bottom:1.2rem;"><span class="dwc-micro">Passez à l'action</span></span>
+          <h2 class="dwc-h2" style="margin-bottom:1rem;">Prêt à transformer votre mémoire en réussite de soutenance&nbsp;?</h2>
+          <p class="dwc-lead" style="margin-bottom:1.8rem;">Rejoignez les centaines d'étudiants et chercheurs qui ont sécurisé leur diplôme avec l'encadrement DWC.</p>
+
+          <!-- Ruban de contacts -->
+          <div class="dwc-grid dwc-ribbon" style="gap:1rem; padding:1.5rem 0;">
+            <a class="dwc-contact-card" style="padding:1rem;" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="message-circle" class="dwc-gold" style="width:1.3rem;height:1.3rem; margin-bottom:0.35rem;"></i>
+              <p class="dwc-micro" style="color:var(--text-secondary);">WhatsApp</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:600;">+229 01 97 00 00 00</p>
+            </a>
+            <a class="dwc-contact-card" style="padding:1rem;" href="mailto:contact@digitalworldcoaching.com">
+              <i data-lucide="mail" class="dwc-gold" style="width:1.3rem;height:1.3rem; margin-bottom:0.35rem;"></i>
+              <p class="dwc-micro" style="color:var(--text-secondary);">Email</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:600;">contact@digitalworldcoaching.com</p>
+            </a>
+            <div class="dwc-contact-card" style="padding:1rem;">
+              <i data-lucide="map-pin" class="dwc-gold" style="width:1.3rem;height:1.3rem; margin-bottom:0.35rem;"></i>
+              <p class="dwc-micro" style="color:var(--text-secondary);">Adresse</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:600;">Haie Vive, Cotonou, Bénin</p>
+            </div>
+          </div>
+
+          <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-justify-center" style="padding-top:0.75rem;">
+            <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="#devis">Demander mon devis personnalisé</a>
+            <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="message-circle" class="dwc-gold"></i> Contacter par WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="dwc-footer">
+  <div class="dwc-container">
+    <div class="dwc-footer-grid">
+      <div>
+        <div class="dwc-flex dwc-items-center dwc-gap-2" style="margin-bottom:1rem;">
+          <img src="assets/logo.svg" alt="Logo DWC" style="width:2.25rem;height:2.25rem;"/>
+          <span class="dwc-brand-name" style="font-size:1.2rem;">DWC</span>
+        </div>
+        <p class="dwc-sm">Encadrement académique d'excellence pour mémoires, thèses et soutenances — présentiel à Cotonou ou en ligne.</p>
+        <div class="dwc-footer-contact dwc-mt-2" style="display:flex; gap:0.75rem; padding-top:0.5rem;">
+          <a href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp DWC" class="dwc-nav-call" style="width:2.25rem;height:2.25rem;"><i data-lucide="message-circle"></i></a>
+          <a href="tel:+22997000000" aria-label="Appeler DWC" class="dwc-nav-call" style="width:2.25rem;height:2.25rem;"><i data-lucide="phone"></i></a>
+          <a href="mailto:contact@digitalworldcoaching.com" aria-label="Email DWC" class="dwc-nav-call" style="width:2.25rem;height:2.25rem;"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Programmes</h4>
+        <ul>
+          <li><a href="detail-coaching.html">Coaching Mémoire &amp; Thèse</a></li>
+          <li><a href="detail.html">Formation IA &amp; Automatisation</a></li>
+          <li><a href="services.html">Tous les services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>DWC Cotonou</h4>
+        <ul>
+          <li><a href="projet.html">Le Projet DWC</a></li>
+          <li><a href="contact.html">Contact &amp; Accès</a></li>
+          <li><a href="index.html">Accueil</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accès rapide</h4>
+        <div style="padding:1rem; border-radius:0.9rem; background:var(--surface); border:1px solid rgba(79,70,54,0.35);">
+          <span class="dwc-micro dwc-gold">Campus Haie Vive</span>
+          <p class="dwc-sm dwc-mt-1">Ouvert Lun - Sam, 8h30 - 19h00</p>
+          <a class="dwc-link-arrow dwc-mt-1" style="display:inline-flex;" href="#devis">Devis immédiat <i data-lucide="chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="dwc-footer-bottom">
+      <p>© <span id="current-year">2026</span> Digital World Coaching (DWC). Tous droits réservés. Cotonou, Bénin.</p>
+      <div class="dwc-footer-links">
+        <a href="contact.html">Confidentialité</a>
+        <a href="contact.html">Conditions Générales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script>
+  // Formulaire express de devis -> WhatsApp (aucun backend)
+  (function () {
+    var form = document.getElementById('dwc-quote-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = (document.getElementById('q-name').value || '').trim();
+      var phone = (document.getElementById('q-phone').value || '').trim();
+      var level = (document.getElementById('q-level').value || '').trim();
+      var text = [
+        'Bonjour Digital World Coaching,',
+        '',
+        'Je souhaite un devis pour le Coaching Mémoire & Thèse.',
+        '',
+        'Nom : ' + (name || '—'),
+        'WhatsApp : ' + (phone || '—'),
+        'Niveau / étape : ' + level
+      ].join('\n');
+      window.open('https://wa.me/22997000000?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    });
+  })();
+</script>
+</body>
+</html>

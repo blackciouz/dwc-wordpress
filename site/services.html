@@ -1,540 +1,466 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Les 10 services de Digital World Coaching : coaching mémoire, formation IA, réseaux sociaux, chaînes YouTube & TikTok, informatique, graphisme, marketing digital, dev web, maintenance et impression numérique.">
-    <title>Nos Services — Digital World Coaching</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#f59e0b",
-                        secondary: "#a855f7",
-                        accent: "#10b981",
-                        background: "#0a0812",
-                    },
-                    fontFamily: {
-                        "headline": ["Space Grotesk"],
-                        "body": ["Inter"],
-                        "label": ["DM Sans"]
-                    },
-                },
-            },
-        }
-    </script>
-
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/dwc.css">
-    <link rel="stylesheet" href="css/sparkle-btn.css">
-    <link rel="stylesheet" href="css/animated-btn.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Services &amp; Catalogue Officiel | Digital World Coaching (DWC - Cotonou)</title>
+<meta name="description" content="10 services certifiants &amp; experts : coaching mémoire &amp; thèse, IA générative &amp; automatisation, réseaux sociaux, YouTube, bureautique, graphisme, marketing digital, web, maintenance, impression."/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/main.css"/>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .dwc-filter-btn {
+    padding: 0.55rem 1.2rem; border-radius: 9999px; cursor: pointer;
+    font-size: 0.6563rem; letter-spacing: 0.1em; font-weight: 600; text-transform: uppercase;
+    background: var(--surface); border: 1px solid rgba(79, 70, 54, 0.45); color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+  .dwc-filter-btn:hover { color: var(--text-primary); border-color: var(--outline); }
+  .dwc-filter-btn.is-active {
+    background: var(--surface-elevated); border-color: rgba(229, 180, 76, 0.5); color: var(--gold-soft);
+  }
+  .dwc-metrics { padding: 1.5rem 1rem; margin-top: 3rem; }
+  .dwc-metric { text-align: center; padding: 0.5rem 1rem; }
+  .dwc-metric + .dwc-metric { border-left: 1px solid rgba(79, 70, 54, 0.25); }
+  .dwc-metric .dwc-stat-value { font-size: 1.65rem; }
+</style>
 </head>
-<body class="dwc-body font-body">
+<body>
 
-    <!-- Halos de fond -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="dwc-halo-or" style="top:-10%; left:-10%;"></div>
-        <div class="dwc-halo-violet" style="bottom:-10%; right:-10%;"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="dwc-halo-top"></div>
+
+<!-- ===== NAV ===== -->
+<header class="dwc-header">
+  <nav class="dwc-nav" aria-label="Navigation principale">
+    <a class="dwc-brand" href="index.html" aria-label="Digital World Coaching — Accueil">
+      <img class="dwc-brand-logo" src="assets/logo.svg" alt="Logo DWC — monogramme DW doré"/>
+      <span class="dwc-brand-text">
+        <span class="dwc-brand-name">DWC</span>
+        <span class="dwc-brand-sub">Digital World Coaching</span>
+      </span>
+    </a>
+    <div class="dwc-nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="projet.html">Projet</a>
+      <a href="contact.html">Contact</a>
     </div>
-
-    <!-- Navigation -->
-    <nav class="dwc-nav" id="dwc-nav">
-        <a href="index.html" class="dwc-nav-logo">
-            <img src="assets/logo.svg" alt="Logo DWC" class="dwc-logo-img">
-            <span class="dwc-logo-text">Digital World Coaching</span>
-        </a>
-        <div class="dwc-nav-links">
-            <a href="index.html">Accueil</a>
-            <a href="services.html" class="active">Services</a>
-            <a href="projects.html">Projet</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <a href="contact.html" class="dwc-nav-cta nav-only">Demander un devis</a>
-        <button class="dwc-nav-toggle" id="dwc-nav-toggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- Menu mobile -->
+    <div class="dwc-nav-actions">
+      <a class="dwc-nav-call" href="tel:+22997000000" aria-label="Appeler DWC Cotonou">
+        <i data-lucide="phone"></i>
+      </a>
+      <a class="dwc-btn dwc-btn--gold dwc-nav-cta" href="contact.html">Demander un devis</a>
+      <button class="dwc-burger" id="dwc-nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
     <div class="dwc-mobile-menu" id="dwc-mobile-menu">
-        <a href="index.html">Accueil</a>
-        <a href="services.html" class="active">Services</a>
-        <a href="projects.html">Projet</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="mobile-cta">Demander un devis</a>
+      <a href="index.html">Accueil <i data-lucide="home"></i></a>
+      <a href="services.html">Services <i data-lucide="layers"></i></a>
+      <a href="projet.html">Projet <i data-lucide="building-2"></i></a>
+      <a href="contact.html">Contact <i data-lucide="mail"></i></a>
+      <a class="dwc-btn dwc-btn--gold dwc-btn--block dwc-mobile-cta" href="contact.html">Demander un devis</a>
+    </div>
+  </nav>
+</header>
+
+<main style="position:relative; z-index:1; padding-top:7.5rem;">
+
+  <!-- ===== HERO CATALOGUE ===== -->
+  <section class="dwc-container dwc-center" style="display:flex; flex-direction:column; align-items:center; padding:3rem 1.5rem 3.5rem;">
+    <div class="dwc-badge dwc-mb-4">
+      <span class="dwc-dot"></span>
+      <span class="dwc-micro">Catalogue officiel • 10 services certifiants &amp; experts</span>
+    </div>
+    <h1 class="dwc-h1" style="max-width:56rem; margin-bottom:1.5rem;">
+      Des compétences concrètes pour bâtir votre avenir <span class="dwc-grad-text">académique et numérique</span>
+    </h1>
+    <p class="dwc-lead" style="max-width:48rem; margin-bottom:2.5rem;">
+      À Cotonou en présentiel ou à distance dans toute l'Afrique. Un accompagnement individuel 1-sur-1 sur-mesure et des ateliers intensifs axés sur la pratique directe.
+    </p>
+
+    <!-- Bandeau de rassurance -->
+    <div class="dwc-grid dwc-metrics" style="max-width:60rem; margin:3rem auto 0; background:var(--surface); border:1px solid rgba(79,70,54,0.4); border-radius:1.25rem; padding:1.5rem 1rem; grid-template-columns:repeat(2,1fr);">
+      <div class="dwc-metric">
+        <span class="dwc-stat-value" data-count="10" style="font-size:1.65rem;">10</span>
+        <span class="dwc-sm" style="display:block; margin-top:0.25rem;">Expertises ciblées &amp; reconnues</span>
+      </div>
+      <div class="dwc-metric">
+        <span class="dwc-stat-value" style="font-size:1.65rem;">100%</span>
+        <span class="dwc-sm" style="display:block; margin-top:0.25rem;">Sur-mesure &amp; pratique directe</span>
+      </div>
+      <div class="dwc-metric" style="border-top:1px solid rgba(79,70,54,0.25);">
+        <span class="dwc-stat-value" style="font-size:1.65rem;">Hub Bénin</span>
+        <span class="dwc-sm" style="display:block; margin-top:0.25rem;">Cotonou &amp; Afrique en ligne</span>
+      </div>
+      <div class="dwc-metric" style="border-top:1px solid rgba(79,70,54,0.25);">
+        <span class="dwc-stat-value" style="font-size:1.65rem;">Rigueur</span>
+        <span class="dwc-sm" style="display:block; margin-top:0.25rem;">Certification &amp; validation finale</span>
+      </div>
     </div>
 
-    <!-- Hero -->
-    <section class="relative pt-28 md:pt-40 pb-12 md:pb-16 px-4 md:px-6 overflow-hidden z-10">
-        <div class="absolute inset-0 -z-10 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8 backdrop-blur-md">
-                <i data-lucide="briefcase" class="w-4 h-4 text-primary"></i>
-                <span class="text-xs font-label uppercase tracking-widest text-slate-300">10 services — coaching &amp; formations</span>
-            </div>
+    <!-- Filtres de catégories -->
+    <div class="dwc-flex dwc-flex-wrap dwc-justify-center dwc-gap-2" id="dwc-filters" style="margin-top:3rem;">
+      <button class="dwc-filter-btn is-active" data-filter="all">Tous les services (10)</button>
+      <button class="dwc-filter-btn" data-filter="academic">Académique &amp; Recherche</button>
+      <button class="dwc-filter-btn" data-filter="tech">Intelligence Artificielle &amp; Tech</button>
+      <button class="dwc-filter-btn" data-filter="media">Création &amp; Média</button>
+      <button class="dwc-filter-btn" data-filter="business">Business &amp; Infrastructure</button>
+    </div>
+  </section>
 
-            <h1 class="font-headline text-3xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
-                <span class="dwc-text-gradient">Des compétences digitales</span><br>
-                <span class="text-white">concrètes et monétisables</span>
-            </h1>
+  <!-- ===== GRILLE DES 10 SERVICES ===== -->
+  <section class="dwc-container" id="services" style="padding-bottom:4rem;">
+    <div class="dwc-grid dwc-grid--3" id="dwc-services-grid" style="gap:1.5rem;">
 
-            <p class="font-body text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                Chaque service combine théorie essentielle et pratique guidée sur vos propres projets. Tarifs sur devis : le programme est construit selon votre niveau, votre rythme et vos objectifs.
-            </p>
+      <!-- Service 1 -->
+      <article class="dwc-card dwc-service-card dwc-reveal" data-category="academic">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="graduation-cap"></i></span>
+          <span class="dwc-chip">Recherche &amp; Académique</span>
         </div>
-    </section>
-
-    <!-- Grille des 10 services -->
-    <section class="max-w-7xl mx-auto px-6 py-8 relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <!-- 1. Coaching rédaction de mémoire -->
-            <div class="uv-card" onclick="window.location.href='contact.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #a855f7, #6d28d9);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="graduation-cap" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(168,85,247,0.15); color:#a855f7;"><i data-lucide="graduation-cap" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Coaching rédaction de mémoire</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Coaching</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Accompagnement méthodologique de A à Z : choix du sujet, plan, recherche documentaire, rédaction et dépôt final.</p>
-                    <ul class="uv-benefits">
-                        <li>Méthodologie claire et plan de travail</li>
-                        <li>Suivi étape par étape jusqu'au dépôt</li>
-                        <li>Relecture et corrections guidées</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">Méthodologie</span>
-                        <span class="uv-tech">Recherche</span>
-                        <span class="uv-tech">Word / LaTeX</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">Hybride</span><span class="uv-stat-label">Format</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. Formation IA (Populaire) -->
-            <div class="uv-card" onclick="window.location.href='contact.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #f59e0b, #a855f7);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="brain-circuit" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(245,158,11,0.15); color:#f59e0b;"><i data-lucide="brain-circuit" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Formation à l'intelligence artificielle</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Formation</span>
-                                <span class="uv-pop-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Populaire</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Prendre en main ChatGPT et les outils IA pour rédiger, analyser, créer des visuels et booster votre productivité.</p>
-                    <ul class="uv-benefits">
-                        <li>Comprendre les fondamentaux de l'IA</li>
-                        <li>Écrire des prompts efficaces</li>
-                        <li>Cas pratiques sur votre activité</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">ChatGPT</span>
-                        <span class="uv-tech">Génération d'images</span>
-                        <span class="uv-tech">Automatisation</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">En ligne</span><span class="uv-stat-label">Format</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. Contenus réseaux sociaux -->
-            <div class="uv-card" onclick="window.location.href='contact.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #ec4899, #a855f7);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="share-2" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(236,72,153,0.15); color:#ec4899;"><i data-lucide="share-2" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Contenus pour réseaux sociaux</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Communication</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Créer des posts, stories et vidéos courtes qui engagent : calendrier éditorial, visuels, légendes et hashtags.</p>
-                    <ul class="uv-benefits">
-                        <li>Calendrier de contenu mensuel</li>
-                        <li>Modèles de visuels et de légendes</li>
-                        <li>Bonnes pratiques de publication</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">Canva</span>
-                        <span class="uv-tech">Facebook / Instagram</span>
-                        <span class="uv-tech">TikTok</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">En ligne</span><span class="uv-stat-label">Format</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Création & monétisation de chaînes -->
-            <div class="uv-card" onclick="window.location.href='contact.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #f59e0b, #ef4444);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="video" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(245,158,11,0.15); color:#f59e0b;"><i data-lucide="video" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Création &amp; monétisation de chaînes</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Réseaux sociaux</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">De l'idée à la monétisation : niche, branding de la chaîne, scripts, tournage, montage et stratégie de croissance.</p>
-                    <ul class="uv-benefits">
-                        <li>Choisir une niche rentable</li>
-                        <li>Optimiser titres, miniatures, descriptions</li>
-                        <li>Comprendre la monétisation pas à pas</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">YouTube</span>
-                        <span class="uv-tech">TikTok</span>
-                        <span class="uv-tech">Montage vidéo</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">En ligne</span><span class="uv-stat-label">Format</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. Informatique appliquée -->
-            <div class="uv-card" onclick="window.location.href='contact.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #10b981, #0d9488);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="monitor" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(16,185,129,0.15); color:#10b981;"><i data-lucide="monitor" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Informatique appliquée</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Formation</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Maîtriser l'ordinateur au quotidien : bureautique, organisation de fichiers, internet, email et outils collaboratifs.</p>
-                    <ul class="uv-benefits">
-                        <li>Word, Excel et PowerPoint appliqués</li>
-                        <li>Gestion efficace de vos documents</li>
-                        <li>Navigation et sécurité en ligne</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">Word / Excel</span>
-                        <span class="uv-tech">Google Drive</span>
-                        <span class="uv-tech">Email</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">Présentiel</span><span class="uv-stat-label">Format</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Graphisme -->
-            <div class="uv-card" onclick="window.location.href='contact.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #a855f7, #ec4899);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="palette" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(168,85,247,0.15); color:#a855f7;"><i data-lucide="palette" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Graphisme &amp; design</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Création</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Créer des affiches, logos, flyers et visuels professionnels : principes du design, couleur, typographie et mise en page.</p>
-                    <ul class="uv-benefits">
-                        <li>Fondamentaux du design visuel</li>
-                        <li>Créer votre logo et votre charte</li>
-                        <li>Supports print et digitaux prêts à l'emploi</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">Canva</span>
-                        <span class="uv-tech">Photoshop</span>
-                        <span class="uv-tech">Illustrator</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">Hybride</span><span class="uv-stat-label">Format</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 7. Marketing digital -->
-            <div class="uv-card" onclick="window.location.href='contact.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #f59e0b, #84cc16);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="trending-up" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(245,158,11,0.15); color:#f59e0b;"><i data-lucide="trending-up" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Marketing digital</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Formation</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Attirer et convertir des clients en ligne : offres, tunnel de vente, publicité sur les réseaux et suivi des résultats.</p>
-                    <ul class="uv-benefits">
-                        <li>Définir une offre qui se vend</li>
-                        <li>Créer et lancer une campagne publicitaire</li>
-                        <li>Mesurer et améliorer vos résultats</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">Meta Ads</span>
-                        <span class="uv-tech">WhatsApp Business</span>
-                        <span class="uv-tech">Analytics</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">En ligne</span><span class="uv-stat-label">Format</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 8. Développement web -->
-            <div class="uv-card" onclick="window.location.href='contact.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #a855f7, #3b82f6);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="code-2" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(168,85,247,0.15); color:#a855f7;"><i data-lucide="code-2" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Développement web</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Formation / Service</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Apprendre à créer un site vitrine ou une boutique, ou nous confier la réalisation de votre présence en ligne.</p>
-                    <ul class="uv-benefits">
-                        <li>HTML, CSS et bases du JavaScript</li>
-                        <li>Sites responsives adaptés mobile</li>
-                        <li>Mise en ligne et bonnes pratiques</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">HTML / CSS</span>
-                        <span class="uv-tech">JavaScript</span>
-                        <span class="uv-tech">Responsive</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">Hybride</span><span class="uv-stat-label">Format</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 9. Maintenance informatique -->
-            <div class="uv-card" onclick="window.location.href='contact.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #0ea5e9, #6366f1);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="wrench" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(14,165,233,0.15); color:#0ea5e9;"><i data-lucide="wrench" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Maintenance informatique</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Service</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Diagnostic, entretien et réparation de vos ordinateurs : nettoyage système, installations, mises à jour et sauvegardes.</p>
-                    <ul class="uv-benefits">
-                        <li>Diagnostic complet de vos machines</li>
-                        <li>Installation et configuration logicielle</li>
-                        <li>Stratégie de sauvegarde fiable</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">Windows</span>
-                        <span class="uv-tech">Diagnostic matériel</span>
-                        <span class="uv-tech">Sauvegarde</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">Présentiel</span><span class="uv-stat-label">Format</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 10. Impression numérique -->
-            <div class="uv-card" onclick="window.location.href='contact.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #84cc16, #f59e0b);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="printer" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(132,204,22,0.15); color:#84cc16;"><i data-lucide="printer" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Impression numérique</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Service</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Impression de vos supports : mémoires, affiches, flyers, cartes de visite et bâches, avec conseils de mise en page.</p>
-                    <ul class="uv-benefits">
-                        <li>Fichiers préparés pour l'impression</li>
-                        <li>Qualité d'impression soignée</li>
-                        <li>Conseil format et papier</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">Impression grand format</span>
-                        <span class="uv-tech">Finition</span>
-                        <span class="uv-tech">PDF print</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">Sur place</span><span class="uv-stat-label">Format</span></div>
-                    </div>
-                </div>
-            </div>
-
+        <h3 class="dwc-card-title" style="font-size:1.2rem;">Coaching rédaction de mémoire &amp; thèse</h3>
+        <p class="dwc-sm dwc-card-desc">Cadrage méthodologique rigoureux, structuration analytique et préparation intensive pour franchir votre soutenance avec mention.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Cadrage théorique &amp; problématique validée</span></li>
+          <li><i data-lucide="check"></i><span>Nettoyage méthodologique &amp; relecture critique</span></li>
+          <li><i data-lucide="check"></i><span>Simulations orales avec jury blanc exigeant</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">Word</span><span class="dwc-tag">Zotero</span><span class="dwc-tag">LaTeX</span><span class="dwc-tag">Soutenance</span>
         </div>
-
-        <!-- Note tarification -->
-        <div class="glass rounded-2xl p-6 md:p-8 mt-12 text-center reveal">
-            <p class="text-slate-300 text-sm md:text-base m-0">
-                <span class="text-primary font-bold">Tarifs sur devis.</span>
-                Le coût dépend du format choisi (présentiel ou à distance), de la durée et du niveau d'accompagnement. Contactez-nous pour une proposition adaptée — sans engagement.
-            </p>
+        <div class="dwc-card-footer">
+          <span class="dwc-foot-label">1-sur-1 • Suivi continu</span>
+          <a class="dwc-link-arrow" href="detail-coaching.html">Sur devis <i data-lucide="arrow-right"></i></a>
         </div>
-    </section>
+      </article>
 
-    <!-- CTA -->
-    <section class="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20 relative z-10">
-        <div class="relative rounded-3xl p-[1px] bg-gradient-to-r from-primary/30 via-secondary/30 to-accent/30 overflow-hidden">
-            <div class="relative bg-background rounded-3xl px-4 md:px-8 py-10 md:py-16 flex flex-col items-center text-center overflow-hidden" style="background:#0a0812;">
-                <div class="absolute inset-0 bg-primary/5 -z-10 blur-3xl"></div>
-                <h2 class="font-headline text-3xl md:text-5xl font-bold mb-6 text-white">Besoin d'un programme sur mesure ?</h2>
-                <p class="font-body text-slate-400 max-w-xl mb-10 leading-relaxed">
-                    Chaque parcours est unique. Décrivez-nous votre objectif : nous construisons ensemble le programme et le devis qui correspondent à votre situation.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
-                    <a href="contact.html" class="sparkle-btn">
-                        <div class="dots_border"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="sparkle-icon">
-                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z"></path>
-                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z"></path>
-                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z"></path>
-                        </svg>
-                        <span class="sparkle-text">Demander un devis</span>
-                    </a>
-                    <a class="animated-btn" href="projects.html">
-                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
-                        <span class="anim-text">Voir le projet</span>
-                        <span class="circle"></span>
-                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
-                    </a>
-                </div>
-            </div>
+      <!-- Service 2 -->
+      <article class="dwc-card dwc-service-card dwc-reveal" data-category="tech">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="cpu"></i></span>
+          <span class="dwc-chip">Innovation &amp; Productivité</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="w-full border-t border-white/10 relative z-10" style="background: rgba(6, 4, 12, 0.9);">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
-                <div class="col-span-1 md:col-span-1">
-                    <a href="index.html" class="dwc-nav-logo inline-flex mb-6 no-underline">
-                        <img src="assets/logo.svg" alt="Logo DWC" class="dwc-logo-img dwc-logo-img-sm">
-                        <span class="dwc-logo-text">DWC</span>
-                    </a>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Digital World Coaching — Coaching &amp; formations digitales. Apprenez, créez et monétisez vos compétences, en présentiel ou à distance.
-                    </p>
-                </div>
-                <div>
-                    <h5 class="text-white font-headline font-bold mb-6">Navigation</h5>
-                    <ul class="space-y-4 list-none p-0 m-0">
-                        <li><a href="index.html" class="text-slate-500 hover:text-primary transition-colors text-sm no-underline">Accueil</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Services</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="projects.html">L'entreprise</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-white font-headline font-bold mb-6">Services phares</h5>
-                    <ul class="space-y-4 list-none p-0 m-0">
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Formation à l'IA</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Coaching mémoire</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Chaînes YouTube &amp; TikTok</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Marketing digital</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-white font-headline font-bold mb-6">Contact</h5>
-                    <p class="text-slate-500 text-sm mb-2"><a href="tel:+22997000000" class="text-slate-400 hover:text-primary transition-colors no-underline">+229 01 97 00 00 00</a></p>
-                    <p class="text-slate-500 text-sm mb-4"><a href="mailto:contact@digitalworldcoaching.com" class="text-slate-400 hover:text-primary transition-colors no-underline">contact@digitalworldcoaching.com</a></p>
-                    <p class="text-slate-500 text-sm mb-4 flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> Cotonou, Bénin — sur RDV</p>
-                    <a class="text-primary font-bold hover:underline no-underline" href="contact.html">Me contacter</a>
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5">
-                <p class="text-slate-600 text-xs mb-4 md:mb-0">
-                    © <span id="current-year">2026</span> Digital World Coaching. Tous droits réservés.
-                </p>
-                <div class="flex gap-8">
-                    <a class="text-slate-600 text-xs hover:text-primary transition-colors no-underline" href="contact.html">Contact</a>
-                    <a class="text-slate-600 text-xs hover:text-primary transition-colors no-underline" href="projects.html">Projet</a>
-                </div>
-            </div>
+        <h3 class="dwc-card-title" style="font-size:1.2rem;">IA générative &amp; Automatisation no-code</h3>
+        <p class="dwc-sm dwc-card-desc">Déployez la puissance de l'IA pour automatiser vos tâches récurrentes, multiplier par dix votre productivité et générer du contenu percutant.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Ingénierie de prompt avancée &amp; contextes IA</span></li>
+          <li><i data-lucide="check"></i><span>Scénarios d'automatisation Make &amp; Zapier</span></li>
+          <li><i data-lucide="check"></i><span>Création visuelle &amp; synthèse documentaire</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">ChatGPT</span><span class="dwc-tag">Claude</span><span class="dwc-tag">Midjourney</span><span class="dwc-tag">Make</span><span class="dwc-tag">Perplexity</span>
         </div>
-    </footer>
+        <div class="dwc-card-footer">
+          <span class="dwc-foot-label">Atelier pratique • Immersion</span>
+          <a class="dwc-link-arrow" href="detail.html">Sur devis <i data-lucide="arrow-right"></i></a>
+        </div>
+      </article>
 
-    <!-- Scripts -->
-    <script src="js/nav.js"></script>
+      <!-- Service 3 -->
+      <article class="dwc-card dwc-service-card dwc-reveal" data-category="media">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="share-2"></i></span>
+          <span class="dwc-chip">Stratégie de Marque</span>
+        </div>
+        <h3 class="dwc-card-title" style="font-size:1.2rem;">Réseaux Sociaux &amp; Community Management</h3>
+        <p class="dwc-sm dwc-card-desc">Construisez une autorité indiscutable sur votre secteur grâce à une ligne éditoriale captivante et une gestion de communauté active.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Calendrier éditorial stratégique &amp; plan mensuel</span></li>
+          <li><i data-lucide="check"></i><span>Copywriting persuasif axé conversion d'audience</span></li>
+          <li><i data-lucide="check"></i><span>Modération professionnelle &amp; fidélisation</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">LinkedIn</span><span class="dwc-tag">Meta</span><span class="dwc-tag">Notion</span><span class="dwc-tag">Metricool</span><span class="dwc-tag">Canva Pro</span>
+        </div>
+        <div class="dwc-card-footer">
+          <span class="dwc-foot-label">Accompagnement régulier</span>
+          <a class="dwc-link-arrow" href="contact.html">Sur devis <i data-lucide="arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Service 4 -->
+      <article class="dwc-card dwc-service-card dwc-reveal" data-category="media">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="video"></i></span>
+          <span class="dwc-chip">Création Contenu &amp; Média</span>
+        </div>
+        <h3 class="dwc-card-title" style="font-size:1.2rem;">Chaînes YouTube &amp; Vidéos TikTok Pro</h3>
+        <p class="dwc-sm dwc-card-desc">De la scénarisation au montage dynamique : montez une chaîne influente et activez les leviers de monétisation locale et internationale.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Positionnement de niche &amp; script d'accroche</span></li>
+          <li><i data-lucide="check"></i><span>Tournage, cadrage &amp; montage rythmé studio</span></li>
+          <li><i data-lucide="check"></i><span>Tunnel de monétisation, sponsors &amp; AdSense</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">YouTube Studio</span><span class="dwc-tag">CapCut</span><span class="dwc-tag">Premiere Pro</span><span class="dwc-tag">SEO Vidéo</span>
+        </div>
+        <div class="dwc-card-footer">
+          <span class="dwc-foot-label">Immersion Studio Cotonou</span>
+          <a class="dwc-link-arrow" href="contact.html">Sur devis <i data-lucide="arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Service 5 -->
+      <article class="dwc-card dwc-service-card dwc-reveal" data-category="business">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="monitor"></i></span>
+          <span class="dwc-chip">Compétences Essentielles</span>
+        </div>
+        <h3 class="dwc-card-title" style="font-size:1.2rem;">Informatique &amp; Bureautique avancée</h3>
+        <p class="dwc-sm dwc-card-desc">Maîtrisez les tableurs et suites logicielles pour automatiser le reporting financier, structurer les données et professionnaliser vos présentations.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Modélisation Excel avancée, TCD &amp; formules complexes</span></li>
+          <li><i data-lucide="check"></i><span>Automatisation des modèles administratifs</span></li>
+          <li><i data-lucide="check"></i><span>Maîtrise complète de la suite collaborative Cloud</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">Excel Avancé</span><span class="dwc-tag">Google Sheets</span><span class="dwc-tag">Microsoft 365</span><span class="dwc-tag">PowerPoint</span>
+        </div>
+        <div class="dwc-card-footer">
+          <span class="dwc-foot-label">1-sur-1 / en entreprise</span>
+          <a class="dwc-link-arrow" href="contact.html">Sur devis <i data-lucide="arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Service 6 -->
+      <article class="dwc-card dwc-service-card dwc-reveal" data-category="media">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="palette"></i></span>
+          <span class="dwc-chip">Design &amp; Image de Marque</span>
+        </div>
+        <h3 class="dwc-card-title" style="font-size:1.2rem;">Graphisme &amp; Identité visuelle de marque</h3>
+        <p class="dwc-sm dwc-card-desc">Donnez vie à une identité visuelle singulière qui inspire instantanément le respect et positionne votre marque sur le haut de gamme.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Logos vectoriels singuliers &amp; charte graphique complète</span></li>
+          <li><i data-lucide="check"></i><span>Supports marketing d'impact (plaquettes, carrousels)</span></li>
+          <li><i data-lucide="check"></i><span>Direction artistique &amp; cohérence typographique</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">Photoshop</span><span class="dwc-tag">Illustrator</span><span class="dwc-tag">Figma</span><span class="dwc-tag">Branding</span>
+        </div>
+        <div class="dwc-card-footer">
+          <span class="dwc-foot-label">Création sur-mesure</span>
+          <a class="dwc-link-arrow" href="contact.html">Sur devis <i data-lucide="arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Service 7 -->
+      <article class="dwc-card dwc-service-card dwc-reveal" data-category="business">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="trending-up"></i></span>
+          <span class="dwc-chip">Croissance &amp; Ventes</span>
+        </div>
+        <h3 class="dwc-card-title" style="font-size:1.2rem;">Marketing digital &amp; Acquisition clients</h3>
+        <p class="dwc-sm dwc-card-desc">Mettez en place une machine d'acquisition prévisible pour générer des prospects qualifiés et maximiser votre chiffre d'affaires.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Tunnels de conversion directs &amp; lead magnets</span></li>
+          <li><i data-lucide="check"></i><span>Campagnes publicitaires ciblées Meta &amp; Google Ads</span></li>
+          <li><i data-lucide="check"></i><span>Analytics, suivi ROI &amp; optimisation du coût client</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">Meta Ads</span><span class="dwc-tag">Google Ads</span><span class="dwc-tag">Tunnels</span><span class="dwc-tag">CRM</span>
+        </div>
+        <div class="dwc-card-footer">
+          <span class="dwc-foot-label">Stratégie &amp; exécution</span>
+          <a class="dwc-link-arrow" href="contact.html">Sur devis <i data-lucide="arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Service 8 -->
+      <article class="dwc-card dwc-service-card dwc-reveal" data-category="tech">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="code-2"></i></span>
+          <span class="dwc-chip">Tech &amp; Digital</span>
+        </div>
+        <h3 class="dwc-card-title" style="font-size:1.2rem;">Développement web &amp; Vitrines haute conversion</h3>
+        <p class="dwc-sm dwc-card-desc">Déployez une présence en ligne ultra-rapide, élégante et parfaitement optimisée pour transformer chaque visiteur en client engagé.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Sites vitrines ultra-rapides et 100% responsives</span></li>
+          <li><i data-lucide="check"></i><span>Référencement naturel SEO local &amp; international</span></li>
+          <li><i data-lucide="check"></i><span>Intégration formulaires sécurisés, WhatsApp &amp; CRM</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">HTML5 / Tailwind</span><span class="dwc-tag">WordPress</span><span class="dwc-tag">Webflow</span><span class="dwc-tag">SEO</span>
+        </div>
+        <div class="dwc-card-footer">
+          <span class="dwc-foot-label">Projet clé en main</span>
+          <a class="dwc-link-arrow" href="contact.html">Sur devis <i data-lucide="arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Service 9 -->
+      <article class="dwc-card dwc-service-card dwc-reveal" data-category="business">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="wrench"></i></span>
+          <span class="dwc-chip">Infrastructure &amp; Support</span>
+        </div>
+        <h3 class="dwc-card-title" style="font-size:1.2rem;">Maintenance &amp; Sécurité des systèmes</h3>
+        <p class="dwc-sm dwc-card-desc">Garantissez la fiabilité absolue de vos postes de travail, sécurisez vos données sensibles et éliminez tout risque de panne bloquante.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Diagnostic approfondi &amp; dépannage matériel/logiciel</span></li>
+          <li><i data-lucide="check"></i><span>Sauvegardes automatisées &amp; protection anti-malware</span></li>
+          <li><i data-lucide="check"></i><span>Audit de parc &amp; optimisation des performances</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">Diagnostic PC/Mac</span><span class="dwc-tag">Optimisation</span><span class="dwc-tag">Sécurité Réseau</span>
+        </div>
+        <div class="dwc-card-footer">
+          <span class="dwc-foot-label">Intervention rapide Cotonou</span>
+          <a class="dwc-link-arrow" href="contact.html">Sur devis <i data-lucide="arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Service 10 : carte pleine largeur -->
+      <article class="dwc-card dwc-service-card dwc-reveal" data-category="academic" style="grid-column:1/-1;">
+        <div style="display:grid; grid-template-columns:1fr; gap:2rem;" class="dwc-svc10">
+          <div>
+            <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+              <span class="dwc-icon-circle"><i data-lucide="printer"></i></span>
+              <span class="dwc-chip">Édition &amp; Fabrication</span>
+            </div>
+            <h3 class="dwc-card-title" style="font-size:1.2rem;">Impression numérique &amp; Édition de prestige</h3>
+            <p class="dwc-sm dwc-card-desc">L'atelier d'impression officiel DWC à Cotonou. Confectionnez des exemplaires de thèses, mémoires, rapports institutionnels et plaquettes de prestige avec des finitions d'exception.</p>
+            <div class="dwc-card-tags">
+              <span class="dwc-tag">Tirage HD</span><span class="dwc-tag">Reliure Prestige</span><span class="dwc-tag">Papiers Nobles</span><span class="dwc-tag">Grand Format</span>
+            </div>
+          </div>
+          <div style="background:rgba(30,25,19,0.6); border:1px solid rgba(79,70,54,0.3); border-radius:1rem; padding:1.5rem;">
+            <span class="dwc-micro dwc-gold" style="display:block; margin-bottom:0.8rem;">Qualité certifiée DWC</span>
+            <ul class="dwc-check-list" style="margin-top:0;">
+              <li><i data-lucide="check"></i><span>Reliures officielles cartonnées dorées ou thermocollées</span></li>
+              <li><i data-lucide="check"></i><span>Tirages laser HD haute résolution &amp; fidélité colorimétrique</span></li>
+              <li><i data-lucide="check"></i><span>Contrôle qualité feuille à feuille avant livraison finale</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="dwc-card-footer">
+          <span class="dwc-foot-label">Atelier physique Cotonou &amp; livraison expédition</span>
+          <a class="dwc-link-arrow" href="contact.html">Sur devis <i data-lucide="arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== POURQUOI SUR DEVIS ===== -->
+  <section class="dwc-container dwc-section">
+    <div class="dwc-card dwc-reveal" style="border-radius:1.5rem; position:relative; overflow:hidden; padding:2.5rem;">
+      <div class="dwc-glow-blur" style="width:20rem;height:20rem;right:-6rem;bottom:-8rem;opacity:0.5;"></div>
+      <div style="max-width:40rem; position:relative; z-index:1;">
+        <span class="dwc-micro dwc-gold">Transparence &amp; engagement</span>
+        <h2 class="dwc-h2 dwc-mt-1">Pourquoi une tarification sur devis personnalisé&nbsp;?</h2>
+        <p class="dwc-body dwc-mt-2">Parce que chaque projet de recherche, chaque besoin d'automatisation et chaque profil professionnel est unique. Nous ne vendons pas de modules préfabriqués génériques, mais une solution calibrée exactement sur vos objectifs et contraintes de calendrier.</p>
+      </div>
+      <div class="dwc-grid dwc-grid--3 dwc-mt-6">
+        <div class="dwc-card dwc-card--hover" style="padding:1.5rem; background:var(--surface-elevated); border-color:rgba(79,70,54,0.35);">
+          <span class="dwc-icon-circle" style="margin-bottom:1rem;"><i data-lucide="clock"></i></span>
+          <h4 class="dwc-h4">Devis clair sous 24h ouvrées</h4>
+          <p class="dwc-sm dwc-mt-1">Une estimation transparente et détaillée, sans frais cachés, transmise rapidement après notre premier cadrage.</p>
+        </div>
+        <div class="dwc-card dwc-card--hover" style="padding:1.5rem; background:var(--surface-elevated); border-color:rgba(79,70,54,0.35);">
+          <span class="dwc-icon-circle" style="margin-bottom:1rem;"><i data-lucide="shield-check"></i></span>
+          <h4 class="dwc-h4">Garantie jusqu'à satisfaction</h4>
+          <p class="dwc-sm dwc-mt-1">Tous nos accompagnements incluent des phases de révision et d'ajustement jusqu'à validation académique ou technique.</p>
+        </div>
+        <div class="dwc-card dwc-card--hover" style="padding:1.5rem; background:var(--surface-elevated); border-color:rgba(79,70,54,0.35);">
+          <span class="dwc-icon-circle" style="margin-bottom:1rem;"><i data-lucide="credit-card"></i></span>
+          <h4 class="dwc-h4">Paiement échelonné sans frais</h4>
+          <p class="dwc-sm dwc-mt-1">Des facilités de règlement adaptées au rythme d'avancement de votre mémoire ou de votre formation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="dwc-container" id="contact" style="padding-bottom:4rem;">
+    <div class="dwc-cta-band dwc-reveal">
+      <div class="dwc-glow-blur"></div>
+      <div style="position:relative; z-index:1; max-width:48rem; margin:0 auto;">
+        <span class="dwc-micro dwc-gold">Passez à l'action dès aujourd'hui</span>
+        <h2 class="dwc-h2" style="margin:1rem 0 0.8rem;">Trouvez le service adapté à vos <span class="dwc-grad-text">ambitions professionnelles</span></h2>
+        <p class="dwc-lead" style="margin-bottom:2.2rem;">Rencontrez nos mentors au hub de Cotonou ou démarrez votre session en direct où que vous soyez.</p>
+        <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-justify-center">
+          <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="contact.html">
+            Demander mon devis personnalisé <i data-lucide="arrow-right"></i>
+          </a>
+          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle" class="dwc-gold"></i> Échanger sur WhatsApp (+229 01 97 00 00 00)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="dwc-footer">
+  <div class="dwc-container">
+    <div class="dwc-footer-grid">
+      <div>
+        <div class="dwc-flex dwc-items-center dwc-gap-2" style="margin-bottom:1rem;">
+          <img src="assets/logo.svg" alt="Logo DWC" style="width:2.25rem;height:2.25rem;"/>
+          <span class="dwc-brand-name" style="font-size:1.2rem;">DWC</span>
+        </div>
+        <p class="dwc-sm">Digital World Coaching.<br/>Excellence méthodologique, accélération par l'intelligence artificielle et valorisation des talents en Afrique.</p>
+        <div class="dwc-flex dwc-items-center dwc-gap-2 dwc-mt-2">
+          <i data-lucide="map-pin" class="dwc-gold" style="width:1.05rem;height:1.05rem;"></i>
+          <span class="dwc-sm">Haie Vive, Cotonou, Bénin</span>
+        </div>
+      </div>
+      <div>
+        <h4>Programmes &amp; Services</h4>
+        <ul>
+          <li><a href="services.html">Formations Certifiantes</a></li>
+          <li><a href="services.html">Mentorat Exécutif</a></li>
+          <li><a href="services.html">Transformation Digitale</a></li>
+          <li><a href="detail.html">Formation IA</a></li>
+          <li><a href="detail-coaching.html">Coaching Mémoire &amp; Thèse</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>L'Institution</h4>
+        <ul>
+          <li><a href="projet.html">Le Projet DWC</a></li>
+          <li><a href="contact.html">Contact &amp; Accès</a></li>
+          <li><a href="index.html">Accueil</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accompagnement &amp; Hub</h4>
+        <p class="dwc-sm">Du Lundi au Samedi : 08h30 - 19h00.<br/>Accompagnements en ligne disponibles 7j/7 sur rendez-vous.</p>
+        <a class="dwc-link-arrow dwc-mt-2" style="display:inline-flex;" href="mailto:contact@digitalworldcoaching.com">contact@digitalworldcoaching.com <i data-lucide="arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="dwc-footer-bottom">
+      <span class="dwc-micro" style="letter-spacing:0.1em;">© <span id="current-year">2026</span> Digital World Coaching (DWC). Tous droits réservés. Cotonou, Bénin.</span>
+      <div class="dwc-footer-links dwc-sm">
+        <a href="contact.html">Confidentialité</a>
+        <a href="contact.html">Conditions Générales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script>
+  // Filtre interactif des catégories (design Stitch services.html)
+  (function () {
+    var buttons = document.querySelectorAll('.dwc-filter-btn');
+    var cards = document.querySelectorAll('#dwc-services-grid [data-category]');
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var filter = button.getAttribute('data-filter');
+        buttons.forEach(function (btn) { btn.classList.remove('is-active'); });
+        button.classList.add('is-active');
+        cards.forEach(function (card) {
+          card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter) ? 'flex' : 'none';
+        });
+      });
+    });
+  })();
+</script>
 </body>
 </html>

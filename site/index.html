@@ -1,505 +1,392 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Digital World Coaching — Coaching & formations digitales : rédaction de mémoire, formation IA, réseaux sociaux, chaînes YouTube & TikTok, graphisme, marketing digital, dev web et maintenance informatique.">
-    <meta name="keywords" content="coaching digital, formation IA, mémoire, YouTube, TikTok, marketing digital, graphisme, dev web, Digital World Coaching">
-    <title>Digital World Coaching — Coaching &amp; formations digitales</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#f59e0b",
-                        secondary: "#a855f7",
-                        accent: "#10b981",
-                        background: "#0a0812",
-                    },
-                    fontFamily: {
-                        "headline": ["Space Grotesk"],
-                        "body": ["Inter"],
-                        "label": ["DM Sans"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/dwc.css">
-    <link rel="stylesheet" href="css/sparkle-btn.css">
-    <link rel="stylesheet" href="css/animated-btn.css">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Digital World Coaching (DWC) | Excellence Digitale &amp; Coaching à Cotonou</title>
+<meta name="description" content="Accompagnement humain sur-mesure à Cotonou et en ligne : coaching mémoire &amp; thèse, formation IA, création de contenu. Développez des compétences concrètes et bâtissez des projets numériques rentables."/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/main.css"/>
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="dwc-body font-body">
+<body>
 
-    <!-- Halos de fond -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div class="dwc-halo-or dwc-parallax" style="top:-10%; left:-10%;"></div>
-        <div class="dwc-halo-violet dwc-parallax" style="bottom:-10%; right:-10%;"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
+<!-- Halo chaud ambiant (signature Stitch) -->
+<div class="dwc-halo-top"></div>
+
+<!-- ===== NAV PILULE FLOTTANTE ===== -->
+<header class="dwc-header">
+  <nav class="dwc-nav" aria-label="Navigation principale">
+    <a class="dwc-brand" href="index.html" aria-label="Digital World Coaching — Accueil">
+      <img class="dwc-brand-logo" src="assets/logo.svg" alt="Logo DWC — monogramme DW doré"/>
+      <span class="dwc-brand-text">
+        <span class="dwc-brand-name">DWC</span>
+        <span class="dwc-brand-sub">Digital World Coaching</span>
+      </span>
+    </a>
+    <div class="dwc-nav-links">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="projet.html">Projet</a>
+      <a href="contact.html">Contact</a>
     </div>
-
-    <!-- Navigation (pilule flottante) -->
-    <nav class="dwc-nav" id="dwc-nav">
-        <a href="index.html" class="dwc-nav-logo">
-            <img src="assets/logo.svg" alt="Logo DWC" class="dwc-logo-img">
-            <span class="dwc-logo-text">Digital World Coaching</span>
-        </a>
-        <div class="dwc-nav-links">
-            <a href="index.html" class="active">Accueil</a>
-            <a href="services.html">Services</a>
-            <a href="projects.html">Projet</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <a href="contact.html" class="dwc-nav-cta nav-only">Demander un devis</a>
-        <button class="dwc-nav-toggle" id="dwc-nav-toggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- Menu mobile -->
+    <div class="dwc-nav-actions">
+      <a class="dwc-nav-call" href="tel:+22997000000" aria-label="Appeler DWC Cotonou">
+        <i data-lucide="phone"></i>
+      </a>
+      <a class="dwc-btn dwc-btn--gold dwc-nav-cta" href="contact.html">Demander un devis</a>
+      <button class="dwc-burger" id="dwc-nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
     <div class="dwc-mobile-menu" id="dwc-mobile-menu">
-        <a href="index.html" class="active">Accueil</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projet</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="mobile-cta">Demander un devis</a>
+      <a href="index.html">Accueil <i data-lucide="home"></i></a>
+      <a href="services.html">Services <i data-lucide="layers"></i></a>
+      <a href="projet.html">Projet <i data-lucide="building-2"></i></a>
+      <a href="contact.html">Contact <i data-lucide="mail"></i></a>
+      <a class="dwc-btn dwc-btn--gold dwc-btn--block dwc-mobile-cta" href="contact.html">Demander un devis</a>
     </div>
+  </nav>
+</header>
 
-    <!-- Hero -->
-    <header class="relative pt-32 md:pt-44 pb-16 md:pb-24 px-4 md:px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8 backdrop-blur-md">
-                <span class="flex h-2 w-2 rounded-full bg-accent animate-pulse"></span>
-                <span class="text-xs font-label uppercase tracking-widest text-slate-300">Disponible — inscriptions &amp; accompagnement ouverts</span>
-            </div>
+<main class="dwc-container" style="position:relative; z-index:1; padding-top:7.5rem;">
 
-            <h1 class="text-4xl md:text-7xl font-black font-headline tracking-tighter mb-8 leading-[1.1]">
-                <span class="dwc-text-gradient text-glow">Maîtrisez le digital</span><br>
-                à votre rythme, pas à pas
-            </h1>
+  <!-- ===== HERO ===== -->
+  <section style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:3rem 0 3.5rem;">
+    <div class="dwc-badge dwc-mb-4">
+      <span class="dwc-dot"></span>
+      <span class="dwc-micro">Nouvelle cohorte — inscriptions ouvertes</span>
+    </div>
+    <h1 class="dwc-h1" style="max-width:56rem; margin-bottom:1.5rem;">
+      Maîtrisez le <span class="dwc-grad-text">digital</span>, à votre rythme
+    </h1>
+    <p class="dwc-lead" style="max-width:42rem; margin-bottom:2.5rem;">
+      Un accompagnement humain sur-mesure à Cotonou et en ligne. Développez des compétences concrètes, valorisez vos travaux académiques et bâtissez des projets numériques rentables.
+    </p>
+    <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-justify-center dwc-mb-4">
+      <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="contact.html">
+        Demander un devis <i data-lucide="arrow-right"></i>
+      </a>
+      <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="services.html">
+        Découvrir nos services <i data-lucide="chevron-down"></i>
+      </a>
+    </div>
+    <div class="dwc-flex dwc-flex-wrap dwc-items-center dwc-justify-center dwc-sm" style="column-gap:2rem; row-gap:0.8rem;">
+      <span class="dwc-flex dwc-items-center dwc-gap-2"><i data-lucide="map-pin" class="dwc-gold" style="width:1.1rem;height:1.1rem;"></i> Basé à Cotonou, Bénin</span>
+      <span style="width:0.35rem;height:0.35rem;border-radius:9999px;background:var(--outline-variant);" aria-hidden="true"></span>
+      <span class="dwc-flex dwc-items-center dwc-gap-2"><i data-lucide="user-check" class="dwc-gold" style="width:1.1rem;height:1.1rem;"></i> Coaching 1-sur-1 &amp; mentorat expert</span>
+      <span style="width:0.35rem;height:0.35rem;border-radius:9999px;background:var(--outline-variant);" aria-hidden="true"></span>
+      <span class="dwc-flex dwc-items-center dwc-gap-2"><i data-lucide="award" class="dwc-gold" style="width:1.1rem;height:1.1rem;"></i> 100% axé sur la pratique et les résultats</span>
+    </div>
+  </section>
 
-            <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 font-body mb-12 leading-relaxed">
-                Digital World Coaching vous accompagne : rédaction de mémoire, formation à l'IA, contenus et monétisation de chaînes YouTube &amp; TikTok, graphisme, marketing digital, développement web et maintenance informatique.
-            </p>
+  <!-- ===== 3 CARTES STATS GLASS ===== -->
+  <section class="dwc-grid dwc-grid--3" style="padding-bottom:1rem;">
+    <div class="dwc-card dwc-card--hover dwc-reveal" style="flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+      <span class="dwc-icon-circle dwc-icon-circle--lg"><i data-lucide="heart-handshake"></i></span>
+      <div>
+        <div class="dwc-stat-value">100%</div>
+        <h2 class="dwc-stat-title">Accompagnement personnalisé</h2>
+        <p class="dwc-sm dwc-mt-1">Des parcours sur-mesure adaptés à vos objectifs réels et à votre niveau technique initial.</p>
+      </div>
+    </div>
+    <div class="dwc-card dwc-card--hover dwc-reveal" style="flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+      <span class="dwc-icon-circle dwc-icon-circle--lg"><i data-lucide="graduation-cap"></i></span>
+      <div>
+        <div class="dwc-stat-value" data-count="10" data-suffix="+">10+</div>
+        <h2 class="dwc-stat-title">Formations &amp; services</h2>
+        <p class="dwc-sm dwc-mt-1">De la rédaction académique rigoureuse à l'intelligence artificielle générative appliquée.</p>
+      </div>
+    </div>
+    <div class="dwc-card dwc-card--hover dwc-reveal" style="flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+      <span class="dwc-icon-circle dwc-icon-circle--lg"><i data-lucide="globe"></i></span>
+      <div>
+        <div class="dwc-stat-value">Hybride</div>
+        <h2 class="dwc-stat-title">Présentiel &amp; à distance</h2>
+        <p class="dwc-sm dwc-mt-1">Dans nos locaux feutrés à Cotonou ou en visioconférence interactive avec support continu.</p>
+      </div>
+    </div>
+  </section>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
-                <a href="contact.html" class="sparkle-btn">
-                    <div class="dots_border"></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="sparkle-icon">
-                        <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z"></path>
-                        <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z"></path>
-                        <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z"></path>
-                    </svg>
-                    <span class="sparkle-text">Demander un devis</span>
-                </a>
-                <a class="animated-btn" href="services.html">
-                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
-                    <span class="anim-text">Découvrir nos services</span>
-                    <span class="circle"></span>
-                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
-                </a>
-            </div>
+  <!-- ===== SERVICES PHARES ===== -->
+  <section class="dwc-section" id="services">
+    <div class="dwc-section-head dwc-reveal">
+      <span class="dwc-badge" style="margin-bottom:0.8rem;"><span class="dwc-micro">Catalogue d'excellence</span></span>
+      <h2 class="dwc-h2">Nos services phares</h2>
+      <p class="dwc-body">Une offre d'élite conçue pour les étudiants, chercheurs, cadres et entrepreneurs ambitieux du Bénin et d'ailleurs.</p>
+    </div>
+    <div class="dwc-grid dwc-grid--3">
+
+      <!-- Service 1 : Coaching Mémoire & Thèse -->
+      <div class="dwc-card dwc-card--hover dwc-service-card dwc-reveal">
+        <span class="dwc-flag">Populaire</span>
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="book-open"></i></span>
+          <span class="dwc-chip">Recherche &amp; Académique</span>
         </div>
-    </header>
-
-    <!-- Bandeau 3 stats (qualitatives, aucune stat inventée) -->
-    <section class="max-w-7xl mx-auto px-6 mb-24 md:mb-32 relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="glass glass-hover p-8 rounded-2xl flex items-center gap-6 transition-all duration-500 group reveal">
-                <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                    <i data-lucide="users" class="w-7 h-7"></i>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-headline font-bold text-white dwc-stat-value" data-count="100" data-suffix="%">100%</h3>
-                    <p class="text-slate-400 font-label uppercase text-xs tracking-wider">Accompagnement personnalisé</p>
-                </div>
-            </div>
-            <div class="glass glass-hover p-8 rounded-2xl flex items-center gap-6 transition-all duration-500 group reveal">
-                <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary border border-secondary/20 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                    <i data-lucide="layers" class="w-7 h-7"></i>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-headline font-bold text-white">5 – 15</h3>
-                    <p class="text-slate-400 font-label uppercase text-xs tracking-wider">Formations &amp; services</p>
-                </div>
-            </div>
-            <div class="glass glass-hover p-8 rounded-2xl flex items-center gap-6 transition-all duration-500 group reveal">
-                <div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20 group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                    <i data-lucide="globe" class="w-7 h-7"></i>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-headline font-bold text-white">Afrique &amp; à distance</h3>
-                    <p class="text-slate-400 font-label uppercase text-xs tracking-wider">Présentiel ou en ligne</p>
-                </div>
-            </div>
+        <h3 class="dwc-card-title">Coaching Mémoire &amp; Thèse</h3>
+        <p class="dwc-sm dwc-card-desc">Un encadrement méthodologique d'exception pour structurer, rédiger et soutenir avec brio vos travaux universitaires.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Méthodologie rigoureuse et structuration du plan</span></li>
+          <li><i data-lucide="check"></i><span>Relecture critique approfondie et correction de style</span></li>
+          <li><i data-lucide="check"></i><span>Préparation intensive et simulation de soutenance</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">Word</span><span class="dwc-tag">Zotero</span><span class="dwc-tag">LaTeX</span><span class="dwc-tag">Soutenance</span>
         </div>
-    </section>
-
-    <!-- Services en vedette (3 cartes) -->
-    <section class="max-w-7xl mx-auto px-6 mb-24 md:mb-32 relative z-10" id="services">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 dwc-section-head">
-            <div class="reveal">
-                <h2 class="font-headline font-bold text-white mb-4">Nos Services</h2>
-                <div class="dwc-underline"></div>
-            </div>
-            <p class="max-w-md text-slate-400 reveal">
-                Des formations et un coaching pratique pour apprendre, créer et monétiser vos compétences digitales. <a href="services.html" class="text-primary font-semibold hover:underline">Voir les 10 services →</a>
-            </p>
+        <div class="dwc-card-footer">
+          <div>
+            <span class="dwc-foot-label">Format : Individuel</span>
+            <span class="dwc-foot-price">Sur devis</span>
+          </div>
+          <a class="dwc-link-arrow" href="detail-coaching.html" aria-label="Découvrir le coaching Mémoire &amp; Thèse">
+            Détails <i data-lucide="arrow-right"></i>
+          </a>
         </div>
+      </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Carte 1 : Formation IA (Populaire) -->
-            <div class="uv-card reveal" onclick="window.location.href='services.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #f59e0b, #a855f7);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="brain-circuit" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(245,158,11,0.15); color:#f59e0b;"><i data-lucide="brain-circuit" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Formation à l'IA</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Formation</span>
-                                <span class="uv-pop-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fbbf24" stroke="#fbbf24" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Populaire</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Utiliser ChatGPT et les outils IA au quotidien pour gagner en productivité, créer des contenus et automatiser vos tâches.</p>
-                    <ul class="uv-benefits">
-                        <li>Maîtrise des outils IA essentiels</li>
-                        <li>Prompts efficaces pour votre activité</li>
-                        <li>Exercices pratiques sur vos cas réels</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">ChatGPT</span>
-                        <span class="uv-tech">Outils IA</span>
-                        <span class="uv-tech">Productivité</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">3</span><span class="uv-stat-label">Atouts clés</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">En ligne</span><span class="uv-stat-label">Format</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carte 2 : Coaching mémoire -->
-            <div class="uv-card reveal" onclick="window.location.href='services.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #a855f7, #6d28d9);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="graduation-cap" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(168,85,247,0.15); color:#a855f7;"><i data-lucide="graduation-cap" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Coaching rédaction de mémoire</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Coaching</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Un accompagnement méthodologique complet, du choix du sujet jusqu'au dépôt final de votre mémoire ou thèse.</p>
-                    <ul class="uv-benefits">
-                        <li>Méthodologie &amp; plan de rédaction clairs</li>
-                        <li>Recherche documentaire structurée</li>
-                        <li>Relecture et corrections guidées</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">Méthodologie</span>
-                        <span class="uv-tech">Recherche</span>
-                        <span class="uv-tech">Mise en page</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">3</span><span class="uv-stat-label">Atouts clés</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">Hybride</span><span class="uv-stat-label">Format</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Carte 3 : Chaînes YouTube & TikTok -->
-            <div class="uv-card reveal" onclick="window.location.href='services.html'">
-                <div class="uv-top" style="background:linear-gradient(135deg, #f59e0b, #ef4444);">
-                    <div class="uv-border"></div>
-                    <span class="uv-top-emoji"><i data-lucide="video" class="uv-top-ic"></i></span>
-                </div>
-                <div class="uv-bottom">
-                    <div class="uv-header">
-                        <div class="uv-header-icon" style="background:rgba(245,158,11,0.15); color:#f59e0b;"><i data-lucide="video" class="uv-header-ic"></i></div>
-                        <div class="uv-header-text">
-                            <span class="uv-title">Création &amp; monétisation de chaînes</span>
-                            <div class="uv-badges">
-                                <span class="uv-cat-badge">Réseaux sociaux</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="uv-desc">Lancez et monétisez votre chaîne YouTube ou TikTok : stratégie de contenu, montage, publications et croissance.</p>
-                    <ul class="uv-benefits">
-                        <li>Stratégie éditoriale &amp; niche rentable</li>
-                        <li>Montage et optimisation des vidéos</li>
-                        <li>Monétisation étape par étape</li>
-                    </ul>
-                    <div class="uv-techs">
-                        <span class="uv-tech">YouTube</span>
-                        <span class="uv-tech">TikTok</span>
-                        <span class="uv-tech">Montage</span>
-                    </div>
-                    <div class="uv-stats">
-                        <div class="uv-stat"><span class="uv-stat-big">3</span><span class="uv-stat-label">Atouts clés</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">En ligne</span><span class="uv-stat-label">Format</span></div>
-                        <div class="uv-stat"><span class="uv-stat-big">Sur devis</span><span class="uv-stat-label">Tarif</span></div>
-                    </div>
-                </div>
-            </div>
+      <!-- Service 2 : Formation Intelligence Artificielle -->
+      <div class="dwc-card dwc-card--hover dwc-service-card dwc-reveal">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="brain-circuit"></i></span>
+          <span class="dwc-chip">Innovation &amp; Productivité</span>
         </div>
-    </section>
-
-    <!-- Processus d'accompagnement -->
-    <section class="max-w-7xl mx-auto px-6 mb-24 md:mb-32 relative z-10" id="processus">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 dwc-section-head">
-            <div class="reveal">
-                <h2 class="font-headline font-bold text-white mb-4">Comment ça se passe</h2>
-                <div class="dwc-underline-alt"></div>
-            </div>
-            <p class="max-w-md text-slate-400 reveal">
-                Un parcours simple et transparent, du premier échange jusqu'à votre autonomie complète.
-            </p>
+        <h3 class="dwc-card-title">Formation Intelligence Artificielle</h3>
+        <p class="dwc-sm dwc-card-desc">Domptez la révolution de l'IA générative pour décupler votre cadence de travail et automatiser vos processus clés.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Prompting avancé appliqué aux cas métiers réels</span></li>
+          <li><i data-lucide="check"></i><span>Automatisation des flux de travail récurrents</span></li>
+          <li><i data-lucide="check"></i><span>Création de visuels et contenus éditoriaux percutants</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">ChatGPT</span><span class="dwc-tag">Claude</span><span class="dwc-tag">Midjourney</span><span class="dwc-tag">Make</span>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="dwc-step-card reveal">
-                <div class="dwc-step-num"><i data-lucide="message-circle" class="w-6 h-6" style="color:#f59e0b;"></i></div>
-                <h3 class="text-xl font-headline font-bold text-white mb-2">Premier échange</h3>
-                <p class="text-sm text-slate-400">Nous discutons de votre objectif, de votre niveau et de vos contraintes pour cerner vos besoins réels.</p>
-            </div>
-            <div class="dwc-step-card reveal">
-                <div class="dwc-step-num"><i data-lucide="route" class="w-6 h-6" style="color:#a855f7;"></i></div>
-                <h3 class="text-xl font-headline font-bold text-white mb-2">Plan personnalisé</h3>
-                <p class="text-sm text-slate-400">Nous construisons ensemble un programme adapté : contenu, rythme, format (présentiel ou à distance) et budget.</p>
-            </div>
-            <div class="dwc-step-card reveal">
-                <div class="dwc-step-num"><i data-lucide="pen-tool" class="w-6 h-6" style="color:#f59e0b;"></i></div>
-                <h3 class="text-xl font-headline font-bold text-white mb-2">Coaching &amp; pratique</h3>
-                <p class="text-sm text-slate-400">Sessions guidées avec des exercices concrets sur vos propres projets : on apprend en faisant.</p>
-            </div>
-            <div class="dwc-step-card reveal">
-                <div class="dwc-step-num"><i data-lucide="award" class="w-6 h-6" style="color:#a855f7;"></i></div>
-                <h3 class="text-xl font-headline font-bold text-white mb-2">Suivi &amp; autonomie</h3>
-                <p class="text-sm text-slate-400">Bilan régulier, ajustements et accompagnement après la formation jusqu'à ce que vous soyez autonome.</p>
-            </div>
+        <div class="dwc-card-footer">
+          <div>
+            <span class="dwc-foot-label">Format : Atelier pratique</span>
+            <span class="dwc-foot-price">Sur devis</span>
+          </div>
+          <a class="dwc-link-arrow" href="detail.html" aria-label="Découvrir la formation Intelligence Artificielle">
+            Détails <i data-lucide="arrow-right"></i>
+          </a>
         </div>
-    </section>
+      </div>
 
-    <!-- Projets & réalisations -->
-    <section class="max-w-7xl mx-auto px-6 mb-24 md:mb-32 relative z-10" id="realisations">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 dwc-section-head">
-            <div class="reveal">
-                <h2 class="font-headline font-bold text-white mb-4">Projets &amp; réalisations</h2>
-                <div class="dwc-underline"></div>
-            </div>
-            <p class="max-w-md text-slate-400 reveal">
-                Des missions types menées avec nos clients : étudiants, créateurs, PME et boutiques.
-            </p>
+      <!-- Service 3 : Création & Monétisation YouTube -->
+      <div class="dwc-card dwc-card--hover dwc-service-card dwc-reveal">
+        <div class="dwc-flex dwc-items-center dwc-gap-3" style="justify-content:space-between;">
+          <span class="dwc-icon-circle"><i data-lucide="video"></i></span>
+          <span class="dwc-chip">Création de Contenu</span>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Projet 1 -->
-            <a href="projects.html" class="dwc-proj-card reveal">
-                <span class="dwc-proj-cat"><i data-lucide="graduation-cap" class="w-3 h-3"></i> Académique</span>
-                <h3 class="dwc-proj-title">Refonte de mémoire — étudiant en droit</h3>
-                <p class="dwc-proj-desc">Restructuration du plan, méthode de recherche documentaire et mise en page professionnelle jusqu'au dépôt final.</p>
-                <div class="dwc-proj-tags">
-                    <span class="dwc-proj-tag">Coaching mémoire</span>
-                    <span class="dwc-proj-tag">Mise en page</span>
-                    <span class="dwc-proj-tag">Word</span>
-                </div>
-                <span class="dwc-proj-link">Voir <i data-lucide="arrow-right"></i></span>
-            </a>
-            <!-- Projet 2 -->
-            <a href="projects.html" class="dwc-proj-card reveal">
-                <span class="dwc-proj-cat"><i data-lucide="video" class="w-3 h-3"></i> Réseaux sociaux</span>
-                <h3 class="dwc-proj-title">Chaîne YouTube monétisée — niche tech</h3>
-                <p class="dwc-proj-desc">Accompagnement de la création à la monétisation : niche, branding, scripts, montage et stratégie de publication.</p>
-                <div class="dwc-proj-tags">
-                    <span class="dwc-proj-tag">YouTube</span>
-                    <span class="dwc-proj-tag">Montage</span>
-                    <span class="dwc-proj-tag">Monétisation</span>
-                </div>
-                <span class="dwc-proj-link">Voir <i data-lucide="arrow-right"></i></span>
-            </a>
-            <!-- Projet 3 -->
-            <a href="projects.html" class="dwc-proj-card reveal">
-                <span class="dwc-proj-cat"><i data-lucide="globe" class="w-3 h-3"></i> Web</span>
-                <h3 class="dwc-proj-title">Site vitrine PME</h3>
-                <p class="dwc-proj-desc">Conception et mise en ligne d'un site vitrine responsive, avec pages services, à propos et formulaire de contact.</p>
-                <div class="dwc-proj-tags">
-                    <span class="dwc-proj-tag">Développement web</span>
-                    <span class="dwc-proj-tag">Responsive</span>
-                    <span class="dwc-proj-tag">SEO de base</span>
-                </div>
-                <span class="dwc-proj-link">Voir <i data-lucide="arrow-right"></i></span>
-            </a>
-            <!-- Projet 4 -->
-            <a href="projects.html" class="dwc-proj-card reveal">
-                <span class="dwc-proj-cat"><i data-lucide="palette" class="w-3 h-3"></i> Design</span>
-                <h3 class="dwc-proj-title">Identité visuelle boutique</h3>
-                <p class="dwc-proj-desc">Création du logo, de la charte de couleurs et des modèles d'affiches et de flyers pour une boutique locale.</p>
-                <div class="dwc-proj-tags">
-                    <span class="dwc-proj-tag">Graphisme</span>
-                    <span class="dwc-proj-tag">Logo</span>
-                    <span class="dwc-proj-tag">Affiches</span>
-                </div>
-                <span class="dwc-proj-link">Voir <i data-lucide="arrow-right"></i></span>
-            </a>
-            <!-- Projet 5 -->
-            <a href="projects.html" class="dwc-proj-card reveal">
-                <span class="dwc-proj-cat"><i data-lucide="brain-circuit" class="w-3 h-3"></i> Formation</span>
-                <h3 class="dwc-proj-title">Formation IA d'équipe</h3>
-                <p class="dwc-proj-desc">Prise en main de ChatGPT et des outils IA pour une petite équipe : prompts, productivité et cas pratiques métier.</p>
-                <div class="dwc-proj-tags">
-                    <span class="dwc-proj-tag">ChatGPT</span>
-                    <span class="dwc-proj-tag">Outils IA</span>
-                    <span class="dwc-proj-tag">Atelier</span>
-                </div>
-                <span class="dwc-proj-link">Voir <i data-lucide="arrow-right"></i></span>
-            </a>
-            <!-- Projet 6 -->
-            <a href="projects.html" class="dwc-proj-card reveal">
-                <span class="dwc-proj-cat"><i data-lucide="megaphone" class="w-3 h-3"></i> Marketing</span>
-                <h3 class="dwc-proj-title">Campagne WhatsApp Business</h3>
-                <p class="dwc-proj-desc">Mise en place de WhatsApp Business, catalogue, messages automatiques et script de conversion des contacts clients.</p>
-                <div class="dwc-proj-tags">
-                    <span class="dwc-proj-tag">WhatsApp Business</span>
-                    <span class="dwc-proj-tag">Automatisation</span>
-                    <span class="dwc-proj-tag">Vente</span>
-                </div>
-                <span class="dwc-proj-link">Voir <i data-lucide="arrow-right"></i></span>
-            </a>
+        <h3 class="dwc-card-title">Création &amp; Monétisation YouTube</h3>
+        <p class="dwc-sm dwc-card-desc">Bâtissez une chaîne d'autorité rentable, du cadrage stratégique à la monétisation multi-canal depuis l'Afrique.</p>
+        <ul class="dwc-check-list">
+          <li><i data-lucide="check"></i><span>Stratégie éditoriale, persona et scripts captivants</span></li>
+          <li><i data-lucide="check"></i><span>Montage vidéo dynamique et miniatures à fort clic</span></li>
+          <li><i data-lucide="check"></i><span>Tunnel de monétisation, sponsors et partenariats</span></li>
+        </ul>
+        <div class="dwc-card-tags">
+          <span class="dwc-tag">Premiere Pro</span><span class="dwc-tag">CapCut</span><span class="dwc-tag">SEO YouTube</span><span class="dwc-tag">Analytics</span>
         </div>
-
-        <div class="text-center mt-12 reveal">
-            <p class="dwc-proj-note">
-                <i data-lucide="sparkles" class="w-4 h-4 text-primary"></i>
-                Exemples de missions types réalisées par DWC — détails sur demande.
-            </p>
-            <a href="projects.html" class="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-full border border-white/15 hover:border-primary/50 transition-all text-sm font-semibold text-white no-underline hover:bg-white/5">
-                Voir le projet complet <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
+        <div class="dwc-card-footer">
+          <div>
+            <span class="dwc-foot-label">Format : Immersion 1-sur-1</span>
+            <span class="dwc-foot-price">Sur devis</span>
+          </div>
+          <a class="dwc-link-arrow" href="services.html" aria-label="Voir tous les services DWC">
+            Catalogue <i data-lucide="arrow-right"></i>
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- CTA final avec glow -->
-    <section class="max-w-7xl mx-auto px-6 mb-24 md:mb-32 relative z-10">
-        <div class="relative rounded-3xl overflow-hidden p-8 md:p-20 text-center border border-white/10">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10 z-0"></div>
-            <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-            <div class="relative z-10">
-                <h2 class="text-3xl md:text-6xl font-headline font-bold mb-8 text-white max-w-4xl mx-auto leading-tight">
-                    Prêt à <span class="dwc-text-gradient">développer vos compétences</span> digitales ?
-                </h2>
-                <p class="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-body">
-                    Parlez-nous de votre projet : mémoire, formation, chaîne à lancer ou site à créer. Nous répondons avec un plan clair et un devis transparent.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
-                    <a href="contact.html" class="sparkle-btn">
-                        <div class="dots_border"></div>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="sparkle-icon">
-                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z"></path>
-                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z"></path>
-                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z"></path>
-                        </svg>
-                        <span class="sparkle-text">Discutons de votre projet</span>
-                    </a>
-                    <a class="animated-btn" href="projects.html">
-                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
-                        <span class="anim-text">Voir le projet</span>
-                        <span class="circle"></span>
-                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
-                    </a>
-                </div>
-            </div>
+  <!-- ===== 4 ÉTAPES ===== -->
+  <section class="dwc-section" id="methode" style="border-top:1px solid rgba(79,70,54,0.25);">
+    <div class="dwc-section-head dwc-reveal">
+      <span class="dwc-badge" style="margin-bottom:0.8rem;"><span class="dwc-micro">Notre méthodologie</span></span>
+      <h2 class="dwc-h2">Une démarche structurée en 4 étapes</h2>
+      <p class="dwc-body">Nous éliminons les incertitudes par un cadre rigoureux qui privilégie la clarté et l'exécution immédiate.</p>
+    </div>
+    <div style="position:relative;">
+      <div class="dwc-step-line" aria-hidden="true"></div>
+      <div class="dwc-grid dwc-grid--4" style="position:relative; z-index:1;">
+        <div class="dwc-card dwc-card--hover dwc-center dwc-reveal" style="padding:1.5rem;">
+          <div class="dwc-step-num">01</div>
+          <h3 class="dwc-h4">Premier échange</h3>
+          <p class="dwc-sm dwc-mt-2">Diagnostic offert de 30 min pour analyser vos enjeux et cerner vos attentes précises.</p>
         </div>
-    </section>
-
-    <!-- Footer 4 colonnes -->
-    <footer class="w-full border-t border-white/10 relative z-10" style="background: rgba(6, 4, 12, 0.9);">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
-                <div class="col-span-1 md:col-span-1">
-                    <a href="index.html" class="dwc-nav-logo inline-flex mb-6 no-underline">
-                        <img src="assets/logo.svg" alt="Logo DWC" class="dwc-logo-img dwc-logo-img-sm">
-                        <span class="dwc-logo-text">DWC</span>
-                    </a>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Digital World Coaching — Coaching &amp; formations digitales. Apprenez, créez et monétisez vos compétences, en présentiel ou à distance.
-                    </p>
-                </div>
-                <div>
-                    <h5 class="text-white font-headline font-bold mb-6">Navigation</h5>
-                    <ul class="space-y-4 list-none p-0 m-0">
-                        <li><a href="index.html" class="text-slate-500 hover:text-primary transition-colors text-sm no-underline">Accueil</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Services</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="projects.html">L'entreprise</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-white font-headline font-bold mb-6">Services</h5>
-                    <ul class="space-y-4 list-none p-0 m-0">
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Formation à l'IA</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Coaching mémoire</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Marketing digital</a></li>
-                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Création de sites web</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-white font-headline font-bold mb-6">Contact</h5>
-                    <p class="text-slate-500 text-sm mb-2"><a href="tel:+22997000000" class="text-slate-400 hover:text-primary transition-colors no-underline">+229 01 97 00 00 00</a></p>
-                    <p class="text-slate-500 text-sm mb-4"><a href="mailto:contact@digitalworldcoaching.com" class="text-slate-400 hover:text-primary transition-colors no-underline">contact@digitalworldcoaching.com</a></p>
-                    <p class="text-slate-500 text-sm mb-4 flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> Cotonou, Bénin — sur RDV</p>
-                    <a class="text-primary font-bold hover:underline no-underline" href="contact.html">Me contacter</a>
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5">
-                <p class="text-slate-600 text-xs mb-4 md:mb-0">
-                    © <span id="current-year">2026</span> Digital World Coaching. Tous droits réservés.
-                </p>
-                <div class="flex gap-8">
-                    <a class="text-slate-600 text-xs hover:text-primary transition-colors no-underline" href="contact.html">Contact</a>
-                    <a class="text-slate-600 text-xs hover:text-primary transition-colors no-underline" href="projects.html">Projet</a>
-                </div>
-            </div>
+        <div class="dwc-card dwc-card--hover dwc-center dwc-reveal" style="padding:1.5rem;">
+          <div class="dwc-step-num">02</div>
+          <h3 class="dwc-h4">Plan personnalisé</h3>
+          <p class="dwc-sm dwc-mt-2">Élaboration d'une feuille de route personnalisée avec calendrier d'objectifs chiffrés.</p>
         </div>
-    </footer>
+        <div class="dwc-card dwc-card--hover dwc-center dwc-reveal" style="padding:1.5rem;">
+          <div class="dwc-step-num">03</div>
+          <h3 class="dwc-h4">Coaching &amp; pratique</h3>
+          <p class="dwc-sm dwc-mt-2">Séances intensives axées sur l'action directe, l'exercice guidé et le déblocage immédiat.</p>
+        </div>
+        <div class="dwc-card dwc-card--hover dwc-center dwc-reveal" style="padding:1.5rem;">
+          <div class="dwc-step-num">04</div>
+          <h3 class="dwc-h4">Suivi &amp; autonomie</h3>
+          <p class="dwc-sm dwc-mt-2">Bilan des résultats, validation des livrables finaux et accompagnement post-formation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Scripts -->
-    <script src="js/nav.js"></script>
-    <script src="js/home.js"></script>
+  <!-- ===== PROJETS & RÉALISATIONS ===== -->
+  <section class="dwc-section" id="realisations" style="border-top:1px solid rgba(79,70,54,0.2);">
+    <div class="dwc-reveal" style="display:flex; flex-direction:column; gap:1rem; margin-bottom:3rem;">
+      <div>
+        <span class="dwc-badge" style="margin-bottom:0.8rem;"><span class="dwc-micro">Impact concret</span></span>
+        <h2 class="dwc-h2">Projets &amp; réalisations récentes</h2>
+      </div>
+      <p class="dwc-body" style="max-width:32rem;">La preuve par l'exemple : découvrez comment nos apprenants et clients atteignent leurs objectifs majeurs.</p>
+    </div>
+    <div class="dwc-grid dwc-grid--3">
+
+      <!-- Cas 1 -->
+      <article class="dwc-card dwc-card--hover dwc-reveal" style="padding:0; overflow:hidden;">
+        <div class="dwc-visual">
+          <span class="dwc-visual-badge dwc-micro">Académique</span>
+          <i data-lucide="book-open"></i>
+        </div>
+        <div style="padding:1.5rem; flex:1; display:flex; flex-direction:column;">
+          <h3 class="dwc-h4" style="margin-bottom:0.5rem;">Refonte méthodologique d'un mémoire de Master</h3>
+          <p class="dwc-sm">Restructuration complète de la problématique, cadrage des hypothèses et modélisation des données pour un étudiant de Cotonou.</p>
+          <div class="dwc-result-box">
+            <span class="dwc-result-label">Résultat obtenu</span>
+            <p>Mention Très Bien &amp; soutenance réussie avec félicitations du jury.</p>
+          </div>
+          <div class="dwc-card-footer" style="margin-top:auto;">
+            <span class="dwc-foot-label">Master Audit • Cotonou</span>
+            <a class="dwc-link-arrow" href="contact.html">Voir le cas <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cas 2 -->
+      <article class="dwc-card dwc-card--hover dwc-reveal" style="padding:0; overflow:hidden;">
+        <div class="dwc-visual dwc-visual--b">
+          <span class="dwc-visual-badge dwc-micro">Vidéo &amp; Monétisation</span>
+          <i data-lucide="clapperboard"></i>
+        </div>
+        <div style="padding:1.5rem; flex:1; display:flex; flex-direction:column;">
+          <h3 class="dwc-h4" style="margin-bottom:0.5rem;">Lancement d'une chaîne YouTube financière</h3>
+          <p class="dwc-sm">Création de la charte de contenu, scriptwriting émotionnel, coaching posture et déploiement du calendrier de publication.</p>
+          <div class="dwc-result-box">
+            <span class="dwc-result-label">Résultat obtenu</span>
+            <p>15k abonnés atteints en 4 mois et monétisation Adsense &amp; affiliés active.</p>
+          </div>
+          <div class="dwc-card-footer" style="margin-top:auto;">
+            <span class="dwc-foot-label">YouTube • Stratégie</span>
+            <a class="dwc-link-arrow" href="contact.html">Voir le cas <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cas 3 -->
+      <article class="dwc-card dwc-card--hover dwc-reveal" style="padding:0; overflow:hidden;">
+        <div class="dwc-visual dwc-visual--c">
+          <span class="dwc-visual-badge dwc-micro">Entreprise</span>
+          <i data-lucide="building-2"></i>
+        </div>
+        <div style="padding:1.5rem; flex:1; display:flex; flex-direction:column;">
+          <h3 class="dwc-h4" style="margin-bottom:0.5rem;">Transformation digitale d'une PME locale</h3>
+          <p class="dwc-sm">Conception d'une identité visuelle prestige, d'un site vitrine haute conversion et intégration d'outils CRM automatisés.</p>
+          <div class="dwc-result-box">
+            <span class="dwc-result-label">Résultat obtenu</span>
+            <p>Présence digitale haut de gamme et contacts commerciaux multipliés par 3.</p>
+          </div>
+          <div class="dwc-card-footer" style="margin-top:auto;">
+            <span class="dwc-foot-label">Web • Identité</span>
+            <a class="dwc-link-arrow" href="contact.html">Voir le cas <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="dwc-section" id="contact">
+    <div class="dwc-cta-band dwc-reveal">
+      <div class="dwc-glow-blur"></div>
+      <div style="position:relative; z-index:1; max-width:48rem; margin:0 auto;">
+        <span class="dwc-badge" style="margin-bottom:1.2rem;"><span class="dwc-micro">Faites le premier pas</span></span>
+        <h2 class="dwc-h2" style="margin-bottom:1.2rem;">Prêt à propulser vos projets académiques et digitaux&nbsp;?</h2>
+        <p class="dwc-lead" style="margin-bottom:2.2rem;">Réservez un diagnostic sans engagement avec notre équipe à Cotonou. Discutons de vos ambitions, identifions les blocages et construisons le plan d'action qui fera la différence.</p>
+        <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-justify-center">
+          <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="contact.html">
+            Demander un devis gratuit <i data-lucide="send"></i>
+          </a>
+          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle" class="dwc-gold"></i> Échanger sur WhatsApp (+229)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER 4 COLONNES ===== -->
+<footer class="dwc-footer">
+  <div class="dwc-container">
+    <div class="dwc-footer-grid">
+      <div>
+        <div class="dwc-flex dwc-items-center dwc-gap-2" style="margin-bottom:1rem;">
+          <img src="assets/logo.svg" alt="Logo DWC" style="width:2.25rem;height:2.25rem;"/>
+          <span class="dwc-brand-name" style="font-size:1.2rem;">DWC</span>
+        </div>
+        <p class="dwc-sm">Excellence, accompagnement humain et compétences concrètes à Cotonou, Bénin. Votre tremplin vers la réussite universitaire et l'autonomie digitale.</p>
+        <div class="dwc-flex dwc-items-center dwc-gap-2 dwc-mt-2" style="padding-top:0.5rem;">
+          <i data-lucide="badge-check" class="dwc-gold" style="width:1.1rem;height:1.1rem;"></i>
+          <span class="dwc-micro" style="letter-spacing:0.1em;">Centre agréé de formation</span>
+        </div>
+      </div>
+      <div>
+        <h4>L'Académie</h4>
+        <ul>
+          <li><a href="services.html">Formations Certifiantes</a></li>
+          <li><a href="services.html">Mentorat Exécutif</a></li>
+          <li><a href="services.html">Transformation Digitale</a></li>
+          <li><a href="projet.html">Le Projet DWC</a></li>
+          <li><a href="contact.html">Contact &amp; Accès</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Expertises</h4>
+        <ul>
+          <li><a href="detail-coaching.html">Coaching Mémoire &amp; Thèse</a></li>
+          <li><a href="detail.html">Formation Intelligence Artificielle</a></li>
+          <li><a href="services.html">Chaînes &amp; Monétisation YouTube</a></li>
+          <li><a href="services.html">Création Web &amp; Boutiques en Ligne</a></li>
+          <li><a href="services.html">Productivité &amp; Outils Bureautiques</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact &amp; Accès</h4>
+        <ul class="dwc-footer-contact">
+          <li><i data-lucide="mail"></i><a href="mailto:contact@digitalworldcoaching.com">contact@digitalworldcoaching.com</a></li>
+          <li><i data-lucide="phone"></i><a href="tel:+22997000000">+229 01 97 00 00 00</a></li>
+          <li><i data-lucide="map-pin"></i><span>Cotonou, République du Bénin<br/><span class="dwc-micro" style="color:var(--text-secondary);">Sessions en présentiel &amp; distanciel</span></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="dwc-footer-bottom">
+      <p>© <span id="current-year">2026</span> Digital World Coaching (DWC). Tous droits réservés. Cotonou, Bénin.</p>
+      <div class="dwc-footer-links">
+        <a href="contact.html">Confidentialité</a>
+        <a href="contact.html">Conditions Générales</a>
+        <a href="projet.html">Le Projet</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
 </body>
 </html>
