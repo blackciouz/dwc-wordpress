@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Formation informatique appliquée : Excel, bureautique &amp; cloud | DWC</title>
+<meta name="description" content="Formation bureautique appliquée : Excel avancé, suites collaboratives, modèles administratifs et sécurité numérique. Cotonou ou visio. Devis sous 24h."/>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/anim.css"/>
+<link rel="stylesheet" href="../css/main.css"/>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .dwc-meta-card { display:flex; align-items:flex-start; gap:0.8rem; padding:0.9rem; border-radius:1rem; background:var(--surface); border:1px solid rgba(35,70,120,0.35); }
+  .dwc-meta-card .dwc-icon-circle { width:2.25rem; height:2.25rem; }
+  .dwc-meta-card .dwc-icon-circle .lucide { width:1.05rem; height:1.05rem; }
+  .dwc-module-card { border-radius:1.25rem; background:var(--surface); border:1px solid rgba(35,70,120,0.35); padding:2rem; transition:transform 0.3s var(--ease-out), border-color 0.3s ease; }
+  .dwc-module-pill {
+    display:inline-block; padding:0.35rem 0.85rem; border-radius:9999px;
+    font-size:0.6563rem; letter-spacing:0.12em; font-weight:600; text-transform:uppercase;
+    background:var(--icon-bg); border:1px solid rgba(59, 130, 246,0.25); color:var(--gold-soft);
+  }
+</style>
+</head>
+<body>
+<div class="dwc-halo-top"></div>
+<div class="dwc-aurora" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- ===== NAV ===== -->
+<header class="dwc-header">
+  <nav class="dwc-nav" aria-label="Navigation principale">
+    <a class="dwc-brand" href="../index.html" aria-label="Digital World Coaching — Accueil">
+      <img class="dwc-brand-logo" src="../assets/logo.svg" alt="Logo DWC"/>
+      <span class="dwc-brand-text">
+        <span class="dwc-brand-name">DWC</span>
+        <span class="dwc-brand-sub">Digital World Coaching</span>
+      </span>
+    </a>
+    <div class="dwc-nav-links">
+      <a href="../index.html">Accueil</a>
+      <a href="../services.html" class="active">Services</a>
+      <a href="../projet.html">Projet</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="dwc-nav-actions">
+      <a class="dwc-nav-call" href="tel:+229****0000" aria-label="Appeler DWC Cotonou">
+        <i data-lucide="phone"></i>
+      </a>
+      <a class="dwc-btn dwc-btn--gold dwc-nav-cta" href="#devis">Demander un devis</a>
+      <button class="dwc-burger" id="dwc-nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="dwc-mobile-menu" id="dwc-mobile-menu">
+      <a href="../index.html">Accueil <i data-lucide="home"></i></a>
+      <a href="../services.html">Services <i data-lucide="layers"></i></a>
+      <a href="../projet.html">Projet <i data-lucide="building-2"></i></a>
+      <a href="../contact.html">Contact <i data-lucide="mail"></i></a>
+      <a class="dwc-btn dwc-btn--gold dwc-btn--block dwc-mobile-cta" href="#devis">Demander un devis</a>
+    </div>
+  </nav>
+</header>
+<main style="position:relative; z-index:1; padding-top:7.5rem;">
+
+  <!-- ===== FIL D'ARIANE ===== -->
+  <div class="dwc-container" style="margin-bottom:2rem;">
+    <nav class="dwc-breadcrumb" aria-label="Fil d'Ariane">
+      <a href="../index.html"><i data-lucide="home"></i> Accueil</a>
+      <span class="dwc-crumb-sep">/</span>
+      <a href="../services.html">Services</a>
+      <span class="dwc-crumb-sep">/</span>
+      <span class="dwc-crumb-current">Formation informatique appliquée</span>
+    </nav>
+  </div>
+  <!-- ===== HERO DE SERVICE ===== -->
+  <section class="dwc-container dwc-hero" style="padding-bottom:4rem;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:center;" class="dwc-detail-hero">
+      <div style="display:flex; flex-direction:column; gap:1.4rem;">
+        <div>
+          <span class="dwc-badge">
+            <span class="dwc-dot"></span>
+            <span class="dwc-micro">Formation certifiante DWC • Bureautique &amp; outils</span>
+          </span>
+        </div>
+        <h1 class="dwc-h1">Formation informatique appliquée &amp; <span class="dwc-grad-text">bureautique avancée</span></h1>
+        <p class="dwc-lead">Excel, suites collaboratives et modèles administratifs : la maîtrise concrète des outils que votre bureau, votre école et vos clients utilisent vraiment — sur vos propres fichiers, pas sur des exercices fictifs.</p>
+
+        <!-- 4 méta-badges -->
+        <div class="dwc-grid dwc-meta-2col" style="grid-template-columns:repeat(2,1fr); gap:0.8rem;">
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="user"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Format</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">Individuel 1-sur-1 ou intra-entreprise</p>
+            </div>
+          </div>
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="clock"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Durée</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">2 à 5 semaines selon le niveau visé</p>
+            </div>
+          </div>
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="map-pin"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Lieu</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">Hub DWC, vos locaux ou visio</p>
+            </div>
+          </div>
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="badge-check"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Certification</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">Certificat officiel DWC Academy</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-mt-2">
+          <a class="dwc-btn dwc-btn--gold dwc-btn--lg dwc-btn--sparkle" href="#devis">
+            <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+            <span class="dwc-btn-label">Demander un devis</span> <i data-lucide="arrow-right"></i>
+          </a>
+          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg dwc-btn--beam" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle" class="dwc-gold"></i> WhatsApp (+229 01 97 00 00 00)
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte insignia visuelle -->
+      <div>
+        <div class="dwc-card dwc-card--hover dwc-fx-card dwc-tilt" style="position:relative; overflow:hidden; padding:2rem; box-shadow:0 30px 60px -20px rgba(6,13,28,0.8);">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <div class="dwc-glow-blur" style="width:18rem; height:18rem; top:-7rem; right:-7rem; opacity:0.8;"></div>
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-4" style="justify-content:space-between; position:relative; z-index:1;">
+            <span class="dwc-icon-circle dwc-icon-circle--lg"><i data-lucide="monitor"></i></span>
+            <span class="dwc-chip dwc-chip--gold">Productivité réelle</span>
+          </div>
+          <div style="position:relative; z-index:1;">
+            <h3 class="dwc-h3">Des outils maîtrisés, pas survolés</h3>
+            <p class="dwc-sm dwc-mt-2" style="margin-bottom:1.5rem;">Chaque séance travaille sur vos propres fichiers : budgets, rapports, bases clients. À la fin, vos documents du quotidien sont plus rapides, plus fiables et plus présentables.</p>
+            <div class="dwc-grid" style="grid-template-columns:repeat(2,1fr); gap:1rem; padding-top:1.25rem; border-top:1px solid rgba(35,70,120,0.35);">
+              <div style="padding:1rem; border-radius:0.8rem; background:var(--surface-elevated); border:1px solid rgba(35,70,120,0.25);">
+                <p class="dwc-stat-value">20+</p>
+                <p class="dwc-sm">Modèles Excel &amp; documents livrés</p>
+              </div>
+              <div style="padding:1rem; border-radius:0.8rem; background:var(--surface-elevated); border:1px solid rgba(35,70,120,0.25);">
+                <p class="dwc-stat-value">100%</p>
+                <p class="dwc-sm">Exercices sur vos fichiers réels</p>
+              </div>
+            </div>
+            <div class="dwc-flex dwc-items-center dwc-gap-2 dwc-sm dwc-mt-3">
+              <i data-lucide="award" class="dwc-gold" style="width:1.15rem;height:1.15rem;"></i>
+              <span>Progression mesurée à chaque séance, zéro théorie inutile</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE STACK ===== -->
+  <div class="dwc-marquee" aria-hidden="true">
+    <div class="dwc-marquee-track">
+      <span>Excel Avancé</span><span>Google Sheets</span><span>Microsoft 365</span><span>Word</span><span>PowerPoint</span><span>Google Drive</span><span>Formules &amp; TCD</span><span>Tableaux de bord</span><span>Publipostage</span><span>OneDrive</span>
+    </div>
+  </div>
+  <!-- ===== CURRICULUM : CE QUE VOUS APPRENEZ ===== -->
+  <section class="dwc-section" id="programme" style="background:var(--surface-dim); border-top:1px solid rgba(35,70,120,0.25);">
+    <div class="dwc-container">
+      <div class="dwc-reveal" style="max-width:42rem; margin-bottom:3.5rem;">
+        <span class="dwc-micro dwc-gold">Curriculum d'élite</span>
+        <h2 class="dwc-h2 dwc-mt-1">Ce que vous apprenez : 4 modules pragmatiques</h2>
+        <p class="dwc-body dwc-mt-2">Zéro théorie superflue. Chaque heure passée avec nous aboutit à un livrable concret déployé sur vos environnements réels.</p>
+      </div>
+      <div class="dwc-grid dwc-grid--2 dwc-timeline">
+
+        <!-- Module 01 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(35,70,120,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Module 01</span>
+            <span class="dwc-icon-circle"><i data-lucide="table-2"></i></span>
+          </div>
+          <h3 class="dwc-h3">Excel &amp; Sheets : le cœur du métier</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Des tableaux qui calculent juste et des tableaux de bord qui parlent, sans formules incompréhensibles.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Formules essentielles et imbriquées : SI, RECHERCHEX, INDEX/EQUIV</span></li>
+            <li><i data-lucide="check"></i><span>Tableaux croisés dynamiques et segments de filtre</span></li>
+            <li><i data-lucide="check"></i><span>Nettoyage de données et tableaux de bord lisibles</span></li>
+          </ul>
+        </div>
+
+        <!-- Module 02 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(35,70,120,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Module 02</span>
+            <span class="dwc-icon-circle"><i data-lucide="cloud"></i></span>
+          </div>
+          <h3 class="dwc-h3">Suite collaborative &amp; cloud</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Travaillez à plusieurs sans écraser les fichiers : Drive, OneDrive et partages maîtrisés.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Organisation documentaire : arborescence, nommage, versions</span></li>
+            <li><i data-lucide="check"></i><span>Co-édition en temps réel, commentaires et droits d'accès</span></li>
+            <li><i data-lucide="check"></i><span>Formulaires en ligne et collecte de données structurée</span></li>
+          </ul>
+        </div>
+
+        <!-- Module 03 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(35,70,120,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Module 03</span>
+            <span class="dwc-icon-circle"><i data-lucide="file-text"></i></span>
+          </div>
+          <h3 class="dwc-h3">Modèles administratifs &amp; reporting</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Factures, courriers, attestations : des modèles professionnels qui font gagner des heures chaque mois.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Modèles Word/Docs avec styles, en-têtes et tableaux automatiques</span></li>
+            <li><i data-lucide="check"></i><span>Publipostage : courriers, étiquettes et attestations en série</span></li>
+            <li><i data-lucide="check"></i><span>Présentations PowerPoint sobres et percutantes</span></li>
+          </ul>
+        </div>
+
+        <!-- Module 04 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(35,70,120,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Module 04</span>
+            <span class="dwc-icon-circle"><i data-lucide="shield-check"></i></span>
+          </div>
+          <h3 class="dwc-h3">Sécurité &amp; bonnes pratiques</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Protégez vos comptes, vos fichiers et votre machine comme un professionnel.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Mots de passe robustes et double authentification</span></li>
+            <li><i data-lucide="check"></i><span>Sauvegardes simples et régulières de vos travaux</span></li>
+            <li><i data-lucide="check"></i><span>Repérage des tentatives de fraude et pièces jointes dangereuses</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== POUR QUI ===== -->
+  <section class="dwc-section" id="profils">
+    <div class="dwc-container">
+      <div class="dwc-section-head dwc-reveal">
+        <span class="dwc-micro dwc-gold">Audience cible</span>
+        <h2 class="dwc-h2 dwc-mt-1">Pour qui est conçu ce programme&nbsp;?</h2>
+        <p class="dwc-body">Pour quiconque veut cesser de lutter avec ses outils quotidiens et gagner en vitesse comme en fiabilité.</p>
+      </div>
+      <div class="dwc-grid dwc-grid--4">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="clipboard-list"></i></span>
+          <h3 class="dwc-h4">Assistants &amp; secrétariats</h3>
+          <p class="dwc-sm dwc-mt-1">Des documents et tableaux irréprochables, produits deux fois plus vite.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(35,70,120,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : Reporting accéléré</span>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="briefcase"></i></span>
+          <h3 class="dwc-h4">Cadres &amp; managers</h3>
+          <p class="dwc-sm dwc-mt-1">Des tableaux de bord clairs pour décider sans dépendre de personne.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(35,70,120,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : Autonomie analytique</span>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="graduation-cap"></i></span>
+          <h3 class="dwc-h4">Étudiants &amp; candidats</h3>
+          <p class="dwc-sm dwc-mt-1">Un niveau bureautique certifiable qui fait la différence sur un CV.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(35,70,120,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : Atout employabilité</span>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="store"></i></span>
+          <h3 class="dwc-h4">Petites entreprises</h3>
+          <p class="dwc-sm dwc-mt-1">Des modèles maison cohérents : devis, factures, suivi clients, stocks.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(35,70,120,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : Processus outillés</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== CE QUE VOUS RECEVEZ ===== -->
+  <section class="dwc-section" id="livrables" style="background:var(--surface-dim); border-top:1px solid rgba(35,70,120,0.25);">
+    <div class="dwc-container">
+      <div class="dwc-reveal" style="max-width:42rem; margin-bottom:3.5rem;">
+        <span class="dwc-micro dwc-gold">Assets tangibles</span>
+        <h2 class="dwc-h2 dwc-mt-1">Ce que vous recevez avec DWC</h2>
+        <p class="dwc-body dwc-mt-2">Vous ne repartez pas avec de simples notes, mais avec des livrables concrets, prêts à l'emploi.</p>
+      </div>
+      <div class="dwc-grid dwc-grid--3">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle"><i data-lucide="table-2"></i></span>
+          <div>
+            <h3 class="dwc-h4">20+ modèles Excel prêts à l'emploi</h3>
+            <p class="dwc-sm dwc-mt-1">Budgets, suivis, tableaux de bord : importez vos données, tout fonctionne immédiatement.</p>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle"><i data-lucide="file-text"></i></span>
+          <div>
+            <h3 class="dwc-h4">Pack de modèles administratifs</h3>
+            <p class="dwc-sm dwc-mt-1">Factures, courriers types, attestations et dossiers structurés, adaptés à votre activité.</p>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle"><i data-lucide="video"></i></span>
+          <div>
+            <h3 class="dwc-h4">Replays &amp; fiches mémo</h3>
+            <p class="dwc-sm dwc-mt-1">Chaque technique vue en séance est documentée pas à pas pour être rejouée seule.</p>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem; grid-column:1/-1;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle"><i data-lucide="badge-check"></i></span>
+          <div>
+            <h3 class="dwc-h4">Certificat DWC + support 30 jours</h3>
+            <p class="dwc-sm dwc-mt-1">Certificat officiel et assistance WhatsApp pour débloquer vos cas réels après la formation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== TARIFICATION SUR DEVIS ===== -->
+  <section class="dwc-section" id="devis">
+    <div class="dwc-container">
+      <div class="dwc-card dwc-reveal" style="border-radius:1.5rem; border-color:rgba(59, 130, 246,0.35); padding:2.5rem; position:relative; overflow:hidden;">
+        <div style="display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:center;" class="dwc-devis-grid">
+          <div>
+            <span class="dwc-chip dwc-chip--gold">Transparence &amp; sur-mesure</span>
+            <h2 class="dwc-h2 dwc-mt-2">Tarification sur devis personnalisé</h2>
+            <p class="dwc-body dwc-mt-2">Le devis dépend de votre niveau de départ, du périmètre (Excel seul ou suite complète) et du format (individuel ou intra-entreprise). Diagnostic offert, proposition sous 24h ouvrées.</p>
+            <ul class="dwc-check-list dwc-mt-4" style="padding-top:1.25rem; border-top:1px solid rgba(35,70,120,0.3);">
+              <li><i data-lucide="check"></i><span>Devis clair, transparent et sans frais cachés</span></li>
+              <li><i data-lucide="check"></i><span>Facilités de paiement échelonné disponibles</span></li>
+              <li><i data-lucide="check"></i><span>Garantie d'application pratique directe sur vos projets</span></li>
+            </ul>
+          </div>
+          <!-- Formulaire express -->
+          <div>
+            <form id="dwc-quote-form" style="background:var(--surface-elevated); border:1px solid rgba(35,70,120,0.4); border-radius:1.25rem; padding:1.75rem; display:flex; flex-direction:column; gap:1.1rem;">
+              <h3 class="dwc-h4">Recevoir une proposition sous 24h</h3>
+              <div>
+                <label class="dwc-label-micro" for="q-name">Nom &amp; Prénoms</label>
+                <input class="dwc-input" type="text" id="q-name" placeholder="Ex : Jean-Luc Mensah" required/>
+              </div>
+              <div>
+                <label class="dwc-label-micro" for="q-phone">Numéro WhatsApp (avec indicatif)</label>
+                <input class="dwc-input" type="tel" id="q-phone" placeholder="+229 01 97 00 00 00" required/>
+              </div>
+              <div>
+                <label class="dwc-label-micro" for="q-format">Format souhaité</label>
+                <select class="dwc-select" id="q-format">
+                  <option value="Individuel 1-sur-1 — Hub DWC (Cotonou) ou visio">Individuel 1-sur-1 — Hub DWC (Cotonou) ou visio</option>
+                  <option value="Intra-entreprise (dans vos locaux, groupe fermé)">Intra-entreprise (dans vos locaux, groupe fermé)</option>
+                  <option value="Parcours hybride avec exercices autonomes">Parcours hybride avec exercices autonomes</option>
+                </select>
+              </div>
+              <button class="dwc-btn dwc-btn--gold dwc-btn--block dwc-btn--lg dwc-btn--sparkle" type="submit">
+                <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+                <span class="dwc-btn-label">Recevoir mon devis sous 24h</span> <i data-lucide="send"></i>
+              </button>
+              <p class="dwc-micro dwc-center" style="color:var(--outline);">Vos données sont strictement confidentielles. Réponse sous 24h ouvrées.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== FAQ ACCORDÉON ===== -->
+  <section class="dwc-section" style="background:var(--surface-dim); border-top:1px solid rgba(35,70,120,0.25);">
+    <div class="dwc-container" style="max-width:56rem;">
+      <div class="dwc-section-head dwc-reveal" style="margin-bottom:3rem;">
+        <span class="dwc-micro dwc-gold">Clarifications</span>
+        <h2 class="dwc-h2 dwc-mt-1">Questions fréquemment posées</h2>
+        <p class="dwc-body">Tout ce qu'il faut savoir avant de démarrer.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">Je débute totalement : est-ce adapté&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">Oui. Le diagnostic initial mesure votre niveau réel et la progression part de là. Les débutants complets sont fréquents : le rythme 1-sur-1 permet d'avancer sans jamais se sentir dépassé ni freiné.</div>
+        </details>
+
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">Puis-je apprendre sur mon propre ordinateur&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">Oui, et c'est recommandé : tout s'exerce sur vos fichiers et votre machine. Si votre équipement est limité, les postes du hub DWC sont disponibles en présentiel.</div>
+        </details>
+
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">Excel ou Google Sheets&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">Les deux, selon vos usages : Excel pour les fonctions avancées et les fichiers d'entreprise, Sheets pour la collaboration en temps réel. Les concepts appris se transfèrent d'un outil à l'autre.</div>
+        </details>
+
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">Y a-t-il une certification reconnue&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">Vous recevez le certificat DWC Academy détaillant les compétences maîtrisées, vérifiable auprès de notre équipe — un vrai signal sur un CV au Bénin et dans la sous-région.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+  <!-- ===== CTA FINAL ===== -->
+  <section class="dwc-section" id="contact">
+    <div class="dwc-container">
+      <div class="dwc-cta-band dwc-reveal">
+        <div class="dwc-glow-blur"></div>
+        <div style="position:relative; z-index:1; max-width:48rem; margin:0 auto;">
+          <span class="dwc-badge" style="margin-bottom:1.2rem;"><span class="dwc-micro">Passez à l'action</span></span>
+          <h2 class="dwc-h2" style="margin-bottom:1rem;">Parlons de votre projet dès cette semaine.</h2>
+          <p class="dwc-lead" style="margin-bottom:1.8rem;">Rencontrez nos mentors au hub de Cotonou ou démarrez votre session en direct où que vous soyez.</p>
+
+          <!-- Ruban de contacts -->
+          <div class="dwc-grid dwc-ribbon" style="gap:1rem; padding:1.5rem 0;">
+            <a class="dwc-contact-card" style="padding:1rem;" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="message-circle" class="dwc-gold" style="width:1.3rem;height:1.3rem; margin-bottom:0.35rem;"></i>
+              <p class="dwc-micro" style="color:var(--text-secondary);">WhatsApp</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:600;">+229 01 97 00 00 00</p>
+            </a>
+            <a class="dwc-contact-card" style="padding:1rem;" href="mailto:contact@digitalworldcoaching.com">
+              <i data-lucide="mail" class="dwc-gold" style="width:1.3rem;height:1.3rem; margin-bottom:0.35rem;"></i>
+              <p class="dwc-micro" style="color:var(--text-secondary);">Email</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:600;">contact@digitalworldcoaching.com</p>
+            </a>
+            <div class="dwc-contact-card" style="padding:1rem;">
+              <i data-lucide="map-pin" class="dwc-gold" style="width:1.3rem;height:1.3rem; margin-bottom:0.35rem;"></i>
+              <p class="dwc-micro" style="color:var(--text-secondary);">Adresse</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:600;">Haie Vive, Cotonou, Bénin</p>
+            </div>
+          </div>
+
+          <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-justify-center" style="padding-top:0.75rem;">
+            <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="#devis">Demander mon devis personnalisé</a>
+            <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="../services.html">Voir tous les services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- ===== FOOTER ===== -->
+<footer class="dwc-footer">
+  <div class="dwc-container">
+    <div class="dwc-footer-grid">
+      <div>
+        <div class="dwc-flex dwc-items-center dwc-gap-2" style="margin-bottom:1rem;">
+          <img src="../assets/logo.svg" alt="Logo DWC" style="width:2.25rem;height:2.25rem;"/>
+          <span class="dwc-brand-name" style="font-size:1.2rem;">DWC</span>
+        </div>
+        <p class="dwc-sm">Centre d'excellence en transformation technologique, mentorat exécutif et formation pratique aux outils du futur à Cotonou, Bénin.</p>
+        <div class="dwc-footer-contact dwc-mt-2" style="display:flex; gap:0.75rem; padding-top:0.5rem;">
+          <a href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp DWC" class="dwc-nav-call" style="width:2.25rem;height:2.25rem;"><i data-lucide="message-circle"></i></a>
+          <a href="tel:+229****0000" aria-label="Appeler DWC" class="dwc-nav-call" style="width:2.25rem;height:2.25rem;"><i data-lucide="phone"></i></a>
+          <a href="mailto:contact@digitalworldcoaching.com" aria-label="Email DWC" class="dwc-nav-call" style="width:2.25rem;height:2.25rem;"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Nos 10 services</h4>
+        <ul>
+          <li><a href="coaching-memoire.html">Coaching rédaction de mémoire</a></li>
+          <li><a href="formation-ia.html">Formation intelligence artificielle</a></li>
+          <li><a href="contenus-reseaux.html">Contenus réseaux sociaux</a></li>
+          <li><a href="monetisation-youtube.html">Création & monétisation de chaînes YouTube/TikTok</a></li>
+          <li><a href="graphisme.html">Graphisme</a></li>
+          <li><a href="marketing-digital.html">Marketing digital</a></li>
+          <li><a href="developpement-web.html">Développement web</a></li>
+          <li><a href="maintenance-informatique.html">Maintenance informatique</a></li>
+          <li><a href="impression-numerique.html">Impression numérique</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>DWC Cotonou</h4>
+        <ul>
+          <li><a href="../projet.html">Le Projet DWC</a></li>
+          <li><a href="../contact.html">Contact &amp; Accès</a></li>
+          <li><a href="../index.html">Accueil</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accès rapide</h4>
+        <div style="padding:1rem; border-radius:0.9rem; background:var(--surface); border:1px solid rgba(35,70,120,0.35);">
+          <span class="dwc-micro dwc-gold">Campus Haie Vive</span>
+          <p class="dwc-sm dwc-mt-1">Ouvert Lun - Sam, 8h30 - 19h00</p>
+          <a class="dwc-link-arrow dwc-mt-1" style="display:inline-flex;" href="#devis">Devis immédiat <i data-lucide="chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="dwc-footer-bottom">
+      <p>© <span id="current-year">2026</span> Digital World Coaching (DWC). Tous droits réservés. Cotonou, Bénin.</p>
+      <div class="dwc-footer-links">
+        <a href="../contact.html">Confidentialité</a>
+        <a href="../contact.html">Conditions Générales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../js/nav.js"></script>
+<script src="../js/anim.js"></script>
+<script>
+  // Formulaire express de devis -> WhatsApp (aucun backend)
+  (function () {
+    var form = document.getElementById('dwc-quote-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = (document.getElementById('q-name').value || '').trim();
+      var phone = (document.getElementById('q-phone').value || '').trim();
+      var format = (document.getElementById('q-format').value || '').trim();
+      var text = [
+        'Bonjour Digital World Coaching,',
+        '',
+        'Je souhaite un devis pour : Formation informatique appliquée.',
+        '',
+        'Nom : ' + (name || '—'),
+        'WhatsApp : ' + (phone || '—'),
+        'Format souhaité : ' + format
+      ].join('\n');
+      window.open('https://wa.me/22997000000?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    });
+  })();
+</script>
+</body>
+</html>

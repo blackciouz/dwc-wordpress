@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Développement web : sites vitrines haute conversion | DWC</title>
+<meta name="description" content="Sites vitrines rapides, responsives et optimisés SEO, livrés clé en main à Cotonou : maquettes, développement, mise en ligne et formation d'administration."/>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/anim.css"/>
+<link rel="stylesheet" href="../css/main.css"/>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  .dwc-meta-card { display:flex; align-items:flex-start; gap:0.8rem; padding:0.9rem; border-radius:1rem; background:var(--surface); border:1px solid rgba(35,70,120,0.35); }
+  .dwc-meta-card .dwc-icon-circle { width:2.25rem; height:2.25rem; }
+  .dwc-meta-card .dwc-icon-circle .lucide { width:1.05rem; height:1.05rem; }
+  .dwc-module-card { border-radius:1.25rem; background:var(--surface); border:1px solid rgba(35,70,120,0.35); padding:2rem; transition:transform 0.3s var(--ease-out), border-color 0.3s ease; }
+  .dwc-module-pill {
+    display:inline-block; padding:0.35rem 0.85rem; border-radius:9999px;
+    font-size:0.6563rem; letter-spacing:0.12em; font-weight:600; text-transform:uppercase;
+    background:var(--icon-bg); border:1px solid rgba(59, 130, 246,0.25); color:var(--gold-soft);
+  }
+</style>
+</head>
+<body>
+<div class="dwc-halo-top"></div>
+<div class="dwc-aurora" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- ===== NAV ===== -->
+<header class="dwc-header">
+  <nav class="dwc-nav" aria-label="Navigation principale">
+    <a class="dwc-brand" href="../index.html" aria-label="Digital World Coaching — Accueil">
+      <img class="dwc-brand-logo" src="../assets/logo.svg" alt="Logo DWC"/>
+      <span class="dwc-brand-text">
+        <span class="dwc-brand-name">DWC</span>
+        <span class="dwc-brand-sub">Digital World Coaching</span>
+      </span>
+    </a>
+    <div class="dwc-nav-links">
+      <a href="../index.html">Accueil</a>
+      <a href="../services.html" class="active">Services</a>
+      <a href="../projet.html">Projet</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="dwc-nav-actions">
+      <a class="dwc-nav-call" href="tel:+229****0000" aria-label="Appeler DWC Cotonou">
+        <i data-lucide="phone"></i>
+      </a>
+      <a class="dwc-btn dwc-btn--gold dwc-nav-cta" href="#devis">Demander un devis</a>
+      <button class="dwc-burger" id="dwc-nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="dwc-mobile-menu" id="dwc-mobile-menu">
+      <a href="../index.html">Accueil <i data-lucide="home"></i></a>
+      <a href="../services.html">Services <i data-lucide="layers"></i></a>
+      <a href="../projet.html">Projet <i data-lucide="building-2"></i></a>
+      <a href="../contact.html">Contact <i data-lucide="mail"></i></a>
+      <a class="dwc-btn dwc-btn--gold dwc-btn--block dwc-mobile-cta" href="#devis">Demander un devis</a>
+    </div>
+  </nav>
+</header>
+<main style="position:relative; z-index:1; padding-top:7.5rem;">
+
+  <!-- ===== FIL D'ARIANE ===== -->
+  <div class="dwc-container" style="margin-bottom:2rem;">
+    <nav class="dwc-breadcrumb" aria-label="Fil d'Ariane">
+      <a href="../index.html"><i data-lucide="home"></i> Accueil</a>
+      <span class="dwc-crumb-sep">/</span>
+      <a href="../services.html">Services</a>
+      <span class="dwc-crumb-sep">/</span>
+      <span class="dwc-crumb-current">Développement web</span>
+    </nav>
+  </div>
+  <!-- ===== HERO DE SERVICE ===== -->
+  <section class="dwc-container dwc-hero" style="padding-bottom:4rem;">
+    <div style="display:grid; grid-template-columns:1fr; gap:3rem; align-items:center;" class="dwc-detail-hero">
+      <div style="display:flex; flex-direction:column; gap:1.4rem;">
+        <div>
+          <span class="dwc-badge">
+            <span class="dwc-dot"></span>
+            <span class="dwc-micro">Projet web clé en main • DWC Digital</span>
+          </span>
+        </div>
+        <h1 class="dwc-h1">Développement web &amp; <span class="dwc-grad-text">vitrines haute conversion</span></h1>
+        <p class="dwc-lead">Un site rapide, clair et trouvable sur Google : du cadrage à la mise en ligne, avec vos contenus structurés, vos CTA qui convertissent et une formation pour gérer votre site sans développeur.</p>
+
+        <!-- 4 méta-badges -->
+        <div class="dwc-grid dwc-meta-2col" style="grid-template-columns:repeat(2,1fr); gap:0.8rem;">
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="user"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Format</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">Projet clé en main + formation</p>
+            </div>
+          </div>
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="clock"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Durée</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">2 à 6 semaines selon le périmètre</p>
+            </div>
+          </div>
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="map-pin"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Lieu</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">Hub DWC ou à distance</p>
+            </div>
+          </div>
+          <div class="dwc-meta-card">
+            <span class="dwc-icon-circle"><i data-lucide="badge-check"></i></span>
+            <div>
+              <p class="dwc-micro" style="margin-bottom:0.15rem;">Certification</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:500;">Support &amp; corrections 30 jours</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-mt-2">
+          <a class="dwc-btn dwc-btn--gold dwc-btn--lg dwc-btn--sparkle" href="#devis">
+            <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+            <span class="dwc-btn-label">Demander un devis</span> <i data-lucide="arrow-right"></i>
+          </a>
+          <a class="dwc-btn dwc-btn--ghost dwc-btn--lg dwc-btn--beam" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="message-circle" class="dwc-gold"></i> WhatsApp (+229 01 97 00 00 00)
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte insignia visuelle -->
+      <div>
+        <div class="dwc-card dwc-card--hover dwc-fx-card dwc-tilt" style="position:relative; overflow:hidden; padding:2rem; box-shadow:0 30px 60px -20px rgba(6,13,28,0.8);">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <div class="dwc-glow-blur" style="width:18rem; height:18rem; top:-7rem; right:-7rem; opacity:0.8;"></div>
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-4" style="justify-content:space-between; position:relative; z-index:1;">
+            <span class="dwc-icon-circle dwc-icon-circle--lg"><i data-lucide="code-2"></i></span>
+            <span class="dwc-chip dwc-chip--gold">Clé en main</span>
+          </div>
+          <div style="position:relative; z-index:1;">
+            <h3 class="dwc-h3">Rapide, responsive, trouvé sur Google</h3>
+            <p class="dwc-sm dwc-mt-2" style="margin-bottom:1.5rem;">Chaque page est pensée pour transformer : hiérarchie claire, preuves, appels à l'action visibles. Sous le capot : vitesse, structure SEO propre et administration documentée.</p>
+            <div class="dwc-grid" style="grid-template-columns:repeat(2,1fr); gap:1rem; padding-top:1.25rem; border-top:1px solid rgba(35,70,120,0.35);">
+              <div style="padding:1rem; border-radius:0.8rem; background:var(--surface-elevated); border:1px solid rgba(35,70,120,0.25);">
+                <p class="dwc-stat-value">≥90</p>
+                <p class="dwc-sm">Score performance visé (PageSpeed)</p>
+              </div>
+              <div style="padding:1rem; border-radius:0.8rem; background:var(--surface-elevated); border:1px solid rgba(35,70,120,0.25);">
+                <p class="dwc-stat-value">30j</p>
+                <p class="dwc-sm">Support &amp; corrections inclus</p>
+              </div>
+            </div>
+            <div class="dwc-flex dwc-items-center dwc-gap-2 dwc-sm dwc-mt-3">
+              <i data-lucide="award" class="dwc-gold" style="width:1.15rem;height:1.15rem;"></i>
+              <span>Livraison documentée + session de formation incluse</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE STACK ===== -->
+  <div class="dwc-marquee" aria-hidden="true">
+    <div class="dwc-marquee-track">
+      <span>HTML5</span><span>Tailwind</span><span>WordPress</span><span>Webflow</span><span>SEO local</span><span>Google Business</span><span>Hébergement</span><span>HTTPS</span><span>WhatsApp CTA</span><span>Analytics</span>
+    </div>
+  </div>
+  <!-- ===== CURRICULUM : CE QUE VOUS APPRENEZ ===== -->
+  <section class="dwc-section" id="programme" style="background:var(--surface-dim); border-top:1px solid rgba(35,70,120,0.25);">
+    <div class="dwc-container">
+      <div class="dwc-reveal" style="max-width:42rem; margin-bottom:3.5rem;">
+        <span class="dwc-micro dwc-gold">Curriculum d'élite</span>
+        <h2 class="dwc-h2 dwc-mt-1">Ce que vous apprenez : 4 modules pragmatiques</h2>
+        <p class="dwc-body dwc-mt-2">Zéro théorie superflue. Chaque heure passée avec nous aboutit à un livrable concret déployé sur vos environnements réels.</p>
+      </div>
+      <div class="dwc-grid dwc-grid--2 dwc-timeline">
+
+        <!-- Module 01 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(35,70,120,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Module 01</span>
+            <span class="dwc-icon-circle"><i data-lucide="compass"></i></span>
+          </div>
+          <h3 class="dwc-h3">Cadrage &amp; maquettes</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Objectifs, pages, contenus et parcours client validés avant la première ligne de code.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Arborescence et contenus structurés page par page</span></li>
+            <li><i data-lucide="check"></i><span>Maquettes fidèles à votre kit de marque</span></li>
+            <li><i data-lucide="check"></i><span>Choix technique argumenté : statique, WordPress ou hybride</span></li>
+          </ul>
+        </div>
+
+        <!-- Module 02 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(35,70,120,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Module 02</span>
+            <span class="dwc-icon-circle"><i data-lucide="code-2"></i></span>
+          </div>
+          <h3 class="dwc-h3">Développement &amp; contenus</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Un site qui se charge vite, s'affiche parfaitement sur mobile et guide vers l'action.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Intégration responsive soignée, mobile d'abord</span></li>
+            <li><i data-lucide="check"></i><span>Reprise ou rédaction des contenus avec hiérarchie SEO</span></li>
+            <li><i data-lucide="check"></i><span>CTA efficaces : WhatsApp, devis, appel, formulaire</span></li>
+          </ul>
+        </div>
+
+        <!-- Module 03 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(35,70,120,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Module 03</span>
+            <span class="dwc-icon-circle"><i data-lucide="rocket"></i></span>
+          </div>
+          <h3 class="dwc-h3">SEO &amp; performance</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Être trouvé par ceux qui cherchent vos services à Cotonou et ailleurs.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Optimisation technique : vitesse, images, structure des titres</span></li>
+            <li><i data-lucide="check"></i><span>SEO local : Google Business Profile et pages de services</span></li>
+            <li><i data-lucide="check"></i><span>Analytics et Search Console configurés et expliqués</span></li>
+          </ul>
+        </div>
+
+        <!-- Module 04 -->
+        <div class="dwc-card dwc-card--hover dwc-reveal" style="border-color:rgba(35,70,120,0.35);">
+          <div class="dwc-flex dwc-items-center dwc-gap-3 dwc-mb-2" style="justify-content:space-between;">
+            <span class="dwc-module-pill">Module 04</span>
+            <span class="dwc-icon-circle"><i data-lucide="life-buoy"></i></span>
+          </div>
+          <h3 class="dwc-h3">Mise en ligne &amp; autonomie</h3>
+          <p class="dwc-body dwc-mt-2 dwc-mb-2">Domaine, hébergement, sécurité : tout est déployé, documenté et entre vos mains.</p>
+          <ul class="dwc-check-list">
+            <li><i data-lucide="check"></i><span>Déploiement, DNS, certificat HTTPS et sauvegardes</span></li>
+            <li><i data-lucide="check"></i><span>Session de formation : mettre à jour textes et images seul</span></li>
+            <li><i data-lucide="check"></i><span>Support 30 jours pour ajustements post-lancement</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== POUR QUI ===== -->
+  <section class="dwc-section" id="profils">
+    <div class="dwc-container">
+      <div class="dwc-section-head dwc-reveal">
+        <span class="dwc-micro dwc-gold">Audience cible</span>
+        <h2 class="dwc-h2 dwc-mt-1">Pour qui est conçu ce programme&nbsp;?</h2>
+        <p class="dwc-body">Pour toute structure qui a besoin d'une présence web sérieuse, livrée vite et bien.</p>
+      </div>
+      <div class="dwc-grid dwc-grid--4">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="store"></i></span>
+          <h3 class="dwc-h4">Artisans &amp; commerces</h3>
+          <p class="dwc-sm dwc-mt-1">Une vitrine qui rassure, montre vos réalisations et fait venir les clients.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(35,70,120,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : Crédibilité immédiate</span>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="briefcase"></i></span>
+          <h3 class="dwc-h4">Consultants &amp; freelances</h3>
+          <p class="dwc-sm dwc-mt-1">Un profil en ligne qui soutient vos propositions commerciales.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(35,70,120,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : Autorité professionnelle</span>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="building-2"></i></span>
+          <h3 class="dwc-h4">Écoles &amp; ONG</h3>
+          <p class="dwc-sm dwc-mt-1">Un site clair pour informer, recruter et rendre compte à vos partenaires.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(35,70,120,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : Communication structurée</span>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle dwc-mb-4"><i data-lucide="utensils"></i></span>
+          <h3 class="dwc-h4">Restaurants &amp; hôtels</h3>
+          <p class="dwc-sm dwc-mt-1">Menu, photos, itinéraire et réservation WhatsApp en un clic.</p>
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid rgba(35,70,120,0.25);">
+            <span class="dwc-micro dwc-gold">Bénéfice clé : Réservations facilitées</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== CE QUE VOUS RECEVEZ ===== -->
+  <section class="dwc-section" id="livrables" style="background:var(--surface-dim); border-top:1px solid rgba(35,70,120,0.25);">
+    <div class="dwc-container">
+      <div class="dwc-reveal" style="max-width:42rem; margin-bottom:3.5rem;">
+        <span class="dwc-micro dwc-gold">Assets tangibles</span>
+        <h2 class="dwc-h2 dwc-mt-1">Ce que vous recevez avec DWC</h2>
+        <p class="dwc-body dwc-mt-2">Vous ne repartez pas avec de simples notes, mais avec des livrables concrets, prêts à l'emploi.</p>
+      </div>
+      <div class="dwc-grid dwc-grid--3">
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle"><i data-lucide="globe"></i></span>
+          <div>
+            <h3 class="dwc-h4">Site responsive livré clé en main</h3>
+            <p class="dwc-sm dwc-mt-1">Vos pages en ligne, rapides et testées sur mobile, tablette et ordinateur.</p>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle"><i data-lucide="pen-line"></i></span>
+          <div>
+            <h3 class="dwc-h4">Contenus structurés &amp; SEO de base</h3>
+            <p class="dwc-sm dwc-mt-1">Textes hiérarchisés, balises propres, Google Business configuré pour le local.</p>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle"><i data-lucide="monitor-play"></i></span>
+          <div>
+            <h3 class="dwc-h4">Session de formation d'administration</h3>
+            <p class="dwc-sm dwc-mt-1">Une heure de prise en main filmée : mettre à jour vos contenus sans développeur.</p>
+          </div>
+        </div>
+
+        <div class="dwc-card dwc-card--hover dwc-reveal dwc-fx-card" style="border-color:rgba(35,70,120,0.35); flex-direction:row; align-items:flex-start; gap:1.25rem; padding:1.75rem; grid-column:1/-1;">
+          <span class="dwc-fx-shine" aria-hidden="true"></span>
+          <span class="dwc-icon-circle"><i data-lucide="shield-check"></i></span>
+          <div>
+            <h3 class="dwc-h4">Support &amp; corrections 30 jours</h3>
+            <p class="dwc-sm dwc-mt-1">Un mois d'ajustements post-lancement inclus, par WhatsApp ou en visio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== TARIFICATION SUR DEVIS ===== -->
+  <section class="dwc-section" id="devis">
+    <div class="dwc-container">
+      <div class="dwc-card dwc-reveal" style="border-radius:1.5rem; border-color:rgba(59, 130, 246,0.35); padding:2.5rem; position:relative; overflow:hidden;">
+        <div style="display:grid; grid-template-columns:1fr; gap:2.5rem; align-items:center;" class="dwc-devis-grid">
+          <div>
+            <span class="dwc-chip dwc-chip--gold">Transparence &amp; sur-mesure</span>
+            <h2 class="dwc-h2 dwc-mt-2">Tarification sur devis personnalisé</h2>
+            <p class="dwc-body dwc-mt-2">Le devis dépend du nombre de pages, de la reprise des contenus et des fonctionnalités (boutique, réservation, multilingue). Proposition détaillée sous 24h ouvrées.</p>
+            <ul class="dwc-check-list dwc-mt-4" style="padding-top:1.25rem; border-top:1px solid rgba(35,70,120,0.3);">
+              <li><i data-lucide="check"></i><span>Devis clair, transparent et sans frais cachés</span></li>
+              <li><i data-lucide="check"></i><span>Facilités de paiement échelonné disponibles</span></li>
+              <li><i data-lucide="check"></i><span>Garantie d'application pratique directe sur vos projets</span></li>
+            </ul>
+          </div>
+          <!-- Formulaire express -->
+          <div>
+            <form id="dwc-quote-form" style="background:var(--surface-elevated); border:1px solid rgba(35,70,120,0.4); border-radius:1.25rem; padding:1.75rem; display:flex; flex-direction:column; gap:1.1rem;">
+              <h3 class="dwc-h4">Recevoir une proposition sous 24h</h3>
+              <div>
+                <label class="dwc-label-micro" for="q-name">Nom &amp; Prénoms</label>
+                <input class="dwc-input" type="text" id="q-name" placeholder="Ex : Jean-Luc Mensah" required/>
+              </div>
+              <div>
+                <label class="dwc-label-micro" for="q-phone">Numéro WhatsApp (avec indicatif)</label>
+                <input class="dwc-input" type="tel" id="q-phone" placeholder="+229 01 97 00 00 00" required/>
+              </div>
+              <div>
+                <label class="dwc-label-micro" for="q-format">Format souhaité</label>
+                <select class="dwc-select" id="q-format">
+                  <option value="Projet clé en main (maquettes → mise en ligne)">Projet clé en main (maquettes → mise en ligne)</option>
+                  <option value="Refonte d'un site existant">Refonte d'un site existant</option>
+                  <option value="Site + forfait maintenance mensuelle">Site + forfait maintenance mensuelle</option>
+                </select>
+              </div>
+              <button class="dwc-btn dwc-btn--gold dwc-btn--block dwc-btn--lg dwc-btn--sparkle" type="submit">
+                <span class="dwc-sparkle-dots" aria-hidden="true"></span>
+                <span class="dwc-btn-label">Recevoir mon devis sous 24h</span> <i data-lucide="send"></i>
+              </button>
+              <p class="dwc-micro dwc-center" style="color:var(--outline);">Vos données sont strictement confidentielles. Réponse sous 24h ouvrées.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== FAQ ACCORDÉON ===== -->
+  <section class="dwc-section" style="background:var(--surface-dim); border-top:1px solid rgba(35,70,120,0.25);">
+    <div class="dwc-container" style="max-width:56rem;">
+      <div class="dwc-section-head dwc-reveal" style="margin-bottom:3rem;">
+        <span class="dwc-micro dwc-gold">Clarifications</span>
+        <h2 class="dwc-h2 dwc-mt-1">Questions fréquemment posées</h2>
+        <p class="dwc-body">Tout ce qu'il faut savoir avant de démarrer.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1rem;">
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">Quel est le délai type d'un site vitrine&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">Deux à quatre semaines quand vos contenus (textes, logos, photos) sont disponibles. Le cadrage initial liste précisément ce que nous attendons de vous — c'est le premier facteur de délai.</div>
+        </details>
+
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">Puis-je modifier mon site ensuite&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">Oui. La formation d'administration incluse vous rend autonome sur les mises à jour courantes. Pour les évolutions lourdes, un forfait maintenance mensuelle est proposé.</div>
+        </details>
+
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">Garantissez-vous la première position sur Google&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">Personne ne peut garantir une position précise — ce serait malhonnête. Nous posons les fondations techniques et locales solides (vitesse, structure, Google Business) qui donnent les meilleures chances durables.</div>
+        </details>
+
+        <details class="dwc-faq dwc-reveal">
+          <summary>
+            <span class="dwc-faq-q">Qui paie le nom de domaine et l'hébergement&nbsp;?</span>
+            <span class="dwc-faq-chev"><i data-lucide="chevron-down"></i></span>
+          </summary>
+          <div class="dwc-faq-a">Vous, directement chez le registrar de votre choix, à votre nom : vous gardez la propriété et le contrôle total de votre actif numérique. Nous configurons tout pour vous.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+  <!-- ===== CTA FINAL ===== -->
+  <section class="dwc-section" id="contact">
+    <div class="dwc-container">
+      <div class="dwc-cta-band dwc-reveal">
+        <div class="dwc-glow-blur"></div>
+        <div style="position:relative; z-index:1; max-width:48rem; margin:0 auto;">
+          <span class="dwc-badge" style="margin-bottom:1.2rem;"><span class="dwc-micro">Passez à l'action</span></span>
+          <h2 class="dwc-h2" style="margin-bottom:1rem;">Parlons de votre projet dès cette semaine.</h2>
+          <p class="dwc-lead" style="margin-bottom:1.8rem;">Rencontrez nos mentors au hub de Cotonou ou démarrez votre session en direct où que vous soyez.</p>
+
+          <!-- Ruban de contacts -->
+          <div class="dwc-grid dwc-ribbon" style="gap:1rem; padding:1.5rem 0;">
+            <a class="dwc-contact-card" style="padding:1rem;" href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="message-circle" class="dwc-gold" style="width:1.3rem;height:1.3rem; margin-bottom:0.35rem;"></i>
+              <p class="dwc-micro" style="color:var(--text-secondary);">WhatsApp</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:600;">+229 01 97 00 00 00</p>
+            </a>
+            <a class="dwc-contact-card" style="padding:1rem;" href="mailto:contact@digitalworldcoaching.com">
+              <i data-lucide="mail" class="dwc-gold" style="width:1.3rem;height:1.3rem; margin-bottom:0.35rem;"></i>
+              <p class="dwc-micro" style="color:var(--text-secondary);">Email</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:600;">contact@digitalworldcoaching.com</p>
+            </a>
+            <div class="dwc-contact-card" style="padding:1rem;">
+              <i data-lucide="map-pin" class="dwc-gold" style="width:1.3rem;height:1.3rem; margin-bottom:0.35rem;"></i>
+              <p class="dwc-micro" style="color:var(--text-secondary);">Adresse</p>
+              <p class="dwc-sm" style="color:var(--text-primary); font-weight:600;">Haie Vive, Cotonou, Bénin</p>
+            </div>
+          </div>
+
+          <div class="dwc-flex dwc-flex-wrap dwc-gap-3 dwc-justify-center" style="padding-top:0.75rem;">
+            <a class="dwc-btn dwc-btn--gold dwc-btn--lg" href="#devis">Demander mon devis personnalisé</a>
+            <a class="dwc-btn dwc-btn--ghost dwc-btn--lg" href="../services.html">Voir tous les services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- ===== FOOTER ===== -->
+<footer class="dwc-footer">
+  <div class="dwc-container">
+    <div class="dwc-footer-grid">
+      <div>
+        <div class="dwc-flex dwc-items-center dwc-gap-2" style="margin-bottom:1rem;">
+          <img src="../assets/logo.svg" alt="Logo DWC" style="width:2.25rem;height:2.25rem;"/>
+          <span class="dwc-brand-name" style="font-size:1.2rem;">DWC</span>
+        </div>
+        <p class="dwc-sm">Centre d'excellence en transformation technologique, mentorat exécutif et formation pratique aux outils du futur à Cotonou, Bénin.</p>
+        <div class="dwc-footer-contact dwc-mt-2" style="display:flex; gap:0.75rem; padding-top:0.5rem;">
+          <a href="https://wa.me/22997000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp DWC" class="dwc-nav-call" style="width:2.25rem;height:2.25rem;"><i data-lucide="message-circle"></i></a>
+          <a href="tel:+229****0000" aria-label="Appeler DWC" class="dwc-nav-call" style="width:2.25rem;height:2.25rem;"><i data-lucide="phone"></i></a>
+          <a href="mailto:contact@digitalworldcoaching.com" aria-label="Email DWC" class="dwc-nav-call" style="width:2.25rem;height:2.25rem;"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Nos 10 services</h4>
+        <ul>
+          <li><a href="coaching-memoire.html">Coaching rédaction de mémoire</a></li>
+          <li><a href="formation-ia.html">Formation intelligence artificielle</a></li>
+          <li><a href="contenus-reseaux.html">Contenus réseaux sociaux</a></li>
+          <li><a href="monetisation-youtube.html">Création & monétisation de chaînes YouTube/TikTok</a></li>
+          <li><a href="informatique-appliquee.html">Formation informatique appliquée</a></li>
+          <li><a href="graphisme.html">Graphisme</a></li>
+          <li><a href="marketing-digital.html">Marketing digital</a></li>
+          <li><a href="maintenance-informatique.html">Maintenance informatique</a></li>
+          <li><a href="impression-numerique.html">Impression numérique</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>DWC Cotonou</h4>
+        <ul>
+          <li><a href="../projet.html">Le Projet DWC</a></li>
+          <li><a href="../contact.html">Contact &amp; Accès</a></li>
+          <li><a href="../index.html">Accueil</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accès rapide</h4>
+        <div style="padding:1rem; border-radius:0.9rem; background:var(--surface); border:1px solid rgba(35,70,120,0.35);">
+          <span class="dwc-micro dwc-gold">Campus Haie Vive</span>
+          <p class="dwc-sm dwc-mt-1">Ouvert Lun - Sam, 8h30 - 19h00</p>
+          <a class="dwc-link-arrow dwc-mt-1" style="display:inline-flex;" href="#devis">Devis immédiat <i data-lucide="chevron-right"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="dwc-footer-bottom">
+      <p>© <span id="current-year">2026</span> Digital World Coaching (DWC). Tous droits réservés. Cotonou, Bénin.</p>
+      <div class="dwc-footer-links">
+        <a href="../contact.html">Confidentialité</a>
+        <a href="../contact.html">Conditions Générales</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../js/nav.js"></script>
+<script src="../js/anim.js"></script>
+<script>
+  // Formulaire express de devis -> WhatsApp (aucun backend)
+  (function () {
+    var form = document.getElementById('dwc-quote-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = (document.getElementById('q-name').value || '').trim();
+      var phone = (document.getElementById('q-phone').value || '').trim();
+      var format = (document.getElementById('q-format').value || '').trim();
+      var text = [
+        'Bonjour Digital World Coaching,',
+        '',
+        'Je souhaite un devis pour : Développement web.',
+        '',
+        'Nom : ' + (name || '—'),
+        'WhatsApp : ' + (phone || '—'),
+        'Format souhaité : ' + format
+      ].join('\n');
+      window.open('https://wa.me/22997000000?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    });
+  })();
+</script>
+</body>
+</html>

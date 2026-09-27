@@ -245,7 +245,7 @@
         // Applique le filtre puis anime
         cards.forEach(function (c) {
           var show = filter === 'all' || c.getAttribute('data-category') === filter;
-          c.style.display = show ? 'flex' : 'none';
+          c.style.display = show ? (c.tagName === 'A' ? 'grid' : 'flex') : 'none';
         });
 
         requestAnimationFrame(function () {
@@ -376,6 +376,9 @@
     /* ---------- 13. Marquee de compétences (duplication pour boucle parfaite) ---------- */
     document.querySelectorAll('.dwc-marquee-track').forEach(function (track) {
       if (track.getAttribute('data-clone') === 'done') return;
+      // La moitié dupliquée vit sous translateX animé : on la retire du flux scrollable
+      track.style.width = '50%';
+      track.style.boxSizing = 'content-box';
       track.setAttribute('data-clone', 'done');
       track.innerHTML += track.innerHTML;
     });
