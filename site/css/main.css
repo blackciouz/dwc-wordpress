@@ -419,6 +419,8 @@ strong {
 }
 
 /* Scroll reveal (activé par js/nav.js) */
+.stitch-body h1, .stitch-body h2 { text-wrap: balance; }
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
