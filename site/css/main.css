@@ -363,7 +363,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   margin-top: 1.75rem; padding-top: 1rem; border-top: 1px solid rgba(43, 76, 126, 0.35);
 }
-.dwc-card-footer .dwc-foot-label { font-size: 0.6563rem; letter-spacing: 0.1em; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); }
+.dwc-card-footer .dwc-foot-label { font-size: 0.6875rem; letter-spacing: 0.03em; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); }
 .dwc-card-footer .dwc-foot-price { display: block; margin-top: 0.15rem; font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; color: var(--gold-soft); }
 .dwc-link-arrow {
   display: inline-flex; align-items: center; gap: 0.4rem;
