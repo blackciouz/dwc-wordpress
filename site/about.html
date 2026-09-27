@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="À propos de Digital World Coaching : notre histoire, nos valeurs et notre équipe de coachs digitaux.">
+    <title>À propos — Digital World Coaching</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f59e0b'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='26' font-weight='bold' fill='%230a0812' text-anchor='middle'%3EDW%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#f59e0b",
+                        secondary: "#a855f7",
+                        accent: "#10b981",
+                        background: "#0a0812",
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["DM Sans"]
+                    },
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dwc.css">
+    <link rel="stylesheet" href="css/sparkle-btn.css">
+    <link rel="stylesheet" href="css/animated-btn.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dwc-body font-body">
+
+    <!-- Halos de fond -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="dwc-halo-or" style="top:-10%; left:-10%;"></div>
+        <div class="dwc-halo-violet" style="bottom:-10%; right:-10%;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="dwc-nav" id="dwc-nav">
+        <a href="index.html" class="dwc-nav-logo">
+            <span class="dwc-nav-logo-icon">DW</span>
+            <span class="dwc-logo-text">Digital World Coaching</span>
+        </a>
+        <div class="dwc-nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="about.html" class="active">À propos</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">L'entreprise</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a href="contact.html" class="dwc-nav-cta nav-only">Demander un devis</a>
+        <button class="dwc-nav-toggle" id="dwc-nav-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div class="dwc-mobile-menu" id="dwc-mobile-menu">
+        <a href="index.html">Accueil</a>
+        <a href="about.html" class="active">À propos</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">L'entreprise</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="mobile-cta">Demander un devis</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="relative pt-28 md:pt-40 pb-12 px-4 md:px-6 overflow-hidden z-10">
+        <div class="absolute inset-0 -z-10 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0); background-size: 40px 40px;"></div>
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8 backdrop-blur-md">
+                <i data-lucide="users" class="w-4 h-4 text-primary"></i>
+                <span class="text-xs font-label uppercase tracking-widest text-slate-300">À propos</span>
+            </div>
+
+            <h1 class="font-headline text-3xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
+                <span class="dwc-text-gradient">Le digital, enseigné autrement</span>
+            </h1>
+
+            <p class="font-body text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                Digital World Coaching est né d'un constat simple : les outils numériques transforment des vies — encore faut-il que quelqu'un prenne le temps de les expliquer clairement, patiemment et pratiquement.
+            </p>
+        </div>
+    </section>
+
+    <!-- Valeurs -->
+    <section class="max-w-7xl mx-auto px-6 py-10 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass glass-hover p-8 rounded-2xl reveal">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 mb-6">
+                    <i data-lucide="heart" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-xl font-headline font-bold text-white mb-3">Pédagogie avant tout</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Nous n'avançons jamais plus vite que ce qui est compris. Chaque notion est expliquée, montrée, puis pratiquée ensemble — sans jargon inutile.
+                </p>
+            </div>
+            <div class="glass glass-hover p-8 rounded-2xl reveal">
+                <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary border border-secondary/20 mb-6">
+                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-xl font-headline font-bold text-white mb-3">Transparence</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Programme clair, devis détaillé, aucune promesse irréaliste : vous savez toujours où vous en êtes et ce que vous obtenez.
+                </p>
+            </div>
+            <div class="glass glass-hover p-8 rounded-2xl reveal">
+                <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent border border-accent/20 mb-6">
+                    <i data-lucide="rocket" class="w-6 h-6"></i>
+                </div>
+                <h2 class="text-xl font-headline font-bold text-white mb-3">Résultats concrets</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Un mémoire terminé, une chaîne lancée, un site en ligne, une campagne qui convertit : nos parcours se mesurent en projets réels.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domaines -->
+    <section class="max-w-7xl mx-auto px-6 py-10 md:py-16 relative z-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 dwc-section-head">
+            <div class="reveal">
+                <h2 class="font-headline font-bold text-white mb-4">Nos domaines d'intervention</h2>
+                <div class="dwc-underline"></div>
+            </div>
+            <p class="max-w-md text-slate-400 reveal">
+                De l'écriture académique à la création de contenu, jusqu'à l'infrastructure technique.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass rounded-2xl p-8 reveal">
+                <h3 class="text-lg font-headline font-bold text-white mb-3">🎓 Académique &amp; rédaction</h3>
+                <p class="text-sm text-slate-400 m-0">Coaching mémoire et thèse, méthodologie de recherche, bureautique appliquée, impression numérique des travaux.</p>
+            </div>
+            <div class="glass rounded-2xl p-8 reveal">
+                <h3 class="text-lg font-headline font-bold text-white mb-3">Création &amp; contenu</h3>
+                <p class="text-sm text-slate-400 m-0">Graphisme, contenus réseaux sociaux, création et monétisation de chaînes YouTube &amp; TikTok, marketing digital.</p>
+            </div>
+            <div class="glass rounded-2xl p-8 reveal">
+                <h3 class="text-lg font-headline font-bold text-white mb-3">Technologie &amp; IA</h3>
+                <p class="text-sm text-slate-400 m-0">Formation à l'intelligence artificielle, informatique appliquée, développement web et maintenance informatique.</p>
+            </div>
+            <div class="glass rounded-2xl p-8 reveal">
+                <h3 class="text-lg font-headline font-bold text-white mb-3">Accompagnement &amp; services</h3>
+                <p class="text-sm text-slate-400 m-0">Coaching personnalisé en présentiel ou à distance, services de maintenance et d'impression pour particuliers et entreprises.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 relative z-10">
+        <div class="relative rounded-3xl overflow-hidden p-8 md:p-20 text-center border border-white/10">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10 z-0"></div>
+            <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+            <div class="relative z-10">
+                <h2 class="text-3xl md:text-6xl font-headline font-bold mb-8 text-white max-w-4xl mx-auto leading-tight">
+                    Envie d'en savoir <span class="dwc-text-gradient">plus ?</span>
+                </h2>
+                <p class="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-body">
+                    Découvrez nos services ou écrivez-nous directement : nous aimons parler projets.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
+                    <a href="services.html" class="sparkle-btn">
+                        <div class="dots_border"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="sparkle-icon">
+                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z"></path>
+                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z"></path>
+                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black" fill="black" d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z"></path>
+                        </svg>
+                        <span class="sparkle-text">Voir nos services</span>
+                    </a>
+                    <a class="animated-btn" href="contact.html">
+                        <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                        <span class="anim-text">Nous contacter</span>
+                        <span class="circle"></span>
+                        <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-white/10 relative z-10" style="background: rgba(6, 4, 12, 0.9);">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="index.html" class="dwc-nav-logo inline-flex mb-6 no-underline">
+                        <span class="dwc-nav-logo-icon">DW</span>
+                        <span class="dwc-logo-text">DWC</span>
+                    </a>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Digital World Coaching — Coaching &amp; formations digitales. Apprenez, créez et monétisez vos compétences, en présentiel ou à distance.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-headline font-bold mb-6">Navigation</h5>
+                    <ul class="space-y-4 list-none p-0 m-0">
+                        <li><a href="index.html" class="text-slate-500 hover:text-primary transition-colors text-sm no-underline">Accueil</a></li>
+                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="about.html">À propos</a></li>
+                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Services</a></li>
+                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-headline font-bold mb-6">Services phares</h5>
+                    <ul class="space-y-4 list-none p-0 m-0">
+                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Formation à l'IA</a></li>
+                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Coaching mémoire</a></li>
+                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Chaînes YouTube &amp; TikTok</a></li>
+                        <li><a class="text-slate-500 hover:text-primary transition-colors text-sm no-underline" href="services.html">Marketing digital</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-headline font-bold mb-6">Contact</h5>
+                    <p class="text-slate-500 text-sm mb-2">Téléphone / WhatsApp : <span class="text-slate-400">[à compléter]</span></p>
+                    <p class="text-slate-500 text-sm mb-4">Email : <span class="text-slate-400">[à compléter]</span></p>
+                    <a class="text-primary font-bold hover:underline no-underline" href="contact.html">Me contacter</a>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5">
+                <p class="text-slate-600 text-xs mb-4 md:mb-0">
+                    © <span id="current-year">2026</span> Digital World Coaching. Tous droits réservés.
+                </p>
+                <div class="flex gap-8">
+                    <a class="text-slate-600 text-xs hover:text-primary transition-colors no-underline" href="contact.html">Contact</a>
+                    <a class="text-slate-600 text-xs hover:text-primary transition-colors no-underline" href="about.html">À propos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/nav.js"></script>
+</body>
+</html>
