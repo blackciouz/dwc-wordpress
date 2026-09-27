@@ -1,0 +1,88 @@
+/* DWC — MODE CLAIR (défaut) : surcharge des tokens, même structure qu'en sombre.
+   Activé par défaut; le mode sombre se remet via [data-theme="dark"] sur <html>. */
+html[data-theme="light"] {
+  --bg: #F4F8FE;
+  --surface: #FFFFFF;
+  --surface-dim: #EAF1FA;
+  --surface-elevated: #FFFFFF;
+  --surface-hi: #FFFFFF;
+  --icon-bg: #E3EEFD;
+  --outline-variant: #B9D3F1;
+  --outline: #6E90BE;
+
+  --gold: #2563EB;
+  --gold-bright: #1D4ED8;
+  --gold-soft: #1E5BD6;
+  --bronze: #1E40AF;
+  --gold-border: rgba(37, 99, 235, 0.22);
+  --gold-border-hover: rgba(37, 99, 235, 0.55);
+  --grad-gold: linear-gradient(90deg, #2563EB 0%, #3B82F6 50%, #1D4ED8 100%);
+  --grad-gold-soft: linear-gradient(135deg, #3B82F6 0%, #3B82F6 50%, #2563EB 100%);
+
+  --text-primary: #0C1B33;
+  --text-secondary: #44587A;
+  --on-surface: #0C1B33;
+  --on-primary: #FFFFFF;
+  --on-primary-deep: #FFFFFF;
+
+  --shadow-card: 0 16px 32px -12px rgba(12, 27, 51, 0.18);
+  --cream: #F4F8FE;
+  --teal: #0D9488;
+  --teal-bright: #14B8A6;
+  --teal-soft: rgba(20, 184, 166, 0.14);
+  --amber: #0284C7;
+  --amber-bright: #38BDF8;
+  --copper: #1D4ED8;
+  --copper-bright: #2563EB;
+  --ember: #1D4ED8;
+  --ember-bright: #2563EB;
+}
+
+/* Fond du body + surfaces génériques */
+html[data-theme="light"] body { background: var(--bg); color: var(--text-primary); }
+
+/* Halos/aurora: beaucoup plus discrets sur fond clair */
+html[data-theme="light"] [class*="aurora"],
+html[data-theme="light"] [class*="orb"],
+html[data-theme="light"] [class*="mesh"] { opacity: 0.25; filter: saturate(0.8); }
+
+/* Navbar: fond blanc translucide */
+html[data-theme="light"] .dwc-nav {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(37, 99, 235, 0.18);
+  box-shadow: 0 12px 40px rgba(12, 27, 51, 0.10);
+}
+html[data-theme="light"] .dwc-mobile-menu { background: rgba(255, 255, 255, 1); border-color: rgba(37, 99, 235, 0.18); }
+
+/* Cartes: blanc + ombre douce bleutée */
+html[data-theme="light"] .dwc-card,
+html[data-theme="light"] .svc-card { box-shadow: 0 10px 28px -10px rgba(12, 27, 51, 0.14); }
+html[data-theme="light"] .svc-card { background: #E9F1FC; }
+
+/* Bouton ghost: fond clair */
+html[data-theme="light"] .dwc-btn--ghost { background: rgba(37, 99, 235, 0.06); border-color: rgba(37, 99, 235, 0.35); color: var(--text-primary); }
+html[data-theme="light"] .dwc-btn--dark { background: #E3EEFC; border-color: rgba(37, 99, 235, 0.3); color: #1D4ED8; }
+html[data-theme="light"] .dwc-btn--gold { background: linear-gradient(135deg, #2563EB, #3B82F6); color: #fff; box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.5); }
+
+/* Inputs */
+html[data-theme="light"] .dwc-input, html[data-theme="light"] .dwc-select, html[data-theme="light"] .dwc-textarea {
+  background: #FFFFFF; border-color: #B9D3F1; color: var(--text-primary);
+}
+html[data-theme="light"] .dwc-input:focus, html[data-theme="light"] .dwc-select:focus, html[data-theme="light"] .dwc-textarea:focus {
+  border-color: #2563EB; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Marquee + badges */
+html[data-theme="light"] .dwc-badge { background: #FFFFFF; border-color: rgba(37, 99, 235, 0.25); }
+
+/* Toggle de thème dans la nav */
+.dwc-theme-toggle {
+  width: 2.5rem; height: 2.5rem; border-radius: 9999px; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--icon-bg); border: 1px solid var(--outline-variant);
+  color: var(--gold-soft); cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+.dwc-theme-toggle:hover { border-color: var(--gold); }
+.dwc-theme-toggle:active { transform: scale(0.95); }
+.dwc-theme-toggle .lucide { width: 1.05rem; height: 1.05rem; }

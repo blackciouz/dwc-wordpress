@@ -183,3 +183,15 @@ document.addEventListener('DOMContentLoaded', function () {
         yearSpan.textContent = new Date().getFullYear();
     }
 });
+/* ---------- Toggle thème clair/sombre (défaut: clair) ---------- */
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest ? e.target.closest('#dwc-theme-toggle') : null;
+  if (!btn) return;
+  var root = document.documentElement;
+  var cur = root.getAttribute('data-theme') || 'light';
+  var next = cur === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('dwc-theme', next); } catch (err) {}
+  var ic = btn.querySelector('.lucide, [data-lucide]');
+  if (ic) { ic.setAttribute('data-lucide', next === 'light' ? 'sun' : 'moon'); if (window.lucide && lucide.createIcons) lucide.createIcons(); }
+});

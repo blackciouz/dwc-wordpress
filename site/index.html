@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <script>
+(function(){try{var t=localStorage.getItem('dwc-theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Digital World Coaching (DWC) | Excellence Digitale &amp; Coaching à Cotonou</title>
@@ -10,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="css/anim.css"/>
+  <link rel="stylesheet" href="css/light.css"/>
 <link rel="stylesheet" href="css/main.css"/>
 <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -40,6 +44,7 @@
         <i data-lucide="phone"></i>
       </a>
       <a class="dwc-btn dwc-btn--gold dwc-nav-cta" href="contact.html">Demander un devis</a>
+  <button class="dwc-theme-toggle" id="dwc-theme-toggle" aria-label="Changer de thème" title="Mode clair/sombre"><i data-lucide="sun"></i></button>
       <button class="dwc-burger" id="dwc-nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
