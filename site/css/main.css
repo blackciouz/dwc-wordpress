@@ -1,44 +1,44 @@
 /* ============================================================
    Digital World Coaching — DWC v3 (identité Stitch)
-   Noir café chaud #0E0C09 + or chaud #E5B44C — zéro bleu, zéro violet
+   Bleu nuit #0A1428 + bleu vif #3B82F6 — identité bleu & blanc
    Typo : Space Grotesk (titres) + Inter (texte) — Icônes : Lucide
    ============================================================ */
 
 /* ---------- 1. Tokens ---------- */
 :root {
   /* Fond & surfaces (palette Stitch) */
-  --bg: #0E0C09;
-  --surface: #17130D;
+  --bg: #0A1428;
+  --surface: #101E38;
   --surface-dim: #151310;
   --surface-elevated: #1E1913;
-  --icon-bg: #241C11;
-  --outline-variant: #4F4636;
-  --outline: #9B8F7D;
+  --icon-bg: #152A4A;
+  --outline-variant: #2B4C7E;
+  --outline: #94AACD;
 
-  /* Or chaud */
-  --gold: #E5B44C;
-  --gold-bright: #F2D492;
-  --gold-soft: #FFD174;
-  --bronze: #B97F35;
-  --gold-border: rgba(229, 180, 76, 0.18);
-  --gold-border-hover: rgba(229, 180, 76, 0.55);
+  /* Bleu vif */
+  --gold: #3B82F6;
+  --gold-bright: #93C5FD;
+  --gold-soft: #60A5FA;
+  --bronze: #1D4ED8;
+  --gold-border: rgba(59, 130, 246, 0.18);
+  --gold-border-hover: rgba(59, 130, 246, 0.55);
 
   /* Textes */
-  --text-primary: #F7F2E7;
-  --text-secondary: #B3A88F;
-  --on-surface: #E8E1DB;
+  --text-primary: #F5F9FF;
+  --text-secondary: #94AACD;
+  --on-surface: #EAF2FF;
 
   /* Sur l'or (texte sombre chaud) */
-  --on-primary: #402D00;
-  --on-primary-deep: #261900;
+  --on-primary: #0E2452;
+  --on-primary-deep: #0A1830;
 
   /* États */
-  --success: #8BB174;
-  --danger: #C96A5A;
+  --success: #34D399;
+  --danger: #F87171;
 
   /* Dégradés or -> bronze (seule direction autorisée) */
-  --grad-gold: linear-gradient(90deg, #E5B44C 0%, #F2D492 50%, #B97F35 100%);
-  --grad-gold-soft: linear-gradient(135deg, #FFD174 0%, #F7BB77 50%, #E5B44C 100%);
+  --grad-gold: linear-gradient(90deg, #3B82F6 0%, #93C5FD 50%, #1D4ED8 100%);
+  --grad-gold-soft: linear-gradient(135deg, #60A5FA 0%, #60A5FA 50%, #3B82F6 100%);
 
   /* Layout */
   --radius: 1rem;
@@ -49,25 +49,25 @@
   --font-head: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
-  --shadow-card: 0 16px 32px -8px rgba(16, 14, 11, 0.7);
+  --shadow-card: 0 16px 32px -8px rgba(9, 17, 34, 0.7);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* --- v4 : écosystème enrichi (crème / teal / ambre / cuivre / braise) --- */
-  --cream: #F3EAD8;
-  --teal: #3E9B8F;
-  --teal-bright: #6FC7BB;
-  --teal-soft: rgba(62, 155, 143, 0.16);
-  --amber: #E89B3C;
-  --amber-bright: #F3BE7A;
-  --copper: #C87A3B;
-  --copper-bright: #E2A468;
-  --ember: #C96F4A;
-  --ember-bright: #EFA07E;
+  --cream: #F5F9FF;
+  --teal: #14B8A6;
+  --teal-bright: #5EEAD4;
+  --teal-soft: rgba(20, 184, 166, 0.16);
+  --amber: #38BDF8;
+  --amber-bright: #7DD3FC;
+  --copper: #2563EB;
+  --copper-bright: #38BDF8;
+  --ember: #2563EB;
+  --ember-bright: #7DD3FC;
   --surface-hi: #221B12;
-  --surface-card: #1D1811;
-  --surface-line: rgba(226, 201, 148, 0.14);
-  --grad-title: linear-gradient(100deg, #F2D492 0%, #E5B44C 30%, #C87A3B 62%, #F3EAD8 100%);
-  --grad-warm: linear-gradient(120deg, #E5B44C 0%, #E89B3C 45%, #C87A3B 100%);
+  --surface-card: #122140;
+  --surface-line: rgba(147, 197, 253, 0.14);
+  --grad-title: linear-gradient(100deg, #93C5FD 0%, #3B82F6 30%, #2563EB 62%, #F5F9FF 100%);
+  --grad-warm: linear-gradient(120deg, #3B82F6 0%, #38BDF8 45%, #2563EB 100%);
 }
 
 /* ---------- 2. Reset ---------- */
@@ -165,14 +165,14 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
 .dwc-halo-top {
   position: absolute; inset: 0 0 auto 0; height: 37.5rem;
   pointer-events: none; z-index: 0;
-  background: radial-gradient(ellipse 65% 50% at 50% 0%, rgba(229, 180, 76, 0.10), transparent 70%);
+  background: radial-gradient(ellipse 65% 50% at 50% 0%, rgba(59, 130, 246, 0.10), transparent 70%);
 }
 .dwc-halo-soft {
-  background: radial-gradient(circle at 50% 50%, rgba(229, 180, 76, 0.07), transparent 75%);
+  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.07), transparent 75%);
 }
 .dwc-glow-blur {
   position: absolute; border-radius: 9999px; pointer-events: none;
-  background: rgba(229, 180, 76, 0.09); filter: blur(90px);
+  background: rgba(59, 130, 246, 0.09); filter: blur(90px);
 }
 
 /* ---------- 5. Nav pilule flottante ---------- */
@@ -183,12 +183,12 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
 .dwc-nav {
   max-width: var(--container); margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  background: rgba(23, 19, 13, 0.92);
+  background: rgba(11, 22, 44, 0.92);
   -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
   border: 1px solid rgba(79, 70, 54, 0.45);
   border-radius: 9999px;
   padding: 0.65rem 0.75rem 0.65rem 1.25rem;
-  box-shadow: 0 12px 40px rgba(10, 8, 6, 0.55);
+  box-shadow: 0 12px 40px rgba(6, 13, 28, 0.55);
   transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 .dwc-brand { display: flex; align-items: center; gap: 0.7rem; min-width: 0; }
@@ -235,13 +235,13 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
 .dwc-mobile-menu {
   position: absolute; top: calc(100% + 0.6rem); left: 0; right: 0;
   max-width: var(--container); margin: 0 auto;
-  background: rgba(23, 19, 13, 0.98);
+  background: rgba(11, 22, 44, 0.98);
   -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
   border: 1px solid var(--gold-border);
   border-radius: 1.5rem;
   padding: 1rem;
   display: none; flex-direction: column; gap: 0.25rem;
-  box-shadow: 0 24px 60px rgba(10, 8, 6, 0.7);
+  box-shadow: 0 24px 60px rgba(6, 13, 28, 0.7);
 }
 .dwc-mobile-menu.open { display: flex; }
 .dwc-mobile-menu a {
@@ -251,7 +251,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
   color: var(--text-primary); transition: background 0.2s ease, color 0.2s ease;
 }
 .dwc-mobile-menu a:hover, .dwc-mobile-menu a.active {
-  background: rgba(229, 180, 76, 0.08); color: var(--gold-soft);
+  background: rgba(59, 130, 246, 0.08); color: var(--gold-soft);
 }
 .dwc-mobile-menu a .lucide { width: 1rem; height: 1rem; color: var(--gold); }
 .dwc-mobile-cta { margin-top: 0.6rem; }
@@ -268,12 +268,12 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
 
 .dwc-btn--gold {
   background: var(--gold); color: var(--on-primary-deep);
-  box-shadow: 0 10px 30px -10px rgba(229, 180, 76, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.45);
 }
 .dwc-btn--gold:hover { filter: brightness(1.08); }
 
 .dwc-btn--ghost {
-  background: rgba(23, 19, 13, 0.7); border: 1px solid rgba(229, 180, 76, 0.4); color: var(--text-primary);
+  background: rgba(11, 22, 44, 0.7); border: 1px solid rgba(59, 130, 246, 0.4); color: var(--text-primary);
 }
 .dwc-btn--ghost:hover { border-color: var(--gold); color: var(--gold-soft); }
 
@@ -289,9 +289,9 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
 .dwc-badge {
   display: inline-flex; align-items: center; gap: 0.6rem;
   padding: 0.4rem 1rem; border-radius: 9999px;
-  background: var(--surface-elevated); border: 1px solid rgba(229, 180, 76, 0.3);
+  background: var(--surface-elevated); border: 1px solid rgba(59, 130, 246, 0.3);
   color: var(--gold-soft);
-  box-shadow: 0 4px 16px rgba(10, 8, 6, 0.4);
+  box-shadow: 0 4px 16px rgba(6, 13, 28, 0.4);
 }
 .dwc-badge .dwc-dot {
   width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: var(--success);
@@ -307,7 +307,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
 }
 @media (max-width: 1280px) { .dwc-chip { white-space: normal; } }
 .dwc-chip--gold {
-  border-color: rgba(229, 180, 76, 0.3); color: var(--gold-bright); background: var(--icon-bg);
+  border-color: rgba(59, 130, 246, 0.3); color: var(--gold-bright); background: var(--icon-bg);
 }
 .dwc-tag {
   display: inline-block; padding: 0.3rem 0.65rem; border-radius: 0.5rem;
@@ -322,7 +322,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
   padding: 0.3rem 0.85rem; border-radius: 9999px;
   background: var(--gold); color: var(--on-primary-deep);
   font-size: 0.6563rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  box-shadow: 0 6px 18px rgba(229, 180, 76, 0.35);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
 }
 
 /* ---------- 8. Cartes ---------- */
@@ -336,14 +336,14 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
 .dwc-card--hover:hover {
   transform: translateY(-4px);
   border-color: var(--gold-border-hover);
-  box-shadow: var(--shadow-card), 0 0 28px rgba(229, 180, 76, 0.07);
+  box-shadow: var(--shadow-card), 0 0 28px rgba(59, 130, 246, 0.07);
 }
 
 /* Rond d'icône Lucide */
 .dwc-icon-circle {
   width: 3rem; height: 3rem; border-radius: 9999px; flex-shrink: 0;
   display: inline-flex; align-items: center; justify-content: center;
-  background: var(--icon-bg); border: 1px solid rgba(229, 180, 76, 0.28);
+  background: var(--icon-bg); border: 1px solid rgba(59, 130, 246, 0.28);
   color: var(--gold-soft);
 }
 .dwc-icon-circle .lucide { width: 1.4rem; height: 1.4rem; }
@@ -378,13 +378,13 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
   display: flex; align-items: center; justify-content: center;
   background: var(--surface-elevated); border: 2px solid var(--gold);
   font-family: var(--font-head); font-size: 1.15rem; font-weight: 700; color: var(--gold-soft);
-  box-shadow: 0 10px 24px rgba(10, 8, 6, 0.6);
+  box-shadow: 0 10px 24px rgba(6, 13, 28, 0.6);
 }
 .dwc-step-line { display: none; }
 @media (min-width: 900px) {
   .dwc-step-line {
     display: block; position: absolute; top: 3.1rem; left: 4%; right: 4%; z-index: 0;
-    border-top: 2px dashed rgba(229, 180, 76, 0.28);
+    border-top: 2px dashed rgba(59, 130, 246, 0.28);
   }
 }
 
@@ -400,27 +400,27 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
   position: relative; height: 11rem; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   background:
-    radial-gradient(ellipse 80% 90% at 30% 15%, rgba(242, 212, 146, 0.22), transparent 60%),
-    radial-gradient(ellipse 90% 100% at 75% 90%, rgba(185, 127, 53, 0.35), transparent 65%),
-    linear-gradient(160deg, #241C11 0%, #17130D 55%, #100D08 100%);
+    radial-gradient(ellipse 80% 90% at 30% 15%, rgba(96, 165, 250, 0.22), transparent 60%),
+    radial-gradient(ellipse 90% 100% at 75% 90%, rgba(29, 78, 216, 0.35), transparent 65%),
+    linear-gradient(160deg, #152A4A 0%, #101E38 55%, #0C1830 100%);
 }
-.dwc-visual .lucide { width: 3.5rem; height: 3.5rem; color: rgba(229, 180, 76, 0.75); }
+.dwc-visual .lucide { width: 3.5rem; height: 3.5rem; color: rgba(59, 130, 246, 0.75); }
 .dwc-visual .dwc-visual-badge {
   position: absolute; top: 1rem; left: 1rem;
   padding: 0.35rem 0.8rem; border-radius: 9999px;
-  background: rgba(23, 19, 13, 0.9); border: 1px solid var(--gold-border);
+  background: rgba(11, 22, 44, 0.9); border: 1px solid var(--gold-border);
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   color: var(--gold-bright);
 }
 .dwc-visual--b { background:
-    radial-gradient(ellipse 80% 90% at 70% 20%, rgba(229, 180, 76, 0.28), transparent 60%),
-    radial-gradient(ellipse 90% 100% at 20% 85%, rgba(185, 127, 53, 0.3), transparent 65%),
-    linear-gradient(200deg, #241C11 0%, #17130D 55%, #100D08 100%);
+    radial-gradient(ellipse 80% 90% at 70% 20%, rgba(59, 130, 246, 0.28), transparent 60%),
+    radial-gradient(ellipse 90% 100% at 20% 85%, rgba(29, 78, 216, 0.3), transparent 65%),
+    linear-gradient(200deg, #152A4A 0%, #101E38 55%, #0C1830 100%);
 }
 .dwc-visual--c { background:
-    radial-gradient(ellipse 80% 90% at 50% 10%, rgba(247, 187, 119, 0.2), transparent 60%),
-    radial-gradient(ellipse 90% 100% at 80% 80%, rgba(185, 127, 53, 0.4), transparent 65%),
-    linear-gradient(140deg, #100D08 0%, #241C11 60%, #17130D 100%);
+    radial-gradient(ellipse 80% 90% at 50% 10%, rgba(56, 189, 248, 0.2), transparent 60%),
+    radial-gradient(ellipse 90% 100% at 80% 80%, rgba(29, 78, 216, 0.4), transparent 65%),
+    linear-gradient(140deg, #0C1830 0%, #152A4A 60%, #101E38 100%);
 }
 .dwc-result-box {
   background: var(--surface-elevated); border: 1px solid rgba(79, 70, 54, 0.35);
@@ -440,9 +440,9 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
   padding: 0.85rem 1rem; font-size: 0.95rem; color: var(--text-primary);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.dwc-input::placeholder, .dwc-textarea::placeholder { color: rgba(155, 143, 125, 0.7); }
+.dwc-input::placeholder, .dwc-textarea::placeholder { color: rgba(148, 172, 205, 0.7); }
 .dwc-input:focus, .dwc-select:focus, .dwc-textarea:focus {
-  outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(229, 180, 76, 0.18);
+  outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
 }
 .dwc-textarea { resize: vertical; min-height: 7rem; }
 /* Les <select> gardent un min-content intrinsèque (option la plus longue) : autoriser le shrink */
@@ -462,7 +462,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
   background: var(--surface-elevated); border: 1px solid rgba(79, 70, 54, 0.55);
   cursor: pointer; transition: border-color 0.2s ease;
 }
-.dwc-radio-card:hover { border-color: rgba(229, 180, 76, 0.5); }
+.dwc-radio-card:hover { border-color: rgba(59, 130, 246, 0.5); }
 .dwc-radio-card input[type="radio"] { accent-color: var(--gold); width: 1.05rem; height: 1.05rem; }
 .dwc-radio-card input:checked ~ .dwc-radio-body .dwc-radio-title { color: var(--gold-soft); }
 .dwc-radio-title { display: block; font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
@@ -470,7 +470,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); font-weight: 700; letter-spa
 
 /* ---------- 13. FAQ accordéon ---------- */
 .dwc-faq { background: var(--surface); border: 1px solid rgba(79, 70, 54, 0.4); border-radius: 1.1rem; overflow: hidden; transition: border-color 0.25s ease; }
-.dwc-faq[open] { border-color: rgba(229, 180, 76, 0.4); }
+.dwc-faq[open] { border-color: rgba(59, 130, 246, 0.4); }
 .dwc-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.35rem 1.5rem; cursor: pointer; list-style: none; user-select: none; }
 .dwc-faq summary::-webkit-details-marker { display: none; }
 .dwc-faq summary:hover .dwc-faq-q { color: var(--gold-soft); }
@@ -492,10 +492,10 @@ section[id], div[id] { scroll-margin-top: 6.5rem; }
 .dwc-cta-band {
   position: relative; overflow: hidden; text-align: center;
   background: var(--surface-elevated);
-  border: 2px solid rgba(229, 180, 76, 0.22);
+  border: 2px solid rgba(59, 130, 246, 0.22);
   border-radius: var(--radius-xl);
   padding: 3rem 1.5rem;
-  box-shadow: 0 30px 80px -30px rgba(10, 8, 6, 0.9);
+  box-shadow: 0 30px 80px -30px rgba(6, 13, 28, 0.9);
 }
 @media (min-width: 768px) { .dwc-cta-band { padding: 4.5rem 4rem; } }
 .dwc-cta-band .dwc-glow-blur { width: 22rem; height: 22rem; top: -8rem; right: -6rem; opacity: 0.6; }
@@ -510,7 +510,7 @@ section[id], div[id] { scroll-margin-top: 6.5rem; }
 .dwc-contact-card:hover {
   transform: translateY(-4px);
   border-color: var(--gold-border-hover);
-  box-shadow: 0 16px 36px -12px rgba(16, 14, 11, 0.9), 0 0 24px -4px rgba(229, 180, 76, 0.1);
+  box-shadow: 0 16px 36px -12px rgba(9, 17, 34, 0.9), 0 0 24px -4px rgba(59, 130, 246, 0.1);
 }
 .dwc-contact-value { font-family: var(--font-head); font-size: 1.15rem; font-weight: 600; color: var(--text-primary); letter-spacing: -0.01em; transition: color 0.2s ease; }
 .dwc-contact-card:hover .dwc-contact-value { color: var(--gold-soft); }
@@ -566,10 +566,10 @@ section[id], div[id] { scroll-margin-top: 6.5rem; }
 /* Stat-box (indicateurs du hero projet) */
 .dwc-stat-box {
   padding: 1.25rem; border-radius: 1rem;
-  background: rgba(23, 19, 13, 0.8); border: 1px solid rgba(79, 70, 54, 0.25);
+  background: rgba(11, 22, 44, 0.8); border: 1px solid rgba(79, 70, 54, 0.25);
   transition: border-color 0.25s ease;
 }
-.dwc-stat-box:hover { border-color: rgba(229, 180, 76, 0.45); }
+.dwc-stat-box:hover { border-color: rgba(59, 130, 246, 0.45); }
 
 /* Ruban de contacts 3 colonnes (pages détail) : 1 col mobile -> 3 cols */
 .dwc-ribbon { grid-template-columns: 1fr; }

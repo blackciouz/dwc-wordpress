@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Digital World Coaching — DW">
   <defs>
     <linearGradient id="dwcRing" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f2d492"/>
-      <stop offset="100%" stop-color="#b97f35"/>
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
     </linearGradient>
     <linearGradient id="dwcLetters" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffd174"/>
-      <stop offset="50%" stop-color="#e5b44c"/>
-      <stop offset="100%" stop-color="#b97f35"/>
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
     </linearGradient>
     <filter id="dwcGlow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="10" result="blur"/>
@@ -28,7 +28,7 @@
 
   <!-- Fond transparent : anneau dégradé or -> bronze, intérieur noir café -->
   <circle cx="256" cy="256" r="238" fill="url(#dwcRing)"/>
-  <circle cx="256" cy="256" r="206" fill="#0e0c09"/>
+  <circle cx="256" cy="256" r="206" fill="#0A1428"/>
 
   <!-- Anneau fin de soulignement -->
   <circle cx="256" cy="256" r="216" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="3"/>
@@ -42,5 +42,5 @@
   </g>
 
   <!-- Point d'accent sous le monogramme -->
-  <circle cx="256" cy="382" r="9" fill="#e5b44c" filter="url(#dwcGlow)"/>
+  <circle cx="256" cy="382" r="9" fill="#3B82F6" filter="url(#dwcGlow)"/>
 </svg>

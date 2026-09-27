@@ -3,7 +3,7 @@
    Patterns portés depuis ouzef.com (sparkle-btn, reveals, tilt)
    + uiverse.io / 21st.dev (liquid fill, border beam, shimmer,
    spotlight, floating labels) — recalibrés palette Stitch :
-   noir café #0E0C09 + or chaud #E5B44C. Zéro bleu, zéro violet.
+   Bleu nuit #0A1428 + bleu vif #3B82F6. identité bleu & blanc.
    ============================================================ */
 
 /* ---------- 0. Angle animé (border beam) ---------- */
@@ -14,38 +14,38 @@
 }
 
 /* ---------- 0b. Écosystème de couleurs enrichi (directive v4) ----------
-   Base inchangée : noir café + or. Ajouts harmonisés autour du duo :
+   Identité bleu & blanc. Accents harmonisés autour du duo bleu :
    ivoire/crème (accents clairs), teal profond (succès tertiaire),
    ambre & cuivre (gradients secondaires), rouge braise (badges chauds).
-   Profondeur des cartes = variations de luminosité du café, pas un aplat. */
+   Profondeur des cartes = variations de luminosité du bleu nuit, pas un aplat. */
 :root {
   /* Accents clairs */
-  --cream: #F3EAD8;
-  --cream-dim: #E4D9C2;
+  --cream: #F5F9FF;
+  --cream-dim: #DBEAFE;
   /* Tertiaire vert/teal (états positifs, accent IA) */
-  --teal: #3E9B8F;
-  --teal-bright: #6FC7BB;
-  --teal-soft: rgba(62, 155, 143, 0.16);
-  --teal-glow: rgba(111, 199, 187, 0.35);
+  --teal: #14B8A6;
+  --teal-bright: #5EEAD4;
+  --teal-soft: rgba(20, 184, 166, 0.16);
+  --teal-glow: rgba(45, 212, 191, 0.35);
   /* Secondaire ambre / cuivre */
-  --amber: #E89B3C;
-  --amber-bright: #F3BE7A;
-  --amber-soft: rgba(232, 155, 60, 0.15);
-  --copper: #C87A3B;
-  --copper-bright: #E2A468;
-  --copper-soft: rgba(200, 122, 59, 0.16);
-  --copper-glow: rgba(226, 164, 104, 0.32);
+  --amber: #38BDF8;
+  --amber-bright: #7DD3FC;
+  --amber-soft: rgba(56, 189, 248, 0.15);
+  --copper: #2563EB;
+  --copper-bright: #38BDF8;
+  --copper-soft: rgba(37, 99, 235, 0.16);
+  --copper-glow: rgba(56, 189, 248, 0.32);
   /* Braise discrète (alertes, badge Populaire) */
-  --ember: #C96F4A;
-  --ember-bright: #EFA07E;
-  --ember-soft: rgba(201, 111, 74, 0.16);
-  /* Surfaces café étagées (profondeur) */
+  --ember: #2563EB;
+  --ember-bright: #7DD3FC;
+  --ember-soft: rgba(59, 130, 246, 0.16);
+  /* Surfaces bleu nuit étagées (profondeur) */
   --surface-hi: #221B12;
-  --surface-card: #1D1811;
-  --surface-line: rgba(226, 201, 148, 0.14);
+  --surface-card: #122140;
+  --surface-line: rgba(147, 197, 253, 0.14);
   /* Dégradés multi-teintes */
-  --grad-title: linear-gradient(100deg, #F2D492 0%, #E5B44C 30%, #C87A3B 62%, #F3EAD8 100%);
-  --grad-warm: linear-gradient(120deg, #E5B44C 0%, #E89B3C 45%, #C87A3B 100%);
+  --grad-title: linear-gradient(100deg, #93C5FD 0%, #3B82F6 30%, #2563EB 62%, #F5F9FF 100%);
+  --grad-warm: linear-gradient(120deg, #3B82F6 0%, #38BDF8 45%, #2563EB 100%);
 }
 
 /* ---------- 1. NAV : liseré de progression + état scrolé ---------- */
@@ -55,14 +55,14 @@
   background: linear-gradient(90deg, var(--bronze), var(--gold), var(--gold-soft));
   transform-origin: 0 50%;
   transform: scaleX(0);
-  box-shadow: 0 0 12px rgba(229, 180, 76, 0.55);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.55);
 }
 .dwc-header.is-scrolled .dwc-nav {
-  background: rgba(20, 16, 11, 0.88);
+  background: rgba(10, 20, 40, 0.88);
   -webkit-backdrop-filter: blur(18px) saturate(150%);
   backdrop-filter: blur(18px) saturate(150%);
-  border-color: rgba(229, 180, 76, 0.35);
-  box-shadow: 0 14px 44px rgba(10, 8, 6, 0.65), 0 0 0 1px rgba(229, 180, 76, 0.08), 0 0 28px rgba(229, 180, 76, 0.07);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 14px 44px rgba(6, 13, 28, 0.65), 0 0 0 1px rgba(59, 130, 246, 0.08), 0 0 28px rgba(59, 130, 246, 0.07);
 }
 .dwc-nav-links a { position: relative; }
 .dwc-nav-links a::after {
@@ -93,26 +93,26 @@
 .dwc-btn--gold:not(.dwc-btn--sparkle) > *, .dwc-btn--dark > * { position: relative; z-index: 2; }
 .dwc-btn--gold:not(.dwc-btn--sparkle):hover { filter: none; }
 .dwc-btn--gold:not(.dwc-btn--sparkle):hover {
-  box-shadow: 0 14px 34px -10px rgba(229, 180, 76, 0.55), 0 0 0 1px rgba(242, 212, 146, 0.35) inset;
+  box-shadow: 0 14px 34px -10px rgba(59, 130, 246, 0.55), 0 0 0 1px rgba(96, 165, 250, 0.35) inset;
 }
 .dwc-btn--gold:active, .dwc-btn--ghost:active, .dwc-btn--dark:active { transform: scale(0.96); }
 
 /* ---------- 2b. BOUTON SECONDAIRE : border beam animé (21st.dev) ---------- */
 .dwc-btn--beam {
-  background: rgba(23, 19, 13, 0.72);
+  background: rgba(11, 22, 44, 0.72);
   border: 1px solid transparent;
   isolation: isolate;
-  box-shadow: 0 10px 30px -12px rgba(10, 8, 6, 0.8);
+  box-shadow: 0 10px 30px -12px rgba(6, 13, 28, 0.8);
 }
 .dwc-btn--beam::before {
   content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
   padding: 1.5px;
   background: conic-gradient(
     from var(--dwc-beam-angle),
-    rgba(229, 180, 76, 0.12) 0deg,
+    rgba(59, 130, 246, 0.12) 0deg,
     var(--gold-soft) 40deg,
     var(--bronze) 80deg,
-    rgba(229, 180, 76, 0.12) 130deg,
+    rgba(59, 130, 246, 0.12) 130deg,
     rgba(79, 70, 54, 0.5) 360deg
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -124,13 +124,13 @@
 .dwc-btn--beam:hover {
   color: var(--gold-soft);
   transform: translateY(-1px) scale(1.015);
-  box-shadow: 0 14px 34px -12px rgba(229, 180, 76, 0.3);
+  box-shadow: 0 14px 34px -12px rgba(59, 130, 246, 0.3);
 }
 .dwc-btn--beam > * { position: relative; z-index: 2; }
 @keyframes dwc-beam-spin { to { --dwc-beam-angle: 360deg; } }
 /* Repli si @property non supporté : halo respirant */
 @supports not (background: conic-gradient(from 0deg, red, blue)) {
-  .dwc-btn--beam { border-color: rgba(229, 180, 76, 0.5); }
+  .dwc-btn--beam { border-color: rgba(59, 130, 246, 0.5); }
 }
 
 /* ---------- 2c. BOUTON SPARKLE (port ouzef.com, or/bronze) ---------- */
@@ -148,7 +148,7 @@
 .dwc-btn--sparkle .dwc-sparkle-dots::before {
   content: ""; position: absolute; top: 35%; left: 50%;
   width: 110%; height: 2.2rem;
-  background: linear-gradient(180deg, var(--gold-soft), rgba(229, 180, 76, 0.1));
+  background: linear-gradient(180deg, var(--gold-soft), rgba(59, 130, 246, 0.1));
   -webkit-mask: linear-gradient(transparent 0%, #000 120%);
           mask: linear-gradient(transparent 0%, #000 120%);
   transform-origin: left center;
@@ -159,15 +159,15 @@
 .dwc-btn--sparkle::after {
   content: ""; position: absolute; inset: 0; z-index: 2; border-radius: 9999px;
   background:
-    radial-gradient(circle at 22% 85%, rgba(255, 209, 116, 0.85) 0%, transparent 55%),
-    radial-gradient(circle at 80% 90%, rgba(185, 127, 53, 0.8) 0%, transparent 55%),
-    radial-gradient(circle at 50% 120%, rgba(242, 212, 146, 0.9) 0%, transparent 60%);
+    radial-gradient(circle at 22% 85%, rgba(147, 197, 253, 0.85) 0%, transparent 55%),
+    radial-gradient(circle at 80% 90%, rgba(29, 78, 216, 0.8) 0%, transparent 55%),
+    radial-gradient(circle at 50% 120%, rgba(96, 165, 250, 0.9) 0%, transparent 60%);
   opacity: 0; transition: opacity 0.35s ease;
 }
 .dwc-btn--sparkle:hover::after, .dwc-btn--sparkle:focus-visible::after { opacity: 1; }
 .dwc-btn--sparkle:hover {
   transform: scale(1.035);
-  box-shadow: 0 16px 40px -12px rgba(229, 180, 76, 0.6), 0 0 0 4px rgba(229, 180, 76, 0.18);
+  box-shadow: 0 16px 40px -12px rgba(59, 130, 246, 0.6), 0 0 0 4px rgba(59, 130, 246, 0.18);
 }
 .dwc-btn--sparkle:hover > * { text-shadow: 0 0 18px rgba(255, 232, 176, 0.55); }
 /* Icône lucide qui pulse en alternance */
@@ -191,28 +191,28 @@
 }
 .dwc-aurora i:nth-child(1) {
   width: 34rem; height: 22rem; top: -6rem; left: 8%;
-  background: radial-gradient(closest-side, rgba(229, 180, 76, 0.17), transparent 72%);
+  background: radial-gradient(closest-side, rgba(59, 130, 246, 0.17), transparent 72%);
   animation: dwc-aurora-a 22s ease-in-out infinite alternate;
 }
 .dwc-aurora i:nth-child(2) {
   width: 30rem; height: 20rem; top: 2rem; right: 4%;
-  background: radial-gradient(closest-side, rgba(200, 122, 59, 0.18), transparent 72%);
+  background: radial-gradient(closest-side, rgba(37, 99, 235, 0.18), transparent 72%);
   animation: dwc-aurora-b 27s ease-in-out infinite alternate;
 }
 .dwc-aurora i:nth-child(3) {
   width: 24rem; height: 16rem; top: 38%; left: 36%;
-  background: radial-gradient(closest-side, rgba(111, 199, 187, 0.09), transparent 75%);
+  background: radial-gradient(closest-side, rgba(45, 212, 191, 0.09), transparent 75%);
   animation: dwc-aurora-c 19s ease-in-out infinite alternate;
 }
 .dwc-aurora i:nth-child(4) {
   width: 20rem; height: 14rem; top: 55%; left: 12%;
-  background: radial-gradient(closest-side, rgba(232, 155, 60, 0.11), transparent 75%);
+  background: radial-gradient(closest-side, rgba(56, 189, 248, 0.11), transparent 75%);
   animation: dwc-aurora-a 25s ease-in-out infinite alternate-reverse;
 }
 /* Un 5e halo optionnel pour les pages longues (posé en HTML au besoin) */
 .dwc-aurora i:nth-child(5) {
   width: 26rem; height: 18rem; top: 70%; right: 10%;
-  background: radial-gradient(closest-side, rgba(111, 199, 187, 0.07), transparent 78%);
+  background: radial-gradient(closest-side, rgba(45, 212, 191, 0.07), transparent 78%);
   animation: dwc-aurora-c 31s ease-in-out infinite alternate;
 }
 @keyframes dwc-aurora-a { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(14%, 12%, 0) scale(1.18); } }
@@ -295,7 +295,7 @@
   background: var(--grad-gold);
   transform-origin: 0 50%; transform: scaleX(0);
   transition: transform 1.4s var(--ease-out) 0.15s;
-  box-shadow: 0 0 10px rgba(229, 180, 76, 0.4);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
 }
 .dwc-bar-fill.is-filled { transform: scaleX(var(--bar-w, 1)); }
 
@@ -330,8 +330,8 @@
 }
 .dwc-service-card:hover .dwc-icon-circle {
   transform: rotate(-10deg) scale(1.12);
-  border-color: rgba(229, 180, 76, 0.65);
-  box-shadow: 0 0 0 4px rgba(229, 180, 76, 0.12), 0 8px 22px -6px rgba(229, 180, 76, 0.35);
+  border-color: rgba(59, 130, 246, 0.65);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12), 0 8px 22px -6px rgba(59, 130, 246, 0.35);
 }
 .dwc-service-card:hover .dwc-icon-circle .lucide, .dwc-fx-card:hover .dwc-icon-circle .lucide {
   animation: dwc-icon-pulse 1.6s ease-in-out infinite;
@@ -349,7 +349,7 @@
 .dwc-spot { position: relative; }
 .dwc-spot::after {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: radial-gradient(14rem 14rem at var(--spot-x, 50%) var(--spot-y, 50%), rgba(242, 212, 146, 0.22), transparent 65%);
+  background: radial-gradient(14rem 14rem at var(--spot-x, 50%) var(--spot-y, 50%), rgba(96, 165, 250, 0.22), transparent 65%);
   opacity: 0; transition: opacity 0.35s ease;
 }
 .dwc-spot:hover::after { opacity: 1; }
@@ -378,13 +378,13 @@
   background: var(--grad-gold); border-radius: 3px;
   transform-origin: 0 50%; transform: scaleX(0);
   transition: transform 1.8s var(--ease-out) 0.2s;
-  box-shadow: 0 0 14px rgba(229, 180, 76, 0.45);
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.45);
 }
 .dwc-step-line.is-drawn .dwc-step-fill { transform: scaleX(1); }
 .dwc-step-num { transition: transform 0.45s var(--ease-out), box-shadow 0.4s ease; }
 .dwc-card:hover .dwc-step-num, .dwc-step-card.is-in .dwc-step-num {
   transform: translateY(-3px) scale(1.06);
-  box-shadow: 0 12px 28px rgba(10, 8, 6, 0.7), 0 0 18px rgba(229, 180, 76, 0.3);
+  box-shadow: 0 12px 28px rgba(6, 13, 28, 0.7), 0 0 18px rgba(59, 130, 246, 0.3);
 }
 
 /* Stepper connecté (projet.html) */
@@ -392,12 +392,12 @@
 .dwc-steps-h::before, .dwc-steps-h::after {
   content: ""; position: absolute; top: 3.1rem; left: 7%; right: 7%; height: 2px; z-index: 0;
 }
-.dwc-steps-h::before { background: rgba(229, 180, 76, 0.16); }
+.dwc-steps-h::before { background: rgba(59, 130, 246, 0.16); }
 .dwc-steps-h::after {
   background: var(--grad-gold);
   transform-origin: 0 50%; transform: scaleX(0);
   transition: transform 1.8s var(--ease-out) 0.2s;
-  box-shadow: 0 0 14px rgba(229, 180, 76, 0.45);
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.45);
 }
 .dwc-steps-h.is-drawn::after { transform: scaleX(1); }
 @media (max-width: 899px) { .dwc-steps-h::before, .dwc-steps-h::after { display: none; } }
@@ -416,7 +416,7 @@
   width: 2px; border-radius: 2px; background: var(--grad-gold);
   transform-origin: 0 0; transform: scaleY(0);
   transition: transform 1.6s var(--ease-out) 0.1s;
-  box-shadow: 0 0 16px rgba(229, 180, 76, 0.45);
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.45);
 }
 .dwc-timeline.is-drawn::after { transform: scaleY(1); }
 .dwc-timeline > * { position: relative; }
@@ -424,12 +424,12 @@
   content: ""; position: absolute; top: 1.9rem; left: calc(-2.05rem - 0.55rem);
   width: 1.1rem; height: 1.1rem; border-radius: 9999px; z-index: 1;
   background: var(--surface-elevated);
-  border: 2px solid rgba(229, 180, 76, 0.4);
+  border: 2px solid rgba(59, 130, 246, 0.4);
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 .dwc-timeline > .revealed::before {
   border-color: var(--gold);
-  box-shadow: 0 0 0 4px rgba(229, 180, 76, 0.12), 0 0 14px rgba(229, 180, 76, 0.35);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12), 0 0 14px rgba(59, 130, 246, 0.35);
 }
 .dwc-timeline > *:hover::before { transform: scale(1.2); }
 
@@ -438,7 +438,7 @@
 .dwc-field.is-float label {
   position: absolute; left: 1rem; top: 0.88rem; z-index: 1;
   margin-bottom: 0; pointer-events: none;
-  font-size: 0.95rem; font-weight: 500; color: rgba(155, 143, 125, 0.9);
+  font-size: 0.95rem; font-weight: 500; color: rgba(148, 172, 205, 0.9);
   transform-origin: left top;
   transition: transform 0.25s var(--ease-out), color 0.25s ease;
 }
@@ -449,7 +449,7 @@
   color: transparent; transition: color 0.2s ease 0.12s;
 }
 .dwc-field.is-float.is-floated input::placeholder, .dwc-field.is-float.is-floated textarea::placeholder {
-  color: rgba(155, 143, 125, 0.65);
+  color: rgba(148, 172, 205, 0.65);
 }
 .dwc-field.is-float.is-floated label, .dwc-field.is-float:focus-within label {
   transform: translateY(-0.62rem) scale(0.72);
@@ -460,8 +460,8 @@
   animation: dwc-focus-glow 1.8s ease-in-out infinite;
 }
 @keyframes dwc-focus-glow {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(229, 180, 76, 0.16), 0 0 18px rgba(229, 180, 76, 0.12); }
-  50% { box-shadow: 0 0 0 3px rgba(229, 180, 76, 0.3), 0 0 26px rgba(229, 180, 76, 0.22); }
+  0%, 100% { box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.16), 0 0 18px rgba(59, 130, 246, 0.12); }
+  50% { box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), 0 0 26px rgba(59, 130, 246, 0.22); }
 }
 /* Bouton submit : loading → succès */
 .dwc-btn.is-loading { pointer-events: none; }
@@ -476,7 +476,7 @@
 @keyframes dwc-spin { to { transform: rotate(360deg); } }
 .dwc-btn.is-success {
   background: var(--success); color: #10200f;
-  box-shadow: 0 14px 34px -12px rgba(139, 177, 116, 0.6);
+  box-shadow: 0 14px 34px -12px rgba(52, 211, 153, 0.6);
   animation: dwc-success-pop 0.5s var(--ease-out);
 }
 .dwc-btn.is-success::before { display: none; }
@@ -488,7 +488,7 @@
 .dwc-faq { position: relative; }
 .dwc-faq::before {
   content: ""; position: absolute; inset: -1px; border-radius: inherit; z-index: 0; pointer-events: none;
-  background: conic-gradient(from var(--dwc-beam-angle), transparent 0deg, transparent 230deg, rgba(229, 180, 76, 0.55) 320deg, transparent 360deg);
+  background: conic-gradient(from var(--dwc-beam-angle), transparent 0deg, transparent 230deg, rgba(59, 130, 246, 0.55) 320deg, transparent 360deg);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
           mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -500,7 +500,7 @@
 .dwc-faq .dwc-faq-a { overflow: hidden; }
 .dwc-faq[open] .dwc-faq-chev {
   background: var(--gold); color: var(--on-primary-deep); border-color: var(--gold);
-  box-shadow: 0 6px 16px -4px rgba(229, 180, 76, 0.5);
+  box-shadow: 0 6px 16px -4px rgba(59, 130, 246, 0.5);
 }
 
 /* ---------- 11. PILULES FILTRES : remplissage liquide ---------- */
@@ -534,26 +534,26 @@
 .dwc-footer .dwc-nav-call:hover {
   background: var(--gold); border-color: var(--gold);
   color: var(--on-primary-deep); transform: translateY(-3px) rotate(-6deg);
-  box-shadow: 0 10px 24px -8px rgba(229, 180, 76, 0.55);
+  box-shadow: 0 10px 24px -8px rgba(59, 130, 246, 0.55);
 }
 .dwc-footer .dwc-nav-call .lucide { position: relative; z-index: 1; }
 
 /* ---------- 13. Micro-interactions génériques ---------- */
 .dwc-badge { transition: transform 0.3s var(--ease-out), box-shadow 0.3s ease; }
-.dwc-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(10, 8, 6, 0.5), 0 0 20px rgba(229, 180, 76, 0.12); }
+.dwc-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(6, 13, 28, 0.5), 0 0 20px rgba(59, 130, 246, 0.12); }
 .dwc-chip, .dwc-tag { transition: transform 0.25s var(--ease-out), border-color 0.25s ease, color 0.25s ease; }
-.dwc-card:hover .dwc-chip { transform: translateY(-2px); border-color: rgba(229, 180, 76, 0.45); color: var(--gold-bright); }
+.dwc-card:hover .dwc-chip { transform: translateY(-2px); border-color: rgba(59, 130, 246, 0.45); color: var(--gold-bright); }
 .dwc-card:hover .dwc-tag { transform: translateY(-2px); }
 .dwc-card:hover .dwc-tag:nth-child(2n) { transition-delay: 0.04s; }
 .dwc-card:hover .dwc-tag:nth-child(3n) { transition-delay: 0.08s; }
 .dwc-link-arrow .lucide { transition: transform 0.3s var(--ease-out); }
 .dwc-link-arrow:hover .lucide { transform: translateX(4px); }
-.dwc-contact-card:hover .dwc-icon-circle { transform: rotate(-8deg) scale(1.1); border-color: rgba(229, 180, 76, 0.6); }
+.dwc-contact-card:hover .dwc-icon-circle { transform: rotate(-8deg) scale(1.1); border-color: rgba(59, 130, 246, 0.6); }
 .dwc-radio-card { transition: border-color 0.25s ease, transform 0.25s var(--ease-out), box-shadow 0.25s ease; }
 .dwc-radio-card:hover { transform: translateY(-2px); }
-.dwc-radio-card:has(input:checked) { border-color: rgba(229, 180, 76, 0.65); box-shadow: 0 0 0 3px rgba(229, 180, 76, 0.12), 0 8px 22px -10px rgba(229, 180, 76, 0.3); }
+.dwc-radio-card:has(input:checked) { border-color: rgba(59, 130, 246, 0.65); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12), 0 8px 22px -10px rgba(59, 130, 246, 0.3); }
 .dwc-stat-box { transition: transform 0.35s var(--ease-out), border-color 0.3s ease, box-shadow 0.3s ease; }
-.dwc-stat-box:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -12px rgba(229, 180, 76, 0.25); }
+.dwc-stat-box:hover { transform: translateY(-3px); box-shadow: 0 12px 28px -12px rgba(59, 130, 246, 0.25); }
 
 /* Reveal : variantes directionnelles + stagger via --dwc-delay */
 .dwc-reveal { transition-delay: var(--dwc-delay, 0s); }
@@ -583,86 +583,86 @@
 /* ---------- 15. Médaillons d'icônes par catégorie (couleurs distinctes) ----------
    Chaque famille de service a SA couleur : les icônes ne se fondent plus. */
 .dwc-medal {
-  border-color: rgba(229, 180, 76, 0.35);
+  border-color: rgba(59, 130, 246, 0.35);
   color: var(--gold-soft);
-  background: linear-gradient(145deg, #2A2013 0%, #241C11 100%);
+  background: linear-gradient(145deg, #2A2013 0%, #152A4A 100%);
 }
 /* Académique & Recherche : crème/doré */
 .dwc-medal--academic {
-  background: linear-gradient(145deg, rgba(243, 234, 216, 0.3) 0%, rgba(229, 180, 76, 0.14) 100%);
-  border-color: rgba(243, 234, 216, 0.55);
+  background: linear-gradient(145deg, rgba(245, 249, 255, 0.3) 0%, rgba(59, 130, 246, 0.14) 100%);
+  border-color: rgba(245, 249, 255, 0.55);
   color: var(--cream);
-  box-shadow: 0 0 0 1px rgba(243, 234, 216, 0.06), 0 4px 18px -6px rgba(243, 234, 216, 0.18);
+  box-shadow: 0 0 0 1px rgba(245, 249, 255, 0.06), 0 4px 18px -6px rgba(245, 249, 255, 0.18);
 }
 /* IA & Tech : teal profond */
 .dwc-medal--tech {
-  background: linear-gradient(145deg, rgba(111, 199, 187, 0.32) 0%, rgba(62, 155, 143, 0.16) 100%);
-  border-color: rgba(111, 199, 187, 0.6);
+  background: linear-gradient(145deg, rgba(45, 212, 191, 0.32) 0%, rgba(62, 155, 143, 0.16) 100%);
+  border-color: rgba(45, 212, 191, 0.6);
   color: var(--teal-bright);
-  box-shadow: 0 0 0 1px rgba(111, 199, 187, 0.08), 0 4px 18px -6px rgba(111, 199, 187, 0.25);
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.08), 0 4px 18px -6px rgba(45, 212, 191, 0.25);
 }
 /* Création & Média : ambre */
 .dwc-medal--media {
-  background: linear-gradient(145deg, rgba(243, 190, 122, 0.28) 0%, rgba(232, 155, 60, 0.16) 100%);
-  border-color: rgba(243, 190, 122, 0.6);
+  background: linear-gradient(145deg, rgba(96, 165, 250, 0.28) 0%, rgba(56, 189, 248, 0.16) 100%);
+  border-color: rgba(96, 165, 250, 0.6);
   color: var(--amber-bright);
-  box-shadow: 0 0 0 1px rgba(243, 190, 122, 0.08), 0 4px 18px -6px rgba(232, 155, 60, 0.25);
+  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.08), 0 4px 18px -6px rgba(56, 189, 248, 0.25);
 }
 /* Business & Infrastructure : cuivre */
 .dwc-medal--business {
-  background: linear-gradient(145deg, rgba(226, 164, 104, 0.28) 0%, rgba(200, 122, 59, 0.16) 100%);
-  border-color: rgba(226, 164, 104, 0.6);
+  background: linear-gradient(145deg, rgba(56, 189, 248, 0.28) 0%, rgba(37, 99, 235, 0.16) 100%);
+  border-color: rgba(56, 189, 248, 0.6);
   color: var(--copper-bright);
-  box-shadow: 0 0 0 1px rgba(226, 164, 104, 0.08), 0 4px 18px -6px rgba(200, 122, 59, 0.25);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.08), 0 4px 18px -6px rgba(37, 99, 235, 0.25);
 }
 /* Rotation/pulse conservés + teinte au hover */
-.dwc-service-card:hover .dwc-medal--academic { box-shadow: 0 0 0 4px rgba(243, 234, 216, 0.1), 0 8px 22px -6px rgba(243, 234, 216, 0.3); }
-.dwc-service-card:hover .dwc-medal--tech { box-shadow: 0 0 0 4px rgba(111, 199, 187, 0.14), 0 8px 22px -6px rgba(111, 199, 187, 0.4); }
-.dwc-service-card:hover .dwc-medal--media { box-shadow: 0 0 0 4px rgba(232, 155, 60, 0.14), 0 8px 22px -6px rgba(232, 155, 60, 0.4); }
-.dwc-service-card:hover .dwc-medal--business { box-shadow: 0 0 0 4px rgba(200, 122, 59, 0.16), 0 8px 22px -6px rgba(200, 122, 59, 0.4); }
+.dwc-service-card:hover .dwc-medal--academic { box-shadow: 0 0 0 4px rgba(245, 249, 255, 0.1), 0 8px 22px -6px rgba(245, 249, 255, 0.3); }
+.dwc-service-card:hover .dwc-medal--tech { box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.14), 0 8px 22px -6px rgba(45, 212, 191, 0.4); }
+.dwc-service-card:hover .dwc-medal--media { box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.14), 0 8px 22px -6px rgba(56, 189, 248, 0.4); }
+.dwc-service-card:hover .dwc-medal--business { box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.16), 0 8px 22px -6px rgba(37, 99, 235, 0.4); }
 
 /* ---------- 16. Cartes hiérarchisées : surface éclaircie + bordure teintée + glow coloré ---------- */
 .dwc-fx-card {
-  background: var(--surface-card, #1D1811);
-  border-color: var(--surface-line, rgba(226, 201, 148, 0.14));
-  box-shadow: 0 1px 0 rgba(243, 234, 216, 0.04) inset, 0 14px 34px -18px rgba(10, 8, 6, 0.8);
+  background: var(--surface-card, #122140);
+  border-color: var(--surface-line, rgba(147, 197, 253, 0.14));
+  box-shadow: 0 1px 0 rgba(245, 249, 255, 0.04) inset, 0 14px 34px -18px rgba(6, 13, 28, 0.8);
 }
-/* Bordure supérieure lumineuse (lumière rasante café→or) */
+/* Bordure supérieure lumineuse (lumière rasante bleu profond→bleu vif) */
 .dwc-fx-card::after {
   content: ""; position: absolute; top: 0; left: 12%; right: 12%; height: 1px; z-index: 3;
-  background: linear-gradient(90deg, transparent, rgba(243, 234, 216, 0.28), transparent);
+  background: linear-gradient(90deg, transparent, rgba(245, 249, 255, 0.28), transparent);
   pointer-events: none;
 }
 /* Glows de survol par catégorie */
 .dwc-fx-card[data-cat="academic"]:hover {
-  border-color: rgba(243, 234, 216, 0.45);
-  box-shadow: 0 18px 40px -14px rgba(16, 14, 11, 0.85), 0 0 30px -6px rgba(243, 234, 216, 0.16);
+  border-color: rgba(245, 249, 255, 0.45);
+  box-shadow: 0 18px 40px -14px rgba(9, 17, 34, 0.85), 0 0 30px -6px rgba(245, 249, 255, 0.16);
 }
 .dwc-fx-card[data-cat="tech"]:hover {
-  border-color: rgba(111, 199, 187, 0.5);
-  box-shadow: 0 18px 40px -14px rgba(16, 14, 11, 0.85), 0 0 30px -6px var(--teal-glow);
+  border-color: rgba(45, 212, 191, 0.5);
+  box-shadow: 0 18px 40px -14px rgba(9, 17, 34, 0.85), 0 0 30px -6px var(--teal-glow);
 }
 .dwc-fx-card[data-cat="media"]:hover {
-  border-color: rgba(243, 190, 122, 0.5);
-  box-shadow: 0 18px 40px -14px rgba(16, 14, 11, 0.85), 0 0 30px -6px rgba(232, 155, 60, 0.32);
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: 0 18px 40px -14px rgba(9, 17, 34, 0.85), 0 0 30px -6px rgba(56, 189, 248, 0.32);
 }
 .dwc-fx-card[data-cat="business"]:hover {
-  border-color: rgba(226, 164, 104, 0.5);
-  box-shadow: 0 18px 40px -14px rgba(16, 14, 11, 0.85), 0 0 30px -6px var(--copper-glow);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 18px 40px -14px rgba(9, 17, 34, 0.85), 0 0 30px -6px var(--copper-glow);
 }
 /* Fallback or quand aucune catégorie */
-.dwc-fx-card:hover { border-color: rgba(229, 180, 76, 0.5); }
+.dwc-fx-card:hover { border-color: rgba(59, 130, 246, 0.5); }
 
 /* ---------- 17. Badge "Populaire" braise + chips catégorie teintées ---------- */
 .dwc-flag {
   background: linear-gradient(120deg, var(--ember-bright), var(--ember));
   color: #2B130A;
-  box-shadow: 0 6px 18px rgba(201, 111, 74, 0.4);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
 }
-.dwc-chip--cat-academic { border-color: rgba(243, 234, 216, 0.5); color: var(--cream); background: rgba(243, 234, 216, 0.12); }
-.dwc-chip--cat-tech { border-color: rgba(111, 199, 187, 0.6); color: var(--teal-bright); background: rgba(62, 155, 143, 0.24); }
-.dwc-chip--cat-media { border-color: rgba(243, 190, 122, 0.6); color: var(--amber-bright); background: rgba(232, 155, 60, 0.22); }
-.dwc-chip--cat-business { border-color: rgba(226, 164, 104, 0.6); color: var(--copper-bright); background: rgba(200, 122, 59, 0.22); }
+.dwc-chip--cat-academic { border-color: rgba(245, 249, 255, 0.5); color: var(--cream); background: rgba(245, 249, 255, 0.12); }
+.dwc-chip--cat-tech { border-color: rgba(45, 212, 191, 0.6); color: var(--teal-bright); background: rgba(62, 155, 143, 0.24); }
+.dwc-chip--cat-media { border-color: rgba(96, 165, 250, 0.6); color: var(--amber-bright); background: rgba(56, 189, 248, 0.22); }
+.dwc-chip--cat-business { border-color: rgba(56, 189, 248, 0.6); color: var(--copper-bright); background: rgba(37, 99, 235, 0.22); }
 .dwc-chip--cat-academic, .dwc-chip--cat-tech, .dwc-chip--cat-media, .dwc-chip--cat-business {
   font-weight: 700; letter-spacing: 0.09em;
 }
@@ -671,7 +671,7 @@
 .dwc-grad-text { background-image: var(--grad-title); }
 
 /* ---------- 19. Divers accents enrichis ---------- */
-.dwc-dot { background: var(--teal-bright) !important; box-shadow: 0 0 10px rgba(111, 199, 187, 0.5); }
+.dwc-dot { background: var(--teal-bright) !important; box-shadow: 0 0 10px rgba(45, 212, 191, 0.5); }
 @keyframes dwc-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 .dwc-bar-fill { background: var(--grad-warm); }
 .dwc-step-fill, .dwc-steps-h::after, .dwc-timeline::after { background: var(--grad-warm) !important; }
