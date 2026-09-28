@@ -36,6 +36,12 @@ html[data-theme="light"] {
   --copper-bright: #2563EB;
   --ember: #1D4ED8;
   --ember-bright: #2563EB;
+
+  /* v8 — tokens oubliés en mode clair (cartes restaient bleu nuit = texte sombre sur fond sombre) */
+  --surface-card: #FFFFFF;
+  --surface-line: rgba(12, 27, 51, 0.10);
+  /* Dégradé des titres en dégradé-texte : version foncée lisible sur fond blanc */
+  --grad-title: linear-gradient(100deg, #1E40AF 0%, #2563EB 30%, #3B82F6 62%, #1D4ED8 100%);
 }
 
 /* Fond du body + surfaces génériques */
@@ -86,3 +92,22 @@ html[data-theme="light"] .dwc-badge { background: #FFFFFF; border-color: rgba(37
 .dwc-theme-toggle:hover { border-color: var(--gold); }
 .dwc-theme-toggle:active { transform: scale(0.95); }
 .dwc-theme-toggle .lucide { width: 1.05rem; height: 1.05rem; }
+
+/* ============================================================
+   v8 — CARTES SERVICES OUZEF EN MODE CLAIR :
+   les pills/labels ont des couleurs blanches codées pour le
+   thème sombre -> invisibles sur carte pâle #E9F1FC. Fix :
+   ============================================================ */
+html[data-theme="light"] .svc-pill { color: #3A5A8C; background: rgba(12, 27, 51, 0.045); border-color: rgba(12, 27, 51, 0.10); }
+html[data-theme="light"] .svc-card:hover .svc-pill { background: rgba(12, 27, 51, 0.08); }
+html[data-theme="light"] .svc-pill-more { color: #3A5A8C; }
+html[data-theme="light"] .svc-price-label { color: #5A719A; }
+html[data-theme="light"] .svc-cat { border-color: rgba(37, 99, 235, 0.35); color: #1D4ED8; background: rgba(37, 99, 235, 0.08); }
+html[data-theme="light"] .svc-cat--academic { border-color: rgba(12, 27, 51, 0.25); color: #0C1B33; background: rgba(12, 27, 51, 0.05); }
+html[data-theme="light"] .svc-cat--tech { color: #0D9488; border-color: rgba(13, 148, 136, 0.45); background: rgba(13, 148, 136, 0.08); }
+html[data-theme="light"] .svc-cat--media { color: #0369A1; border-color: rgba(3, 105, 161, 0.45); background: rgba(3, 105, 161, 0.08); }
+html[data-theme="light"] .svc-cat--business { color: #1D4ED8; border-color: rgba(37, 99, 235, 0.45); background: rgba(37, 99, 235, 0.08); }
+html[data-theme="light"] .svc-footer { border-top-color: rgba(12, 27, 51, 0.12); }
+html[data-theme="light"] .svc-card .svc-medal--academic { color: #EAF2FF; }
+/* Marquee: tokens des items suivent le thème */
+.dwc-marquee-track span { color: var(--outline); }

@@ -1,46 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Digital World Coaching — DW">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Digital World Coaching — DW">
   <defs>
-    <linearGradient id="dwcRing" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#93C5FD"/>
-      <stop offset="100%" stop-color="#1D4ED8"/>
+    <linearGradient id="dwcg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
     </linearGradient>
-    <linearGradient id="dwcLetters" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#60A5FA"/>
-      <stop offset="50%" stop-color="#3B82F6"/>
-      <stop offset="100%" stop-color="#1D4ED8"/>
-    </linearGradient>
-    <filter id="dwcGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="dwcGlowSoft" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="18" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-
-  <!-- Fond transparent : anneau dégradé or -> bronze, intérieur noir café -->
-  <circle cx="256" cy="256" r="238" fill="url(#dwcRing)"/>
-  <circle cx="256" cy="256" r="206" fill="#0A1428"/>
-
-  <!-- Anneau fin de soulignement -->
-  <circle cx="256" cy="256" r="216" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="3"/>
-
-  <!-- Éclat subtil en haut à gauche -->
-  <ellipse cx="180" cy="150" rx="120" ry="70" fill="rgba(255,255,255,0.06)" transform="rotate(-32 180 150)"/>
-
-  <!-- Monogramme DW -->
-  <g filter="url(#dwcGlowSoft)">
-    <text x="256" y="330" font-family="'Space Grotesk','Inter',Arial,sans-serif" font-size="176" font-weight="800" letter-spacing="-6" text-anchor="middle" fill="url(#dwcLetters)">DW</text>
+  <!-- Tuile squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="url(#dwcg)"/>
+  <!-- Monogramme D+W final : air régulier D/W, spark blanc terminal -->
+  <g stroke="#FFFFFF" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M14 19 V45"/>
+    <path d="M14 19 H25.5 C34 19 37.5 24.6 37.5 32 C37.5 39.4 34 45 25.5 45 H14"/>
+    <path d="M39.5 33.5 L44 45 L49.5 23.5 L55 45 L59 29"/>
   </g>
-
-  <!-- Point d'accent sous le monogramme -->
-  <circle cx="256" cy="382" r="9" fill="#3B82F6" filter="url(#dwcGlow)"/>
+  <circle cx="59" cy="29" r="2.2" fill="#FFFFFF"/>
 </svg>

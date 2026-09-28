@@ -3,16 +3,16 @@
 Site vitrine statique — **identité bleu nuit `#0A1428` + bleu vif `#3B82F6` + blanc** (aucun marron/or/beige), Space Grotesk + Inter, icônes Lucide, JS vanilla léger.
 
 ## Pages
-- `index.html` — accueil : nav pilule flottante, hero, 3 stats glass, 3 services phares (cartes ouzef 100% cliquables), 4 étapes, réalisations, CTA, footer
-- `services.html` — catalogue officiel des 10 services : filtres de catégories interactifs, **10 cartes design ouzef 100% cliquables** (wrapper 5px + bordure 2px colorée au hover + scale 1.03, visuel 16:9 avec médaillon 56px, titre 800, badge catégorie pilule, description clamp 2 lignes, pills, footer Sur devis + CTA), arguments sur devis, CTA
+- `index.html` — accueil : nav pilule flottante, hero, 3 stats glass, 3 services phares (cartes éditoriales 100% cliquables), 4 étapes, réalisations, CTA, footer
+- `services.html` — catalogue officiel des 10 services : filtres de catégories interactifs, **10 cartes design éditorial 100% cliquables** (numérotation 01-10, médaillon fin Lucide, kicker catégorie, outils au texte séparés de points médians, footer Sur devis + CTA lien), arguments sur devis, CTA
 - `services/*.html` — **10 pages services uniques** (une par service) : breadcrumb, hero icône + badge + 4 méta-cartes, carte insignia, marquee stack, modules (timeline animée), « pour qui », livrables, tarification sur devis + formulaire express (WhatsApp), FAQ accordéons, CTA contacts, footer avec les 10 services liés
 - `projet.html` — l'entreprise : hero institutionnel, indicateurs, mission/vision, piliers, méthode, publics, études de cas, CTA
 - `contact.html` — cartes contact cliquables, protocole, formulaire complet (mailto / wa.me), 5 FAQ, bandeau Hub Haie Vive
 
-## Cartes services (design ouzef, 100% cliquables)
+## Cartes services (design éditorial v8, 100% cliquables)
 - La carte entière est un `<a href="services/<slug>.html">` — le « Voir → » n'est qu'un indicateur : tout est cliquable.
-- Hover : `scale(1.03)` + bordure 2px teintée par catégorie + glow bleu ; médaillon 56px (Lucide) qui pulse.
-- CSS dans `css/main.css` section 20 (`.svc-*`), adapté de la référence ouzef.com à la palette bleu nuit DWC.
+- Hover : élévation douce -3px + bordure bleue + numéro d'ordre mis en avant ; médaillon fin (Lucide).
+- CSS dans `css/main.css` section 20 (`.svc-*`) — direction éditoriale propre DWC v8 : numérotation 01-10, kicker catégorie, outils au texte, zéro poster 16:9.
 
 ## Les 10 services (URLs propres)
 | # | Service | Page |
@@ -42,7 +42,7 @@ Site vitrine statique — **identité bleu nuit `#0A1428` + bleu vif `#3B82F6` +
 
 ## Structure technique
 - `assets/logo.svg` — monogramme DW, `assets/favicon.svg` — dérivé 64 px
-- `css/main.css` — tokens bleu nuit + sections composants (+ section 20 : cartes ouzef) ; `css/anim.css` — couche animations (aurora, reveal, tilt, sparkle, beam)
+- `css/main.css` — tokens bleu nuit + sections composants (+ section 20 : cartes éditoriales) ; `css/anim.css` — couche animations (aurora, reveal, tilt, sparkle, beam)
 - `js/nav.js` — menu mobile, lien actif, compteurs, init Lucide, formulaire contact
 - `js/anim.js` — reveal stagger, tilt (désactivé au tactile), spotlight, FLIP filtres services, FAQ animées, marquee
 - Icônes : **Lucide uniquement** via CDN `unpkg.com/lucide@latest` (`data-lucide`), aucune police d'icônes tierce, aucun emoji
